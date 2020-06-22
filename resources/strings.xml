@@ -4,6 +4,9 @@
     <string id="metric">km</string>
     <string id="imperial">mi</string>
     
+    <string id="am">am</string>
+    <string id="pm">pm</string>
+    
     <string id="pace">PACE</string>
     <string id="time">TIME</string>
     

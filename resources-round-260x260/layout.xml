@@ -1,3 +1,55 @@
 <resources>
-	<jsonData id="l">[30,76,161,223,false,15,53,94,128,95,130,180,203,28,170,230,240]</jsonData>
+	<!-- Horizontal line 1 -->
+	<string id="hl1">30</string>
+	
+	<!-- Horizontal line 2 -->
+	<string id="hl2">76</string>
+	
+	<!-- Horizontal line 3 -->
+	<string id="hl3">161</string>
+	
+	<!-- Horizontal line 4 -->
+	<string id="hl4">223</string>
+	
+	<!-- Centre offset X -->
+	<string id="cx">10</string>
+	
+	<!-- Clock Y -->
+	<string id="cy">15</string>
+	
+	<!-- Clock offset X -->
+	<string id="cox">0</string>
+	
+	<!-- Top row Y -->
+	<string id="ty">53</string>
+	
+	<!-- Middle row label Y -->
+	<string id="mly">94</string>
+	
+	<!-- Middle row value Y -->
+	<string id="mvy">128</string>
+	
+	<!-- Heart rate icon Y -->
+	<string id="hiy">95</string>
+	
+	<!-- Heart rate text Y -->
+	<string id="hty">130</string>
+	
+	<!-- Bottom row upper text Y -->
+	<string id="buy">180</string>
+	
+	<!-- Bottom row lower text Y -->
+	<string id="bly">203</string>
+	
+	<!-- Bottom row icon X -->
+	<string id="brix">28</string>
+	
+	<!-- Bottom row icon Y -->
+	<string id="briy">170</string>
+	
+	<!-- Battery Y -->
+	<string id="by">240</string>
+	
+	<!-- Battery X -->
+	<string id="bx">0</string>
 </resources>

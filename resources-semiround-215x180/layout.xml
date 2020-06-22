@@ -3,13 +3,13 @@
 	<string id="hl1">30</string>
 	
 	<!-- Horizontal line 2 -->
-	<string id="hl2">70</string>
+	<string id="hl2">64</string>
 	
 	<!-- Horizontal line 3 -->
-	<string id="hl3">145</string>
+	<string id="hl3">128</string>
 	
 	<!-- Horizontal line 4 -->
-	<string id="hl4">203</string>
+	<string id="hl4">500</string>
 	
 	<!-- Centre offset X -->
 	<string id="cx">10</string>
@@ -18,38 +18,38 @@
 	<string id="cy">15</string>
 	
 	<!-- Clock offset X -->
-	<string id="cox">0</string>
+	<string id="cox">-40</string>
 	
 	<!-- Top row Y -->
-	<string id="ty">50</string>
+	<string id="ty">47</string>
 	
 	<!-- Middle row label Y -->
-	<string id="mly">90</string>
+	<string id="mly">80</string>
 	
 	<!-- Middle row value Y -->
-	<string id="mvy">120</string>
+	<string id="mvy">105</string>
 	
 	<!-- Heart rate icon Y -->
-	<string id="hiy">85</string>
+	<string id="hiy">75</string>
 	
 	<!-- Heart rate text Y -->
-	<string id="hty">120</string>
+	<string id="hty">107</string>
 	
 	<!-- Bottom row upper text Y -->
-	<string id="buy">160</string>
+	<string id="buy">140</string>
 	
 	<!-- Bottom row lower text Y -->
-	<string id="bly">185</string>
+	<string id="bly">160</string>
 	
 	<!-- Bottom row icon X -->
-	<string id="brix">25</string>
+	<string id="brix">30</string>
 	
 	<!-- Bottom row icon Y -->
-	<string id="briy">157</string>
+	<string id="briy">135</string>
 	
 	<!-- Battery Y -->
-	<string id="by">220</string>
+	<string id="by">13</string>
 	
 	<!-- Battery X -->
-	<string id="bx">0</string>
+	<string id="bx">30</string>
 </resources>

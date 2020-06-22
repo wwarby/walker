@@ -6,11 +6,14 @@ class ActivityMetrics {
 	hidden var paceData;
 	hidden var heartRateData;
 	
-	hidden var capturedActivityStartTime;
-	hidden var stepsBeforeActivity = 0;
+	hidden var stepsWhenTimerBecameActive = 0;
+	hidden var unconsolidatedSteps = 0;
+	hidden var consolidatedSteps = 0;
 	
 	hidden var paceMode = 0;
 	hidden var heartRateMode = 0;
+	
+	var timerActive = false;
 	
 	var kmOrMileInMeters;
 	var kmOrMilesLabel;
@@ -32,19 +35,51 @@ class ActivityMetrics {
 		kmOrMileInMeters = deviceSettings.distanceUnits == System.UNIT_METRIC ? 1000.0f : 1609.34f;
 		kmOrMilesLabel = Ui.loadResource(deviceSettings.distanceUnits == System.UNIT_METRIC ? Rez.Strings.metric : Rez.Strings.imperial);
 		
-		paceMode = App.Properties.getValue("pm");
+		paceMode = Application.getApp().getProperty("pm");
 		if (paceMode > 0) {
 			paceData = new DataQueue(paceMode);
 		} else {
 			paceData = null;
 		}
 		
-		heartRateMode = App.Properties.getValue("hm");
+		heartRateMode = Application.getApp().getProperty("hm");
 		if (heartRateMode > 0) {
 			heartRateData = new DataQueue(heartRateMode);
 		} else {
 			heartRateData = null;
 		}
+	}
+	
+	function onTimerStart() {
+		consolidatedSteps = 0;
+		unconsolidatedSteps = 0;
+		steps = 0;
+		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
+		timerActive = true;
+	}
+	
+	function onTimerStop() {
+		consolidatedSteps = 0;
+		unconsolidatedSteps = 0;
+		timerActive = false;
+	}
+	
+	function onTimerReset() {
+		consolidatedSteps = steps;
+		unconsolidatedSteps = 0;
+		stepsWhenTimerBecameActive = 0;
+		timerActive = false;
+	}
+	
+	function onTimerPause() {
+		consolidatedSteps = steps;
+		unconsolidatedSteps = 0;
+		timerActive = false;
+	}
+	
+	function onTimerResume() {
+		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
+		timerActive = true;
 	}
 	
 	function compute(info) {
@@ -88,11 +123,10 @@ class ActivityMetrics {
 		time = info.timerTime;
 				
 		// Steps
-		if (capturedActivityStartTime == null || (capturedActivityStartTime != null && capturedActivityStartTime.value() < info.startTime.value())) {
-			capturedActivityStartTime = info.startTime;
-			stepsBeforeActivity = activityMonitorInfo.steps;
+		if (timerActive) {
+			unconsolidatedSteps = activityMonitorInfo.steps - stepsWhenTimerBecameActive;
+			steps = consolidatedSteps + unconsolidatedSteps;
 		}
-		steps = activityMonitorInfo.steps - stepsBeforeActivity;
 		daySteps = activityMonitorInfo.steps;
 		
 		// Calories
@@ -100,6 +134,7 @@ class ActivityMetrics {
 		dayCalories = activityMonitorInfo.calories;
 		
 		// Max width values for layout debugging
+		/*
 		distance = 888888.888;
 		heartRate = 888;
 		pace = 100000;
@@ -109,7 +144,7 @@ class ActivityMetrics {
 		daySteps = 88888;
 		calories = 88888;
 		dayCalories = 88888;
-		
+		*/
 	}
 	
 }

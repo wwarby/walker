@@ -25,14 +25,29 @@
             <color>FFFFFF</color>
         </palette>
 	</bitmap>
+	<bitmap id="ibf" filename="battery.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>00AA00</color>
+        </palette>
+	</bitmap>
 	<bitmap id="ib" filename="battery.png" dithering="none">
 		<palette disableTransparency="false">
-            <color>000000</color>
+            <color>555555</color>
         </palette>
 	</bitmap>
 	<bitmap id="ibd" filename="battery.png" dithering="none">
 		<palette disableTransparency="false">
-            <color>FFFFFF</color>
+            <color>AAAAAA</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ibw" filename="battery.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFAA00</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ibe" filename="battery.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FF0000</color>
         </palette>
 	</bitmap>
 </drawables>
