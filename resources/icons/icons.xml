@@ -1,0 +1,38 @@
+<drawables>
+	<bitmap id="il" filename="launcher.png" dithering="none" />
+	<bitmap id="ihr" filename="heart-rate.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FF0000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="is" filename="steps.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>000000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="isd" filename="steps.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ic" filename="calories.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>000000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="icd" filename="calories.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ib" filename="battery.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>000000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ibd" filename="battery.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+	</bitmap>
+</drawables>

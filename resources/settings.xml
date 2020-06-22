@@ -1,0 +1,40 @@
+<resources>
+	<properties>
+		<property id="pm" type="number">5</property>
+		<property id="hm" type="number">-1</property>
+	</properties>
+	<strings>
+		<string id="paceModeTitle">Pace mode</string>
+		<string id="heartRateModeTitle">Heart rate mode</string>
+		
+		<string id="modeCurrent">Current</string>
+		<string id="mode3Seconds">3 second average</string>
+		<string id="mode5Seconds">5 second average</string>
+		<string id="mode10Seconds">10 second average</string>
+		<string id="mode30Seconds">30 second average</string>
+		<string id="mode60Seconds">60 second average</string>
+	</strings>
+	<settings>
+		<setting propertyKey="@Properties.pm" title="@Strings.paceModeTitle">
+			<settingConfig type="list">
+	            <listEntry value="0">@Strings.modeCurrent</listEntry>
+	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
+	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
+	            <listEntry value="10">@Strings.mode10Seconds</listEntry>
+	            <listEntry value="30">@Strings.mode30Seconds</listEntry>
+	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
+	        </settingConfig>
+		</setting>
+		
+		<setting propertyKey="@Properties.hm" title="@Strings.heartRateModeTitle">
+			<settingConfig type="list">
+	            <listEntry value="0">@Strings.modeCurrent</listEntry>
+	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
+	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
+	            <listEntry value="10">@Strings.mode10Seconds</listEntry>
+	            <listEntry value="30">@Strings.mode30Seconds</listEntry>
+	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
+	        </settingConfig>
+		</setting>
+	</settings>
+</resources>

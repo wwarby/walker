@@ -1,0 +1,12 @@
+<strings>
+    <string id="appName">Walker</string>
+    
+    <string id="metric">km</string>
+    <string id="imperial">mi</string>
+    
+    <string id="pace">PACE</string>
+    <string id="time">TIME</string>
+    
+    <string id="zeroTime">0:00</string>
+    <string id="zeroDistance">0.00</string>
+</strings>
