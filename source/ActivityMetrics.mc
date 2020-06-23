@@ -139,7 +139,7 @@ class ActivityMetrics {
 		heartRate = 888;
 		pace = 100000;
 		averagePace = 100000;
-		time = 2000000;
+		time = 20000000;
 		steps = 88888;
 		daySteps = 88888;
 		calories = 88888;

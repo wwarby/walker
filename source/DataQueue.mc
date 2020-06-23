@@ -1,6 +1,7 @@
 class DataQueue {
 
-	hidden var data;
+	var data;
+	
 	hidden var maxSize = 0;
 	hidden var pos = 0;
 
@@ -19,10 +20,6 @@ class DataQueue {
 			data[i] = null;
 		}
 		pos = 0;
-	}
-	
-	function getData() {
-		return data;
 	}
 	
 	function average() {

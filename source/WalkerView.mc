@@ -2,7 +2,6 @@ using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using Toybox.Application as App;
 using Toybox.Math as Math;
-using Calc;
 
 class WalkerView extends Ui.DataField {
 	
@@ -99,6 +98,10 @@ class WalkerView extends Ui.DataField {
 		var am = activityMetrics.weak().get();
 		var halfWidth = dc.getWidth() / 2;
 		
+		var time = formatTime(am.time == null ? null : am.time, false);
+		var pace = formatTime(am.pace == null ? null : am.pace * 1000.0, false);
+		var shrinkMiddleText = time.length() > 5 || pace.length() > 5;
+		
 		// Set colours
 		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : Gfx.COLOR_WHITE;
 		var darkMode = (backgroundColour == Gfx.COLOR_BLACK);
@@ -177,22 +180,32 @@ class WalkerView extends Ui.DataField {
 		dc.drawText(halfWidth + centerOffsetX, topRowY, Gfx.FONT_XTINY,
 			formatDistance(am.distance, am.kmOrMileInMeters) + am.kmOrMilesLabel, Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
-		// Render current pace
-		dc.drawText((halfWidth / 2) - centerOffsetX, middleRowLabelY, Gfx.FONT_XTINY,
-			Ui.loadResource(Rez.Strings.pace), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-		dc.drawText((halfWidth / 2) - centerOffsetX, middleRowValueY, Gfx.FONT_NUMBER_MILD,
-			formatTime(am.pace == null ? null : am.pace * 1000.0, true), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-			
-		// Render timer
-		dc.drawText((halfWidth * 1.5) + centerOffsetX, middleRowLabelY, Gfx.FONT_XTINY,
-			Ui.loadResource(Rez.Strings.time), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-		dc.drawText((halfWidth * 1.5) + centerOffsetX, middleRowValueY, Gfx.FONT_NUMBER_MILD,
-			formatTime(am.time, true), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-		
 		// Render heart rate
+		var heartRate = (am.heartRate == null ? 0 : am.heartRate).format("%d");
+		var heartRateWidth = dc.getTextDimensions(heartRate, Gfx.FONT_XTINY)[0];
 		dc.drawBitmap(halfWidth - (heartRateIcon.getWidth() / 2), heartRateIconY, heartRateIcon);
 		dc.drawText(halfWidth, heartRateTextY, Gfx.FONT_XTINY,
-			(am.heartRate == null ? 0 : am.heartRate).format("%d"), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+			heartRate, Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		
+		// Render current pace
+		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, Gfx.FONT_XTINY,
+			Ui.loadResource(Rez.Strings.pace), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(
+		(halfWidth / 2) - (heartRateWidth / 2) + 5,
+			middleRowValueY,
+			shrinkMiddleText ? Gfx.FONT_SMALL : Gfx.FONT_NUMBER_MILD,
+			pace,
+			Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+			
+		// Render timer
+		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, middleRowLabelY, Gfx.FONT_XTINY,
+			Ui.loadResource(Rez.Strings.timer), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(
+			(halfWidth * 1.5) + (heartRateWidth / 2) - 5,
+			middleRowValueY,
+			shrinkMiddleText ? Gfx.FONT_SMALL : Gfx.FONT_NUMBER_MILD,
+			time,
+			Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render steps
 		dc.drawBitmap(bottomRowIconX, bottomRowIconY, stepsIcon);
@@ -218,7 +231,7 @@ class WalkerView extends Ui.DataField {
 		// Render battery
 		dc.drawBitmap(halfWidth - (batteryIcon.getWidth() / 2) + 2 + batteryX, batteryY - (batteryIcon.getHeight() / 2), batteryIcon);
 		dc.setColor(batteryTextColour, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(halfWidth + batteryX, batteryY, Gfx.FONT_XTINY,
+		dc.drawText(halfWidth + batteryX, batteryY - 1, Gfx.FONT_XTINY,
 			System.getSystemStats().battery.format("%d") + "%", Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
 	}
 	
