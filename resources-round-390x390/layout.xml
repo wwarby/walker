@@ -11,6 +11,9 @@
 	<!-- Horizontal line 4 -->
 	<string id="hl4">340</string>
 	
+	<!-- Step goal progress offset X -->
+	<string id="spx">7</string>
+	
 	<!-- Centre offset X -->
 	<string id="cx">20</string>
 	

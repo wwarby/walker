@@ -8,8 +8,6 @@ class WalkerView extends Ui.DataField {
 	hidden var doUpdates = false;
 	hidden var is24Hour = false;
 	
-	hidden var activityMetrics;
-	
 	hidden var previousDarkMode;
 	hidden var previousBatteryState;
 	
@@ -21,6 +19,7 @@ class WalkerView extends Ui.DataField {
 	hidden var batteryTextColour;
 	
 	hidden var lines;
+	hidden var stepGoalProgressOffsetX;
 	hidden var centerOffsetX;
 	hidden var clockY;
 	hidden var clockOffsetX;
@@ -36,9 +35,36 @@ class WalkerView extends Ui.DataField {
 	hidden var batteryY;
 	hidden var batteryX;
 	
+	hidden var paceData;
+	hidden var heartRateData;
+	
+	hidden var stepsWhenTimerBecameActive = 0;
+	hidden var unconsolidatedSteps = 0;
+	hidden var consolidatedSteps = 0;
+	
+	hidden var paceMode = 0;
+	hidden var heartRateMode = 0;
+	
+	hidden var timerActive = false;
+	
+	hidden var kmOrMileInMeters;
+	hidden var kmOrMilesLabel;
+	
+	hidden var averagePace;
+	hidden var distance;
+	hidden var heartRate;
+	hidden var pace;
+	hidden var time;
+	hidden var steps;
+	hidden var daySteps;
+	hidden var calories;
+	hidden var dayCalories;
+	hidden var stepGoalProgress;
+	
 	function initialize() {
+		
 		DataField.initialize();
-		activityMetrics = new ActivityMetrics();
+		
 		readSettings();
 		
 		// Layout variables stored as strings because SDK < 2.x doesn't support JSON resources
@@ -49,6 +75,7 @@ class WalkerView extends Ui.DataField {
 			Ui.loadResource(Rez.Strings.hl3).toNumber(),
 			Ui.loadResource(Rez.Strings.hl4).toNumber()
 		];
+		stepGoalProgressOffsetX = Ui.loadResource(Rez.Strings.spx).toNumber();
 		centerOffsetX = Ui.loadResource(Rez.Strings.cx).toNumber();
 		clockY = Ui.loadResource(Rez.Strings.cy).toNumber();
 		clockOffsetX = Ui.loadResource(Rez.Strings.cox).toNumber();
@@ -66,13 +93,27 @@ class WalkerView extends Ui.DataField {
 	}
 	
 	function readSettings() {
+		
 		var deviceSettings = System.getDeviceSettings();
+		
 		is24Hour = deviceSettings.is24Hour;
-		activityMetrics.readSettings(deviceSettings);
-	}
-	
-	function compute(info) {
-		activityMetrics.compute(info);
+		
+		kmOrMileInMeters = deviceSettings.distanceUnits == System.UNIT_METRIC ? 1000.0f : 1609.34f;
+		kmOrMilesLabel = Ui.loadResource(deviceSettings.distanceUnits == System.UNIT_METRIC ? Rez.Strings.metric : Rez.Strings.imperial);
+		
+		paceMode = Application.getApp().getProperty("pm");
+		if (paceMode > 0) {
+			paceData = new DataQueue(paceMode);
+		} else {
+			paceData = null;
+		}
+		
+		heartRateMode = Application.getApp().getProperty("hm");
+		if (heartRateMode > 0) {
+			heartRateData = new DataQueue(heartRateMode);
+		} else {
+			heartRateData = null;
+		}
 	}
 	
 	function onShow() {
@@ -84,22 +125,116 @@ class WalkerView extends Ui.DataField {
 		doUpdates = false;
 	}
 	
-	// Forward timer events to activity metrics
-	function onTimerStart() { activityMetrics.weak().get().onTimerStart(); }
-	function onTimerStop() { activityMetrics.weak().get().onTimerStop(); }
-	function onTimerReset() { activityMetrics.weak().get().onTimerReset(); }
-	function onTimerPause() { activityMetrics.weak().get().onTimerPause(); }
-	function onTimerResume() { activityMetrics.weak().get().onTimerResume(); }
+	function onTimerStart() {
+		consolidatedSteps = 0;
+		unconsolidatedSteps = 0;
+		steps = 0;
+		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
+		timerActive = true;
+	}
+	
+	function onTimerStop() {
+		consolidatedSteps = 0;
+		unconsolidatedSteps = 0;
+		timerActive = false;
+	}
+	
+	function onTimerReset() {
+		consolidatedSteps = steps;
+		unconsolidatedSteps = 0;
+		stepsWhenTimerBecameActive = 0;
+		timerActive = false;
+	}
+	
+	function onTimerPause() {
+		consolidatedSteps = steps;
+		unconsolidatedSteps = 0;
+		timerActive = false;
+	}
+	
+	function onTimerResume() {
+		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
+		timerActive = true;
+	}
+	
+	function compute(info) {
+		var activityMonitorInfo = ActivityMonitor.getInfo();
+		
+		// Distance
+		distance = info.elapsedDistance;
+		
+		// Heart Rate
+		if (heartRateData != null) {
+			if (info.currentHeartRate != null) {
+				heartRateData.add(info.currentHeartRate);
+			} else {
+				heartRateData.reset();
+			}
+		}
+		heartRate = heartRateMode <= 0
+			? info.currentHeartRate
+			: heartRateData != null
+				? heartRateData.average()
+				: null;
+		
+		// Pace
+		if (paceData != null) {
+			if (info.currentSpeed != null) {
+				paceData.add(info.currentSpeed);
+			} else {
+				paceData.reset();
+			}
+		}
+		var speed = paceMode == 0
+			? info.currentSpeed
+			: paceData != null
+				? paceData.average()
+				: null;
+		pace = (speed != null && speed > 0.2) ? (kmOrMileInMeters / speed) : null;
+		averagePace = (info.averageSpeed != null && info.averageSpeed > 0.2) ? (kmOrMileInMeters / info.averageSpeed) : null;
+		
+		// Time
+		time = info.timerTime;
+				
+		// Steps
+		if (timerActive) {
+			unconsolidatedSteps = activityMonitorInfo.steps - stepsWhenTimerBecameActive;
+			steps = consolidatedSteps + unconsolidatedSteps;
+		}
+		daySteps = activityMonitorInfo.steps;
+		stepGoalProgress = activityMonitorInfo.stepGoal != null && activityMonitorInfo.stepGoal > 0
+			? daySteps > activityMonitorInfo.stepGoal
+				? 1
+				: daySteps / activityMonitorInfo.stepGoal.toFloat()
+			: 0;
+		
+		
+		// Calories
+		calories = info.calories;
+		dayCalories = activityMonitorInfo.calories;
+		
+		// Max width values for layout debugging
+		/*
+		distance = 888888.888;
+		heartRate = 888;
+		pace = 100000;
+		averagePace = 100000;
+		time = 20000000;
+		steps = 88888;
+		daySteps = 88888;
+		calories = 88888;
+		dayCalories = 88888;
+		*/
+	}
 	
 	function onUpdate(dc) {
 		
 		if (doUpdates == false) { return; }
 		
-		var am = activityMetrics.weak().get();
 		var halfWidth = dc.getWidth() / 2;
 		
-		var time = formatTime(am.time == null ? null : am.time, false);
-		var pace = formatTime(am.pace == null ? null : am.pace * 1000.0, false);
+		var time = formatTime(time == null ? null : time, false);
+		var pace = formatTime(pace == null ? null : pace * 1000.0, false);
 		var shrinkMiddleText = time.length() > 5 || pace.length() > 5;
 		
 		// Set colours
@@ -158,6 +293,12 @@ class WalkerView extends Ui.DataField {
 		dc.drawLine(halfWidth, lines[0], halfWidth, lines[1]);
 		dc.drawLine(halfWidth, lines[2], halfWidth, lines[3]);
 		
+		// Render step goal progress bar
+		if (stepGoalProgress > 0) {
+			dc.setColor(darkMode ? Gfx.COLOR_GREEN : Gfx.COLOR_DK_GREEN, Gfx.COLOR_TRANSPARENT);
+			dc.drawRectangle(stepGoalProgressOffsetX, lines[2] - 1, (dc.getWidth() - (stepGoalProgressOffsetX * 2)) * stepGoalProgress, 3);
+		}
+		
 		// Set text rendering colour
 		dc.setColor(darkMode ? Gfx.COLOR_WHITE : Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
 		
@@ -174,14 +315,14 @@ class WalkerView extends Ui.DataField {
 		
 		// Render average pace
 		dc.drawText(halfWidth - centerOffsetX, topRowY, Gfx.FONT_XTINY,
-			formatTime(am.averagePace == null ? null : am.averagePace * 1000.0, true) + "/" + am.kmOrMilesLabel, Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
+			formatTime(averagePace == null ? null : averagePace * 1000.0, true) + "/" + kmOrMilesLabel, Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render distance
 		dc.drawText(halfWidth + centerOffsetX, topRowY, Gfx.FONT_XTINY,
-			formatDistance(am.distance, am.kmOrMileInMeters) + am.kmOrMilesLabel, Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+			formatDistance(distance, kmOrMileInMeters) + kmOrMilesLabel, Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render heart rate
-		var heartRate = (am.heartRate == null ? 0 : am.heartRate).format("%d");
+		var heartRate = (heartRate == null ? 0 : heartRate).format("%d");
 		var heartRateWidth = dc.getTextDimensions(heartRate, Gfx.FONT_XTINY)[0];
 		dc.drawBitmap(halfWidth - (heartRateIcon.getWidth() / 2), heartRateIconY, heartRateIcon);
 		dc.drawText(halfWidth, heartRateTextY, Gfx.FONT_XTINY,
@@ -210,23 +351,23 @@ class WalkerView extends Ui.DataField {
 		// Render steps
 		dc.drawBitmap(bottomRowIconX, bottomRowIconY, stepsIcon);
 		dc.drawText(halfWidth - centerOffsetX, bottomRowUpperTextY, Gfx.FONT_XTINY,
-			(am.steps == null ? 0 : am.steps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
+			(steps == null ? 0 : steps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render calories
 		dc.drawBitmap(dc.getWidth() - bottomRowIconX - caloriesIcon.getWidth(), bottomRowIconY, caloriesIcon);
 		dc.drawText(halfWidth + centerOffsetX, bottomRowUpperTextY, Gfx.FONT_XTINY,
-			(am.calories == null ? 0 : am.calories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+			(calories == null ? 0 : calories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Set grey colour for day counts
 		dc.setColor(darkMode ? Gfx.COLOR_DK_GRAY : Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT);
 		
 		// Render day steps
 		dc.drawText(halfWidth - centerOffsetX, bottomRowLowerTextY, Gfx.FONT_XTINY,
-			(am.daySteps == null ? 0 : am.daySteps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
+			(daySteps == null ? 0 : daySteps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render day calories
 		dc.drawText(halfWidth + centerOffsetX, bottomRowLowerTextY, Gfx.FONT_XTINY,
-			(am.dayCalories == null ? 0 : am.dayCalories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+			(dayCalories == null ? 0 : dayCalories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render battery
 		dc.drawBitmap(halfWidth - (batteryIcon.getWidth() / 2) + 2 + batteryX, batteryY - (batteryIcon.getHeight() / 2), batteryIcon);
