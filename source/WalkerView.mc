@@ -46,6 +46,7 @@ class WalkerView extends Ui.DataField {
 	hidden var paceData;
 	hidden var heartRateData;
 	
+	hidden var previousDaySteps = 0;
 	hidden var stepsWhenTimerBecameActive = 0;
 	hidden var unconsolidatedSteps = 0;
 	hidden var consolidatedSteps = 0;
@@ -140,6 +141,7 @@ class WalkerView extends Ui.DataField {
 		consolidatedSteps = 0;
 		unconsolidatedSteps = 0;
 		steps = 0;
+		previousDaySteps = 0;
 		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
 		timerActive = true;
 	}
@@ -153,6 +155,7 @@ class WalkerView extends Ui.DataField {
 	function onTimerReset() {
 		consolidatedSteps = steps;
 		unconsolidatedSteps = 0;
+		previousDaySteps = 0;
 		stepsWhenTimerBecameActive = 0;
 		timerActive = false;
 	}
@@ -207,13 +210,20 @@ class WalkerView extends Ui.DataField {
 		
 		// Time
 		time = info.timerTime;
-				
+		
+		// Day steps
+		daySteps = activityMonitorInfo.steps;
+		if (previousDaySteps > 0 && daySteps < previousDaySteps) {
+			// Uh-oh, the daily step count has reduced - out for a midnight stroll are we?
+			stepsWhenTimerBecameActive -= previousDaySteps;
+		}
+		previousDaySteps = daySteps;
+		
 		// Steps
 		if (timerActive) {
-			unconsolidatedSteps = activityMonitorInfo.steps - stepsWhenTimerBecameActive;
+			unconsolidatedSteps = daySteps - stepsWhenTimerBecameActive;
 			steps = consolidatedSteps + unconsolidatedSteps;
 		}
-		daySteps = activityMonitorInfo.steps;
 		stepGoalProgress = activityMonitorInfo.stepGoal != null && activityMonitorInfo.stepGoal > 0
 			? daySteps > activityMonitorInfo.stepGoal
 				? 1
@@ -223,19 +233,6 @@ class WalkerView extends Ui.DataField {
 		// Calories
 		calories = info.calories;
 		dayCalories = activityMonitorInfo.calories;
-		
-		// Max width values for layout debugging
-		/*
-		distance = 888888.888;
-		heartRate = 888;
-		pace = 100000;
-		averagePace = 100000;
-		time = 20000000;
-		steps = 88888;
-		daySteps = 88888;
-		calories = 88888;
-		dayCalories = 88888;
-		*/
 	}
 	
 	function onUpdate(dc) {
@@ -244,9 +241,9 @@ class WalkerView extends Ui.DataField {
 		
 		var halfWidth = dc.getWidth() / 2;
 		
-		var timeText = formatTime(time == null ? null : time, false);
 		var paceText = formatTime(pace == null ? null : pace * 1000.0, false);
-		var shrinkMiddleText = timeText.length() > 5 || paceText.length() > 5;
+		var timeText = formatTime(time == null ? null : time, false);
+		var shrinkMiddleText = paceText.length() > 5 || timeText.length() > 5;
 		
 		// Set colours
 		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : Gfx.COLOR_WHITE;
@@ -281,6 +278,34 @@ class WalkerView extends Ui.DataField {
 					break;
 			}
 		}
+		
+		// Max width values for layout debugging
+		/*
+		averagePace = 100000;
+		distance = 888888.888;
+		heartRate = 888;
+		paceText = 8:88:88;
+		timeText = 8:88:88;
+		steps = 88888;
+		daySteps = 88888;
+		calories = 88888;
+		dayCalories = 88888;
+		stepGoalProgress = 0.75;
+		*/
+		
+		// Max width values for layout debugging
+		/*
+		averagePace = 44520;
+		distance = 1921;
+		heartRate = 106;
+		paceText = "12:15";
+		timeText = "23:31";
+		steps = 2331;
+		daySteps = 7490;
+		calories = 135;
+		dayCalories = 1742;
+		stepGoalProgress = 0.75;
+		*/
 		
 		// If we've never loaded the icons before or dark mode has been toggled, load the icons
 		if (previousDarkMode != darkMode) {

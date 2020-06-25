@@ -1,23 +1,26 @@
 # Walker
 
-A free data field for Garmin watches to provide stats for walking activities. I built it to provide more stats in a smaller format than are typically
-available on running data fields (where too much information becomes impossible to digest at speed), and to focus on stats that are more relevant to
-walking scenarios than running scenarios (e.g. steps). It currently tracks:
+A free data field for Garmin watches to provide stats for walking activities. Built to provide more data in a more compact format than is typically
+available on data fields designed for runners (where too much information becomes impossible to digest at speed). Walker is focused on data relevant to casual walking scenarios where step count, distance, pace and calorie burn are the predominant concerns rather than hiking where bearing, ascent and altitude etc. are more relevant. It currently displays:
 
 - Clock time
-- Average walking pace for the current activity
+- Average pace for the current activity
 - Total distance for the current activity
 - Current pace (or rolling 5/10/30/60 second average by changing settings)
 - Total time for current activity
 - Current heart rate (or rolling 5/10/30/60 second average by changing settings)
 - Steps for the current activity
-- Steps for the day
+- Steps for today
 - Calories for current activity
-- Calories for the day
+- Calories for today
 - Battery charge level with colour changing battery icon
-
+- Bar showing progress towards step goal (if step goal is set)
 
 Walker is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode.
+
+Feature suggestions are welcome and will be considered.
+
+![Screenshot Dark](/supporting-files/screenshots/screenshot-1.png) ![Screenshot Light](/supporting-files/screenshots/screenshot-2.png)
 
 ## Supported Devices
 - Approach S60 / S62
@@ -33,10 +36,10 @@ Walker is aware of and supports device settings for distance units (KM or miles)
 *Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
 
 ## BETA
-Walker is currently in BETA
-
-## Known Issues
-- The Garmin API does not provide step count information for an activity, so Walker infers the activity step count by observing changes to the daily step count whilst the activity timer is running. This might go wrong if you measure a walking activity that crosses midnight or if you switch data fields (effectively shutting down Walker).
+Walker is currently in BETA, having had only minimal field testing on a couple of watches. It should be relatively stable, but please get in touch
+if you find any bugs. The current activity step count in particular is in need of thorough testing, through pause/unpause cycles, crossing midnight
+(because the daily step counter resets at midnight) etc. This is because the Garmin API doesn't provide step data for activities, so this value
+has been calculated by observing the daily step counter whilst the activity timer is running, and there is plenty of scope for gremlins there.
 
 ## Source
 Walker is open source (MIT license) and it's code resides on GitHub at https://github.com/wwarby/walker
@@ -50,7 +53,11 @@ your project and giving me a leg up in writing for the Garmin SDK.
 - Icons by [Freepic](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com)
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
-
 ## Changelog
+- 0.2.0
+  - Add step goal progress bar
+  - Hopefully support stable transition across midnight boundary for step counter
+  - Optimised images for compression efficiency
+  - Screenshots for Garmin Store
 - 0.1.0
   - Initial alpha release
