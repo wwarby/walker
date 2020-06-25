@@ -53,7 +53,9 @@
             <iq:product id="vivoactive4"/>
             <iq:product id="vivoactive4s"/>
         </iq:products>
-        <iq:permissions/>
+        <iq:permissions>
+            <iq:uses-permission id="FitContributor"/>
+        </iq:permissions>
         <iq:languages>
             <iq:language>eng</iq:language>
         </iq:languages>

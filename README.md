@@ -16,6 +16,9 @@ available on data fields designed for runners (where too much information become
 - Battery charge level with colour changing battery icon
 - Bar showing progress towards step goal (if step goal is set)
 
+Walker also contributes step data to the FIT profile for your activity, showing total steps
+and lap steps in the activity summary in Garmin Connect.
+
 Walker is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode.
 
 Feature suggestions are welcome and will be considered.
@@ -49,11 +52,17 @@ This project borrows code and ideas from [RunnersField by kpaumann](https://gith
 Thanks [kpaumann](https://apps.garmin.com/en-GB/developer/ab0f2743-88d2-4f32-9fb0-5fc8ba61e55a/apps) for open sourcing
 your project and giving me a leg up in writing for the Garmin SDK.
 
+FIT contribution implementation borrows ideas and some of the implementation from [steps2fit by rgergely](https://github.com/rgergely/steps2fit).
+Thanks also to [rgergely](https://apps.garmin.com/en-GB/developer/ab0f2743-88d2-4f32-9fb0-5fc8ba61e55a/apps) for open sourcing your project.
+
 ### Icon Credits
 - Icons by [Freepic](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com)
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 0.3.0
+  - Add FIT contribution for steps
+  - Support for "resume later" on activities
 - 0.2.0
   - Add step goal progress bar
   - Hopefully support stable transition across midnight boundary for step counter

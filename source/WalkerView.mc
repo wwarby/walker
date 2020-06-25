@@ -2,6 +2,7 @@ using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using Toybox.Application as App;
 using Toybox.Math as Math;
+using Toybox.FitContributor as Fit;
 
 class WalkerView extends Ui.DataField {
 	
@@ -48,6 +49,7 @@ class WalkerView extends Ui.DataField {
 	
 	hidden var previousDaySteps = 0;
 	hidden var stepsWhenTimerBecameActive = 0;
+	hidden var activityStepsAtPreviousLap = 0;
 	hidden var unconsolidatedSteps = 0;
 	hidden var consolidatedSteps = 0;
 	
@@ -61,16 +63,21 @@ class WalkerView extends Ui.DataField {
 	hidden var kmOrMilesLabel;
 	
 	// Calculated values that change on every call to compute()
+	var steps;
+	var lapSteps;
 	hidden var averagePace;
 	hidden var distance;
 	hidden var heartRate;
 	hidden var pace;
 	hidden var time;
-	hidden var steps;
 	hidden var daySteps;
 	hidden var calories;
 	hidden var dayCalories;
 	hidden var stepGoalProgress;
+	
+	// FIT contributor fields
+	hidden var stepsActivityField = null;
+	hidden var stepsLapField = null;
 	
 	function initialize() {
 		
@@ -78,8 +85,10 @@ class WalkerView extends Ui.DataField {
 		
 		readSettings();
 		
-		// Layout variables stored as strings because SDK < 2.x doesn't support JSON resources
 		var app = Application.getApp();
+		var info = Activity.getActivityInfo();
+		
+		// Layout variables stored as strings because SDK < 2.x doesn't support JSON resources
 		lines = [
 			Ui.loadResource(Rez.Strings.hl1).toNumber(),
 			Ui.loadResource(Rez.Strings.hl2).toNumber(),
@@ -101,6 +110,24 @@ class WalkerView extends Ui.DataField {
 		bottomRowIconY = Ui.loadResource(Rez.Strings.briy).toNumber();
 		batteryY = Ui.loadResource(Rez.Strings.by).toNumber();
 		batteryX = Ui.loadResource(Rez.Strings.bx).toNumber();
+		
+		// If the activity has restarted after "resume later", load previously stored steps values
+		if (info != null && info.elapsedTime > 0) {
+	        steps = app.getProperty("as");
+	        lapSteps = app.getProperty("ls");
+	        if (steps == null) { steps = 0; }
+	        if (lapSteps == null) { lapSteps = 0; }
+	    }
+		
+		// Create FIT contributor fields
+		stepsActivityField = createField(Ui.loadResource(Rez.Strings.steps), 0, Fit.DATA_TYPE_UINT32,
+            { :mesgType=>Fit.MESG_TYPE_SESSION, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+        stepsLapField = createField(Ui.loadResource( Rez.Strings.steps), 1, Fit.DATA_TYPE_UINT32,
+            { :mesgType => Fit.MESG_TYPE_LAP, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+        
+        // Set initial steps FIT contributions to zero
+        stepsActivityField.setData(0);
+        stepsLapField.setData(0);
 	}
 	
 	// Called on initialization and when settings change (from a hook in WalkerApp.mc)
@@ -141,6 +168,7 @@ class WalkerView extends Ui.DataField {
 		consolidatedSteps = 0;
 		unconsolidatedSteps = 0;
 		steps = 0;
+		activityStepsAtPreviousLap = 0;
 		previousDaySteps = 0;
 		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
 		timerActive = true;
@@ -170,6 +198,10 @@ class WalkerView extends Ui.DataField {
 		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
 		timerActive = true;
 	}
+	
+	function onTimerLap() {
+    	activityStepsAtPreviousLap = steps;
+    }
 	
 	function compute(info) {
 		
@@ -223,6 +255,11 @@ class WalkerView extends Ui.DataField {
 		if (timerActive) {
 			unconsolidatedSteps = daySteps - stepsWhenTimerBecameActive;
 			steps = consolidatedSteps + unconsolidatedSteps;
+			lapSteps = steps - activityStepsAtPreviousLap;
+			
+			// Update step FIT contributions
+			stepsActivityField.setData(steps);
+			stepsLapField.setData(lapSteps);
 		}
 		stepGoalProgress = activityMonitorInfo.stepGoal != null && activityMonitorInfo.stepGoal > 0
 			? daySteps > activityMonitorInfo.stepGoal

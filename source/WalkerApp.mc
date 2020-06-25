@@ -9,9 +9,12 @@ class WalkerApp extends App.AppBase {
 		AppBase.initialize();
 	}
 
-	function onStart(state) {}
-
-	function onStop(state) {}
+	function onStop(state) {
+		// Store current step counts for later usage (e.g., resume later)
+        var app = Application.getApp();
+        app.setProperty("as", mainView.steps);
+        app.setProperty("ls", mainView.lapSteps);
+    }
 	
 	function onSettingsChanged() {
 		mainView.readSettings();

@@ -1,0 +1,22 @@
+<fitContributions>
+	<fitField id="0"
+		fillColor="9966ff"
+		chartTitle="@Strings.steps"
+		displayInChart="true"
+		displayInActivityLaps="false"
+		displayInActivitySummary="true"
+		sortOrder="0"
+		precision="0"
+		dataLabel="@Strings.steps"
+		unitLabel="@Strings.stepsUnits" />
+	<fitField id="1"
+		fillColor="9966ff"
+		chartTitle="@Strings.steps"
+		displayInChart="true"
+		displayInActivityLaps="true"
+		displayInActivitySummary="false"
+		sortOrder="1"
+		precision="0"
+		dataLabel="@Strings.steps"
+		unitLabel="@Strings.stepsUnits" />
+</fitContributions>
