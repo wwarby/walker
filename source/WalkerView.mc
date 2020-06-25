@@ -5,6 +5,13 @@ using Toybox.Math as Math;
 
 class WalkerView extends Ui.DataField {
 	
+	/* NOTE: Violation of SOLID principles (and general good maintainable code hygene) here is intentional. Some Garmin watches only
+	 * give you 16KB (!) of memory to work with for a DataField, and about 9KB of that allowance gets used up on the DataField itself
+	 * before you've written a line of code. Keeping memory usage that low is a challenge, and requires a Scrooge-like accounting of
+	 * memory allocations. No unnecessary intermediate variables, no single instance classes, no single call functions etc. It makes
+	 * the code hard to read, but the codebase is sufficiently small that it shouldn't be a problem
+	 */
+	
 	hidden var doUpdates = false;
 	hidden var is24Hour = false;
 	
@@ -18,6 +25,7 @@ class WalkerView extends Ui.DataField {
 	
 	hidden var batteryTextColour;
 	
+	// Layout variables that are different for each screen size
 	hidden var lines;
 	hidden var stepGoalProgressOffsetX;
 	hidden var centerOffsetX;
@@ -42,6 +50,7 @@ class WalkerView extends Ui.DataField {
 	hidden var unconsolidatedSteps = 0;
 	hidden var consolidatedSteps = 0;
 	
+	// User definable settings. Stored as numbers rather than enums because enums waste valuable memory.
 	hidden var paceMode = 0;
 	hidden var heartRateMode = 0;
 	
@@ -50,6 +59,7 @@ class WalkerView extends Ui.DataField {
 	hidden var kmOrMileInMeters;
 	hidden var kmOrMilesLabel;
 	
+	// Calculated values that change on every call to compute()
 	hidden var averagePace;
 	hidden var distance;
 	hidden var heartRate;
@@ -92,6 +102,7 @@ class WalkerView extends Ui.DataField {
 		batteryX = Ui.loadResource(Rez.Strings.bx).toNumber();
 	}
 	
+	// Called on initialization and when settings change (from a hook in WalkerApp.mc)
 	function readSettings() {
 		
 		var deviceSettings = System.getDeviceSettings();
@@ -118,10 +129,10 @@ class WalkerView extends Ui.DataField {
 	
 	function onShow() {
 		doUpdates = true;
-		return true;
 	}
 	
 	function onHide() {
+	// Avoid drawing to the screen when we're not visible
 		doUpdates = false;
 	}
 	
@@ -158,6 +169,7 @@ class WalkerView extends Ui.DataField {
 	}
 	
 	function compute(info) {
+		
 		var activityMonitorInfo = ActivityMonitor.getInfo();
 		
 		// Distance
@@ -208,7 +220,6 @@ class WalkerView extends Ui.DataField {
 				: daySteps / activityMonitorInfo.stepGoal.toFloat()
 			: 0;
 		
-		
 		// Calories
 		calories = info.calories;
 		dayCalories = activityMonitorInfo.calories;
@@ -233,9 +244,9 @@ class WalkerView extends Ui.DataField {
 		
 		var halfWidth = dc.getWidth() / 2;
 		
-		var time = formatTime(time == null ? null : time, false);
-		var pace = formatTime(pace == null ? null : pace * 1000.0, false);
-		var shrinkMiddleText = time.length() > 5 || pace.length() > 5;
+		var timeText = formatTime(time == null ? null : time, false);
+		var paceText = formatTime(pace == null ? null : pace * 1000.0, false);
+		var shrinkMiddleText = timeText.length() > 5 || paceText.length() > 5;
 		
 		// Set colours
 		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : Gfx.COLOR_WHITE;
@@ -294,7 +305,7 @@ class WalkerView extends Ui.DataField {
 		dc.drawLine(halfWidth, lines[2], halfWidth, lines[3]);
 		
 		// Render step goal progress bar
-		if (stepGoalProgress > 0) {
+		if (stepGoalProgress != null && stepGoalProgress > 0) {
 			dc.setColor(darkMode ? Gfx.COLOR_GREEN : Gfx.COLOR_DK_GREEN, Gfx.COLOR_TRANSPARENT);
 			dc.drawRectangle(stepGoalProgressOffsetX, lines[2] - 1, (dc.getWidth() - (stepGoalProgressOffsetX * 2)) * stepGoalProgress, 3);
 		}
@@ -322,11 +333,11 @@ class WalkerView extends Ui.DataField {
 			formatDistance(distance, kmOrMileInMeters) + kmOrMilesLabel, Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render heart rate
-		var heartRate = (heartRate == null ? 0 : heartRate).format("%d");
-		var heartRateWidth = dc.getTextDimensions(heartRate, Gfx.FONT_XTINY)[0];
+		var heartRateText = (heartRate == null ? 0 : heartRate).format("%d");
+		var heartRateWidth = dc.getTextDimensions(heartRateText, Gfx.FONT_XTINY)[0];
 		dc.drawBitmap(halfWidth - (heartRateIcon.getWidth() / 2), heartRateIconY, heartRateIcon);
 		dc.drawText(halfWidth, heartRateTextY, Gfx.FONT_XTINY,
-			heartRate, Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+			heartRateText, Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render current pace
 		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, Gfx.FONT_XTINY,
@@ -335,7 +346,7 @@ class WalkerView extends Ui.DataField {
 		(halfWidth / 2) - (heartRateWidth / 2) + 5,
 			middleRowValueY,
 			shrinkMiddleText ? Gfx.FONT_SMALL : Gfx.FONT_NUMBER_MILD,
-			pace,
+			paceText,
 			Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
 			
 		// Render timer
@@ -345,7 +356,7 @@ class WalkerView extends Ui.DataField {
 			(halfWidth * 1.5) + (heartRateWidth / 2) - 5,
 			middleRowValueY,
 			shrinkMiddleText ? Gfx.FONT_SMALL : Gfx.FONT_NUMBER_MILD,
-			time,
+			timeText,
 			Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render steps
