@@ -20,7 +20,7 @@ Walker is aware of and supports device settings for distance units (KM or miles)
 
 Feature suggestions are welcome and will be considered.
 
-![Screenshot Dark](/supporting-files/screenshots/screenshot-1.png) ![Screenshot Light](/supporting-files/screenshots/screenshot-2.png)
+<img src="/supporting-files/screenshots/screenshot-1.png" height="300" alt="Screenshot Dark"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="300" alt="Screenshot Light"></img>
 
 ## Supported Devices
 - Approach S60 / S62
