@@ -1,8 +1,6 @@
 <fitContributions>
 	<fitField id="0"
-		fillColor="9966ff"
-		chartTitle="@Strings.steps"
-		displayInChart="true"
+		displayInChart="false"
 		displayInActivityLaps="false"
 		displayInActivitySummary="true"
 		sortOrder="0"
@@ -10,9 +8,7 @@
 		dataLabel="@Strings.steps"
 		unitLabel="@Strings.stepsUnits" />
 	<fitField id="1"
-		fillColor="9966ff"
-		chartTitle="@Strings.steps"
-		displayInChart="true"
+		displayInChart="false"
 		displayInActivityLaps="true"
 		displayInActivitySummary="false"
 		sortOrder="1"
