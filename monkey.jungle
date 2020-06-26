@@ -1,1 +1,20 @@
 project.manifest = manifest.xml
+
+base.sourcePath = source
+base.excludeAnnotations = base
+
+# Configure source paths based on screen shape
+round-218x218.sourcePath = $(base.sourcePath);source-round-218x218
+round-240x240.sourcePath = $(base.sourcePath);source-round-240x240
+round-260x260.sourcePath = $(base.sourcePath);source-round-260x260
+round-280x280.sourcePath = $(base.sourcePath);source-round-280x280
+round-390x390.sourcePath = $(base.sourcePath);source-round-390x390
+semiround-215x180.sourcePath = $(base.sourcePath);source-semiround-215x180
+
+# Configure exclusion annotations based on screen shape
+round-218x218.excludeAnnotations = $(base.sourcePath);base
+round-240x240.excludeAnnotations = $(base.sourcePath);base
+round-260x260.excludeAnnotations = $(base.sourcePath);base
+round-280x280.excludeAnnotations = $(base.sourcePath);base
+round-390x390.excludeAnnotations = $(base.sourcePath);base
+semiround-215x180.excludeAnnotations = $(base.sourcePath);base

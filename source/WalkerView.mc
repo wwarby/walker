@@ -24,24 +24,6 @@ class WalkerView extends Ui.DataField {
 	
 	hidden var batteryTextColour;
 	
-	// Layout variables that are different for each screen size
-	hidden var lines;
-	hidden var stepGoalProgressOffsetX;
-	hidden var centerOffsetX;
-	hidden var clockY;
-	hidden var clockOffsetX;
-	hidden var topRowY;
-	hidden var middleRowLabelY;
-	hidden var middleRowValueY;
-	hidden var heartRateIconY;
-	hidden var heartRateTextY;
-	hidden var bottomRowUpperTextY;
-	hidden var bottomRowLowerTextY;
-	hidden var bottomRowIconX;
-	hidden var bottomRowIconY;
-	hidden var batteryY;
-	hidden var batteryX;
-	
 	hidden var paceData;
 	hidden var heartRateData;
 	
@@ -77,36 +59,13 @@ class WalkerView extends Ui.DataField {
 	hidden var stepsLapField = null;
 	
 	function initialize() {
-		
+	
 		DataField.initialize();
 		
 		readSettings();
 		
 		var app = Application.getApp();
 		var info = Activity.getActivityInfo();
-		
-		// Layout variables stored as strings because SDK < 2.x doesn't support JSON resources
-		lines = [
-			Ui.loadResource(Rez.Strings.hl1).toNumber(),
-			Ui.loadResource(Rez.Strings.hl2).toNumber(),
-			Ui.loadResource(Rez.Strings.hl3).toNumber(),
-			Ui.loadResource(Rez.Strings.hl4).toNumber()
-		];
-		stepGoalProgressOffsetX = Ui.loadResource(Rez.Strings.spx).toNumber();
-		centerOffsetX = Ui.loadResource(Rez.Strings.cx).toNumber();
-		clockY = Ui.loadResource(Rez.Strings.cy).toNumber();
-		clockOffsetX = Ui.loadResource(Rez.Strings.cox).toNumber();
-		topRowY = Ui.loadResource(Rez.Strings.ty).toNumber();
-		middleRowLabelY = Ui.loadResource(Rez.Strings.mly).toNumber();
-		middleRowValueY = Ui.loadResource(Rez.Strings.mvy).toNumber();
-		heartRateIconY = Ui.loadResource(Rez.Strings.hiy).toNumber();
-		heartRateTextY = Ui.loadResource(Rez.Strings.hty).toNumber();
-		bottomRowUpperTextY = Ui.loadResource(Rez.Strings.buy).toNumber();
-		bottomRowLowerTextY = Ui.loadResource(Rez.Strings.bly).toNumber();
-		bottomRowIconX = Ui.loadResource(Rez.Strings.brix).toNumber();
-		bottomRowIconY = Ui.loadResource(Rez.Strings.briy).toNumber();
-		batteryY = Ui.loadResource(Rez.Strings.by).toNumber();
-		batteryX = Ui.loadResource(Rez.Strings.bx).toNumber();
 		
 		// If the activity has restarted after "resume later", load previously stored steps values
 		if (info != null && info.elapsedTime > 0) {

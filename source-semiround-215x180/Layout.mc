@@ -1,0 +1,16 @@
+var lines = [30, 64, 128, 500];
+var stepGoalProgressOffsetX = 7;
+var centerOffsetX = 10;
+var clockY = 15;
+var clockOffsetX = -40;
+var topRowY = 47;
+var middleRowLabelY = 80;
+var middleRowValueY = 105;
+var heartRateIconY = 75;
+var heartRateTextY = 107;
+var bottomRowUpperTextY = 140;
+var bottomRowLowerTextY = 160;
+var bottomRowIconX = 30;
+var bottomRowIconY = 135;
+var batteryY = 13;
+var batteryX = 30;
