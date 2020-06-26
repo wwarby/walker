@@ -455,7 +455,7 @@ class WalkerView extends Ui.DataField {
 			} else if (short) {
 				return hours.format("%d") + ":" + minutes.format("%02d");
 			} else {
-				return hours.format("%d") + ":" + minutes.format("%02d") + ":" + seconds.format();
+				return hours.format("%d") + ":" + minutes.format("%02d") + ":" + seconds.format("%02d");
 			}
 		} else {
 			return "0:00";
