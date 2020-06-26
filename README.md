@@ -63,6 +63,8 @@ Thanks also to [rgergely](https://apps.garmin.com/en-GB/developer/ab0f2743-88d2-
 - 0.3.0
   - Add FIT contribution for steps
   - Support for "resume later" on activities
+  - Fix bug that would reset activity steps on activity "stop" (as opposed to "reset")
+  - Memory usage optimisation
 - 0.2.0
   - Add step goal progress bar
   - Hopefully support stable transition across midnight boundary for step counter

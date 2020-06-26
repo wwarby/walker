@@ -1,18 +1,5 @@
 <strings>
     <string id="appName">Walker</string>
-    
-    <string id="metric">km</string>
-    <string id="imperial">mi</string>
-    
-    <string id="am">am</string>
-    <string id="pm">pm</string>
-    
-    <string id="pace">PACE</string>
-    <string id="timer">TIMER</string>
-    
     <string id="steps">Steps</string>
     <string id="stepsUnits">steps</string>
-    
-    <string id="zeroTime">0:00</string>
-    <string id="zeroDistance">0.00</string>
 </strings>

@@ -1,8 +1,6 @@
 using Toybox.WatchUi as Ui;
-using Toybox.Graphics as Gfx;
 using Toybox.Application as App;
 using Toybox.Math as Math;
-using Toybox.FitContributor as Fit;
 
 class WalkerView extends Ui.DataField {
 	
@@ -50,7 +48,6 @@ class WalkerView extends Ui.DataField {
 	hidden var previousDaySteps = 0;
 	hidden var stepsWhenTimerBecameActive = 0;
 	hidden var activityStepsAtPreviousLap = 0;
-	hidden var unconsolidatedSteps = 0;
 	hidden var consolidatedSteps = 0;
 	
 	// User definable settings. Stored as numbers rather than enums because enums waste valuable memory.
@@ -120,10 +117,10 @@ class WalkerView extends Ui.DataField {
 	    }
 		
 		// Create FIT contributor fields
-		stepsActivityField = createField(Ui.loadResource(Rez.Strings.steps), 0, Fit.DATA_TYPE_UINT32,
-            { :mesgType=>Fit.MESG_TYPE_SESSION, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
-        stepsLapField = createField(Ui.loadResource( Rez.Strings.steps), 1, Fit.DATA_TYPE_UINT32,
-            { :mesgType => Fit.MESG_TYPE_LAP, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+		stepsActivityField = createField(Ui.loadResource(Rez.Strings.steps), 0, 4 /* Fit.DATA_TYPE_UINT16 */,
+            { :mesgType => 20 /* Fit.MESG_TYPE_SESSION */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+        stepsLapField = createField(Ui.loadResource(Rez.Strings.steps), 1, 4 /* Fit.DATA_TYPE_UINT16 */,
+            { :mesgType => 19 /* Fit.MESG_TYPE_LAP */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
         
         // Set initial steps FIT contributions to zero
         stepsActivityField.setData(0);
@@ -137,8 +134,8 @@ class WalkerView extends Ui.DataField {
 		
 		is24Hour = deviceSettings.is24Hour;
 		
-		kmOrMileInMeters = deviceSettings.distanceUnits == System.UNIT_METRIC ? 1000.0f : 1609.34f;
-		kmOrMilesLabel = Ui.loadResource(deviceSettings.distanceUnits == System.UNIT_METRIC ? Rez.Strings.metric : Rez.Strings.imperial);
+		kmOrMileInMeters = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
+		kmOrMilesLabel = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi";
 		
 		paceMode = Application.getApp().getProperty("pm");
 		if (paceMode > 0) {
@@ -155,53 +152,36 @@ class WalkerView extends Ui.DataField {
 		}
 	}
 	
-	function onShow() {
-		doUpdates = true;
-	}
-	
-	function onHide() {
 	// Avoid drawing to the screen when we're not visible
-		doUpdates = false;
-	}
+	function onShow() { doUpdates = true; }
+	function onHide() { doUpdates = false; }
 	
-	function onTimerStart() {
-		consolidatedSteps = 0;
-		unconsolidatedSteps = 0;
-		steps = 0;
-		activityStepsAtPreviousLap = 0;
-		previousDaySteps = 0;
-		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
-		timerActive = true;
-	}
-	
-	function onTimerStop() {
-		consolidatedSteps = 0;
-		unconsolidatedSteps = 0;
-		timerActive = false;
-	}
+	// Handle activity timer events
+	function onTimerStart() { timerStart(); }
+	function onTimerResume() { timerStart(); }
+	function onTimerStop() { timerStop(); }
+	function onTimerPause() { timerStop(); }
+	function onTimerLap() { activityStepsAtPreviousLap = steps; }
 	
 	function onTimerReset() {
-		consolidatedSteps = steps;
-		unconsolidatedSteps = 0;
-		previousDaySteps = 0;
+		consolidatedSteps = 0;
 		stepsWhenTimerBecameActive = 0;
+		activityStepsAtPreviousLap = 0;
+		previousDaySteps = 0;
+		steps = 0;
+		lapSteps = 0;
 		timerActive = false;
 	}
 	
-	function onTimerPause() {
-		consolidatedSteps = steps;
-		unconsolidatedSteps = 0;
-		timerActive = false;
-	}
-	
-	function onTimerResume() {
+	function timerStart() {
 		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
 		timerActive = true;
 	}
 	
-	function onTimerLap() {
-    	activityStepsAtPreviousLap = steps;
-    }
+	function timerStop() {
+		consolidatedSteps = steps;
+		timerActive = false;
+	}
 	
 	function compute(info) {
 		
@@ -253,8 +233,7 @@ class WalkerView extends Ui.DataField {
 		
 		// Steps
 		if (timerActive) {
-			unconsolidatedSteps = daySteps - stepsWhenTimerBecameActive;
-			steps = consolidatedSteps + unconsolidatedSteps;
+			steps = consolidatedSteps + daySteps - stepsWhenTimerBecameActive;
 			lapSteps = steps - activityStepsAtPreviousLap;
 			
 			// Update step FIT contributions
@@ -273,7 +252,7 @@ class WalkerView extends Ui.DataField {
 	}
 	
 	function onUpdate(dc) {
-		
+	
 		if (doUpdates == false) { return; }
 		
 		var halfWidth = dc.getWidth() / 2;
@@ -283,8 +262,8 @@ class WalkerView extends Ui.DataField {
 		var shrinkMiddleText = paceText.length() > 5 || timeText.length() > 5;
 		
 		// Set colours
-		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : Gfx.COLOR_WHITE;
-		var darkMode = (backgroundColour == Gfx.COLOR_BLACK);
+		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : 0xFFFFFF /* Gfx.COLOR_WHITE */;
+		var darkMode = backgroundColour == 0x000000 /* Gfx.COLOR_BLACK */;
 		
 		// Choose the colour of the battery based on it's state
 		var battery = System.getSystemStats().battery;
@@ -299,19 +278,19 @@ class WalkerView extends Ui.DataField {
 			switch (batteryState) {
 				case 0:
 					batteryIcon = Ui.loadResource(Rez.Drawables.ibf);
-					batteryTextColour = Gfx.COLOR_WHITE;
+					batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
 					break;
 				case 1:
 					batteryIcon = Ui.loadResource(Rez.Drawables.ibe);
-					batteryTextColour = Gfx.COLOR_WHITE;
+					batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
 					break;
 				case 2:
 					batteryIcon = Ui.loadResource(Rez.Drawables.ibw);
-					batteryTextColour = Gfx.COLOR_WHITE;
+					batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
 					break;
 				case 3:
 					batteryIcon = Ui.loadResource(darkMode ? Rez.Drawables.ibd : Rez.Drawables.ib);
-					batteryTextColour = darkMode ? Gfx.COLOR_BLACK : Gfx.COLOR_WHITE;
+					batteryTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
 					break;
 			}
 		}
@@ -330,7 +309,7 @@ class WalkerView extends Ui.DataField {
 		stepGoalProgress = 0.75;
 		*/
 		
-		// Max width values for layout debugging
+		// Realistic static values for screenshots
 		/*
 		averagePace = 44520;
 		distance = 1921;
@@ -357,7 +336,7 @@ class WalkerView extends Ui.DataField {
 		dc.fillRectangle(0, 0, dc.getWidth(), dc.getHeight());
 		
 		// Render horizontal lines
-		dc.setColor(Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT);
+		dc.setColor(0xAAAAAA /* Gfx.COLOR_LT_GRAY */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		for (var x = 0; x < lines.size(); x++) {
         	dc.drawLine(0, lines[x], dc.getWidth(), lines[x]);
 		}
@@ -368,85 +347,98 @@ class WalkerView extends Ui.DataField {
 		
 		// Render step goal progress bar
 		if (stepGoalProgress != null && stepGoalProgress > 0) {
-			dc.setColor(darkMode ? Gfx.COLOR_GREEN : Gfx.COLOR_DK_GREEN, Gfx.COLOR_TRANSPARENT);
+			dc.setColor(darkMode ? 0x00FF00 /* Gfx.COLOR_GREEN */ : 0x00AA00 /* Gfx.COLOR_DK_GREEN */, -1 /* Gfx.COLOR_TRANSPARENT */);
 			dc.drawRectangle(stepGoalProgressOffsetX, lines[2] - 1, (dc.getWidth() - (stepGoalProgressOffsetX * 2)) * stepGoalProgress, 3);
 		}
 		
 		// Set text rendering colour
-		dc.setColor(darkMode ? Gfx.COLOR_WHITE : Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
+		dc.setColor(darkMode ? 0xFFFFFF /* Gfx.COLOR_WHITE */ : 0x000000 /* Gfx.COLOR_BLACK */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		
 		// Render clock
 		var currentTime = System.getClockTime();
 		var hour = is24Hour ? currentTime.hour : currentTime.hour % 12;
 		if (!is24Hour && hour == 0) { hour = 12; }
-		dc.drawText(halfWidth + clockOffsetX, clockY, Gfx.FONT_XTINY,
+		dc.drawText(halfWidth + clockOffsetX, clockY, 0 /* Gfx.FONT_XTINY */,
 			hour.format(is24Hour ? "%02d" : "%d")
 			  + ":"
 			  + currentTime.min.format("%02d")
-			  + (is24Hour ? "" : Ui.loadResource(currentTime.hour >= 12 ? Rez.Strings.pm : Rez.Strings.am)),
-			  Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+			  + (is24Hour ? "" : currentTime.hour >= 12 ? "pm" : "am"),
+			  1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render average pace
-		dc.drawText(halfWidth - centerOffsetX, topRowY, Gfx.FONT_XTINY,
-			formatTime(averagePace == null ? null : averagePace * 1000.0, true) + "/" + kmOrMilesLabel, Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(halfWidth - centerOffsetX, topRowY, 0 /* Gfx.FONT_XTINY */,
+			formatTime(averagePace == null ? null : averagePace * 1000.0, true) + "/" + kmOrMilesLabel, 0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render distance
-		dc.drawText(halfWidth + centerOffsetX, topRowY, Gfx.FONT_XTINY,
-			formatDistance(distance, kmOrMileInMeters) + kmOrMilesLabel, Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+		var distanceText;
+		if (distance != null && distance > 0) {
+			var distanceKmOrMiles = distance / kmOrMileInMeters;
+			if (distanceKmOrMiles >= 1000) {
+				distanceText = distanceKmOrMiles.format("%d");
+			} else if (distanceKmOrMiles >= 100) {
+				distanceText = distanceKmOrMiles.format("%.1f");
+			} else {
+				distanceText = distanceKmOrMiles.format("%.2f");
+			}
+		} else {
+			distanceText = "0:00";
+		}
+		dc.drawText(halfWidth + centerOffsetX, topRowY, 0 /* Gfx.FONT_XTINY */,
+			distanceText + kmOrMilesLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render heart rate
 		var heartRateText = (heartRate == null ? 0 : heartRate).format("%d");
-		var heartRateWidth = dc.getTextDimensions(heartRateText, Gfx.FONT_XTINY)[0];
+		var heartRateWidth = dc.getTextDimensions(heartRateText, 0 /* Gfx.FONT_XTINY */)[0];
 		dc.drawBitmap(halfWidth - (heartRateIcon.getWidth() / 2), heartRateIconY, heartRateIcon);
-		dc.drawText(halfWidth, heartRateTextY, Gfx.FONT_XTINY,
-			heartRateText, Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(halfWidth, heartRateTextY, 0 /* Gfx.FONT_XTINY */,
+			heartRateText, 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render current pace
-		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, Gfx.FONT_XTINY,
-			Ui.loadResource(Rez.Strings.pace), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, 0 /* Gfx.FONT_XTINY */,
+			"PACE", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 		(halfWidth / 2) - (heartRateWidth / 2) + 5,
 			middleRowValueY,
-			shrinkMiddleText ? Gfx.FONT_SMALL : Gfx.FONT_NUMBER_MILD,
+			shrinkMiddleText ? 2 /* Gfx.FONT_SMALL */ : 5 /* Gfx.FONT_NUMBER_MILD */,
 			paceText,
-			Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 			
 		// Render timer
-		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, middleRowLabelY, Gfx.FONT_XTINY,
-			Ui.loadResource(Rez.Strings.timer), Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, middleRowLabelY, 0 /* Gfx.FONT_XTINY */,
+			"TIMER", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 			(halfWidth * 1.5) + (heartRateWidth / 2) - 5,
 			middleRowValueY,
-			shrinkMiddleText ? Gfx.FONT_SMALL : Gfx.FONT_NUMBER_MILD,
+			shrinkMiddleText ? 2 /* Gfx.FONT_SMALL */ : 5 /* Gfx.FONT_NUMBER_MILD */,
 			timeText,
-			Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render steps
 		dc.drawBitmap(bottomRowIconX, bottomRowIconY, stepsIcon);
-		dc.drawText(halfWidth - centerOffsetX, bottomRowUpperTextY, Gfx.FONT_XTINY,
-			(steps == null ? 0 : steps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(halfWidth - centerOffsetX, bottomRowUpperTextY, 0 /* Gfx.FONT_XTINY */,
+			(steps == null ? 0 : steps).format("%d"), 0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render calories
 		dc.drawBitmap(dc.getWidth() - bottomRowIconX - caloriesIcon.getWidth(), bottomRowIconY, caloriesIcon);
-		dc.drawText(halfWidth + centerOffsetX, bottomRowUpperTextY, Gfx.FONT_XTINY,
-			(calories == null ? 0 : calories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(halfWidth + centerOffsetX, bottomRowUpperTextY, 0 /* Gfx.FONT_XTINY */,
+			(calories == null ? 0 : calories).format("%d"), 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Set grey colour for day counts
-		dc.setColor(darkMode ? Gfx.COLOR_DK_GRAY : Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT);
+		dc.setColor(darkMode ? 0x555555 /* Gfx.COLOR_DK_GRAY */ : 0xAAAAAA /* Gfx.COLOR_LT_GRAY */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		
 		// Render day steps
-		dc.drawText(halfWidth - centerOffsetX, bottomRowLowerTextY, Gfx.FONT_XTINY,
-			(daySteps == null ? 0 : daySteps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(halfWidth - centerOffsetX, bottomRowLowerTextY, 0 /* Gfx.FONT_XTINY */,
+			(daySteps == null ? 0 : daySteps).format("%d"), 0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render day calories
-		dc.drawText(halfWidth + centerOffsetX, bottomRowLowerTextY, Gfx.FONT_XTINY,
-			(dayCalories == null ? 0 : dayCalories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.drawText(halfWidth + centerOffsetX, bottomRowLowerTextY, 0 /* Gfx.FONT_XTINY */,
+			(dayCalories == null ? 0 : dayCalories).format("%d"), 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render battery
 		dc.drawBitmap(halfWidth - (batteryIcon.getWidth() / 2) + 2 + batteryX, batteryY - (batteryIcon.getHeight() / 2), batteryIcon);
-		dc.setColor(batteryTextColour, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(halfWidth + batteryX, batteryY - 1, Gfx.FONT_XTINY,
-			System.getSystemStats().battery.format("%d") + "%", Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+		dc.setColor(batteryTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
+		dc.drawText(halfWidth + batteryX, batteryY - 1, 0 /* Gfx.FONT_XTINY */,
+			System.getSystemStats().battery.format("%d") + "%", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 	}
 	
 	function formatTime(milliseconds, short) {
@@ -463,25 +455,10 @@ class WalkerView extends Ui.DataField {
 			} else if (short) {
 				return hours.format("%d") + ":" + minutes.format("%02d");
 			} else {
-				return hours.format("%d") + ":" + minutes.format("%02d") + ":" + seconds.format("%02d");
+				return hours.format("%d") + ":" + minutes.format("%02d") + ":" + seconds.format();
 			}
 		} else {
-			return Ui.loadResource(Rez.Strings.zeroTime);
-		}
-	}
-	
-	function formatDistance(meters, kmOrMileInMeters) {
-		if (meters != null && meters > 0) {
-			var distanceKmOrMiles = meters / kmOrMileInMeters;
-			if (distanceKmOrMiles >= 1000) {
-				return distanceKmOrMiles.format("%d");
-			} else if (distanceKmOrMiles >= 100) {
-				return distanceKmOrMiles.format("%.1f");
-			} else {
-				return distanceKmOrMiles.format("%.2f");
-			}
-		} else {
-			return Ui.loadResource(Rez.Strings.zeroDistance);
+			return "0:00";
 		}
 	}
 
