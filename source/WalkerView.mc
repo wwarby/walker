@@ -77,7 +77,7 @@ class WalkerView extends Ui.DataField {
 		
 		// Create FIT contributor fields
 		stepsActivityField = createField(Ui.loadResource(Rez.Strings.steps), 0, 4 /* Fit.DATA_TYPE_UINT16 */,
-            { :mesgType => 20 /* Fit.MESG_TYPE_SESSION */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+            { :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
         stepsLapField = createField(Ui.loadResource(Rez.Strings.steps), 1, 4 /* Fit.DATA_TYPE_UINT16 */,
             { :mesgType => 19 /* Fit.MESG_TYPE_LAP */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
         
