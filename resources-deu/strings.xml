@@ -1,0 +1,15 @@
+<strings>
+    <string id="appName">Wanderer</string>
+    <string id="steps">Schritte</string>
+    <string id="stepsUnits">schritte</string>
+    <string id="pace">TEMPO</string>
+    <string id="timer">TIMER</string>
+    <string id="paceModeTitle">Tempo modus</string>
+	<string id="heartRateModeTitle">Herzschlag modus</string>
+	<string id="modeCurrent">Aktuell</string>
+	<string id="mode3Seconds">3 sekunden durchschnitt</string>
+	<string id="mode5Seconds">5 sekunden durchschnitt</string>
+	<string id="mode10Seconds">10 sekunden durchschnitt</string>
+	<string id="mode30Seconds">30 sekunden durchschnitt</string>
+	<string id="mode60Seconds">60 sekunden durchschnitt</string>
+</strings>

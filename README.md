@@ -34,9 +34,27 @@ Feature suggestions are welcome and will be considered.
 - Forerunner 230 / 235 / 630 / 645 / 645 Music / 735xt / 935 / 945
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition
 - Venu
-- vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S / 
+- vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S
 
 *Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
+
+## Supported Languages
+- Czech
+- Danish
+- Dutch
+- English
+- French
+- German
+- Italian
+- Norwegian
+- Polish
+- Portuguese
+- Romanian
+- Russian
+- Spanish
+- Swedish
+
+Help with internationalisation would be welcomed. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. More languages may be added in future if requested.
 
 ## BETA
 Walker is currently in BETA, having had only minimal field testing on a couple of watches. It should be relatively stable, but please get in touch
@@ -63,6 +81,7 @@ Thanks also to [rgergely](https://apps.garmin.com/en-GB/developer/ab0f2743-88d2-
 - 0.3.0
   - Add FIT contribution for steps
   - Support for "resume later" on activities
+  - Localised language support for several European languages
   - Fix bug that would reset activity steps on activity "stop" (as opposed to "reset")
   - Memory usage optimisation
 - 0.2.0

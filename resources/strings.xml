@@ -2,4 +2,6 @@
     <string id="appName">Walker</string>
     <string id="steps">Steps</string>
     <string id="stepsUnits">steps</string>
+    <string id="pace">PACE</string>
+    <string id="timer">TIMER</string>
 </strings>

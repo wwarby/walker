@@ -1,0 +1,15 @@
+<strings>
+    <string id="appName">Ходок</string>
+    <string id="steps">Шагах</string>
+    <string id="stepsUnits">шагах</string>
+    <string id="pace">темп</string>
+    <string id="timer">таймер</string>
+    <string id="paceModeTitle">Режим темп</string>
+	<string id="heartRateModeTitle">Режим сердечного ритма</string>
+	<string id="modeCurrent">текущий</string>
+	<string id="mode3Seconds">3 секунд в среднем</string>
+	<string id="mode5Seconds">5 секунд в среднем</string>
+	<string id="mode10Seconds">10 секунд в среднем</string>
+	<string id="mode30Seconds">30 секунд в среднем</string>
+	<string id="mode60Seconds">60 секунд в среднем</string>
+</strings>

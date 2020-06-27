@@ -1,0 +1,15 @@
+<strings>
+    <string id="appName">Marcheur</string>
+    <string id="steps">Pas</string>
+    <string id="stepsUnits">pas</string>
+    <string id="pace">RYTHME</string>
+    <string id="timer">CHRONO</string>
+    <string id="paceModeTitle">Mode rythme</string>
+	<string id="heartRateModeTitle">Mode rythme cardiaque</string>
+	<string id="modeCurrent">Actuel</string>
+	<string id="mode3Seconds">Moyenne de 3 secondes</string>
+	<string id="mode5Seconds">Moyenne de 5 secondes</string>
+	<string id="mode10Seconds">Moyenne de 10 secondes</string>
+	<string id="mode30Seconds">Moyenne de 30 secondes</string>
+	<string id="mode60Seconds">Moyenne de 60 secondes</string>
+</strings>

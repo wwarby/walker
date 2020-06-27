@@ -1,0 +1,15 @@
+<strings>
+    <string id="appName">Camminatore</string>
+    <string id="steps">Passi</string>
+    <string id="stepsUnits">passi</string>
+    <string id="pace">PASSO</string>
+    <string id="timer">CHRONO</string>
+    <string id="paceModeTitle">Modalità passo</string>
+	<string id="heartRateModeTitle">Modalità del battito cardiaco</string>
+	<string id="modeCurrent">Attuale</string>
+	<string id="mode3Seconds">3 secondi in media</string>
+	<string id="mode5Seconds">5 secondi in media</string>
+	<string id="mode10Seconds">10 secondi in media</string>
+	<string id="mode30Seconds">30 secondi in media</string>
+	<string id="mode60Seconds">60 secondi in media</string>
+</strings>

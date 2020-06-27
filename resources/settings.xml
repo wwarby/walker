@@ -6,7 +6,6 @@
 	<strings>
 		<string id="paceModeTitle">Pace mode</string>
 		<string id="heartRateModeTitle">Heart rate mode</string>
-		
 		<string id="modeCurrent">Current</string>
 		<string id="mode3Seconds">3 second average</string>
 		<string id="mode5Seconds">5 second average</string>

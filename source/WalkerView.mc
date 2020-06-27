@@ -354,7 +354,7 @@ class WalkerView extends Ui.DataField {
 		
 		// Render current pace
 		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, 0 /* Gfx.FONT_XTINY */,
-			"PACE", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			Ui.loadResource(Rez.Strings.pace), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 		(halfWidth / 2) - (heartRateWidth / 2) + 5,
 			middleRowValueY,
@@ -364,7 +364,7 @@ class WalkerView extends Ui.DataField {
 			
 		// Render timer
 		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, middleRowLabelY, 0 /* Gfx.FONT_XTINY */,
-			"TIMER", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			Ui.loadResource(Rez.Strings.timer), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 			(halfWidth * 1.5) + (heartRateWidth / 2) - 5,
 			middleRowValueY,
