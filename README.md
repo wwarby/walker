@@ -74,6 +74,8 @@ Thanks also to [rgergely](https://apps.garmin.com/en-GB/developer/ab0f2743-88d2-
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 0.4.1
+  - Fix battery icon position bug on 240x240px screens
 - 0.4.0
   - Add heart rate zone (configured by setting, disabled by default) to heart icon
   - Colour heart icon by heart rate zone
