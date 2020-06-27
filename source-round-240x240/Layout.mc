@@ -13,4 +13,4 @@ var bottomRowLowerTextY = 185;
 var bottomRowIconX = 25;
 var bottomRowIconY = 157;
 var batteryY = 220;
-var batteryX = 9;
+var batteryX = 0;
