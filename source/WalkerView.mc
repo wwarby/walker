@@ -1,6 +1,7 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Application as App;
 using Toybox.Math as Math;
+using Toybox.UserProfile as User;
 
 class WalkerView extends Ui.DataField {
 	
@@ -16,6 +17,7 @@ class WalkerView extends Ui.DataField {
 	
 	hidden var previousDarkMode;
 	hidden var previousBatteryState;
+	hidden var previousHeartRateZone;
 	
 	hidden var heartRateIcon;
 	hidden var stepsIcon;
@@ -23,6 +25,7 @@ class WalkerView extends Ui.DataField {
 	hidden var batteryIcon;
 	
 	hidden var batteryTextColour;
+	hidden var heartRateZoneTextColour;
 	
 	hidden var paceData;
 	hidden var heartRateData;
@@ -35,6 +38,7 @@ class WalkerView extends Ui.DataField {
 	// User definable settings. Stored as numbers rather than enums because enums waste valuable memory.
 	hidden var paceMode = 0;
 	hidden var heartRateMode = 0;
+	hidden var showHeartRateZone = false;
 	
 	hidden var timerActive = false;
 	
@@ -47,6 +51,7 @@ class WalkerView extends Ui.DataField {
 	hidden var averagePace;
 	hidden var distance;
 	hidden var heartRate;
+	hidden var heartRateZone;
 	hidden var pace;
 	hidden var time;
 	hidden var daySteps;
@@ -90,25 +95,28 @@ class WalkerView extends Ui.DataField {
 	function readSettings() {
 		
 		var deviceSettings = System.getDeviceSettings();
+		var app = Application.getApp();
 		
 		is24Hour = deviceSettings.is24Hour;
 		
 		kmOrMileInMeters = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
 		kmOrMilesLabel = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi";
 		
-		paceMode = Application.getApp().getProperty("pm");
+		paceMode = app.getProperty("pm");
 		if (paceMode > 0) {
 			paceData = new DataQueue(paceMode);
 		} else {
 			paceData = null;
 		}
 		
-		heartRateMode = Application.getApp().getProperty("hm");
+		heartRateMode = app.getProperty("hm");
 		if (heartRateMode > 0) {
 			heartRateData = new DataQueue(heartRateMode);
 		} else {
 			heartRateData = null;
 		}
+		
+		showHeartRateZone = app.getProperty("z");
 	}
 	
 	// Avoid drawing to the screen when we're not visible
@@ -149,7 +157,7 @@ class WalkerView extends Ui.DataField {
 		// Distance
 		distance = info.elapsedDistance;
 		
-		// Heart Rate
+		// Heart rate
 		if (heartRateData != null) {
 			if (info.currentHeartRate != null) {
 				heartRateData.add(info.currentHeartRate);
@@ -162,6 +170,19 @@ class WalkerView extends Ui.DataField {
 			: heartRateData != null
 				? heartRateData.average()
 				: null;
+		
+		// Heart rate zone
+		if (showHeartRateZone) {
+			var heartRateZones = User.getHeartRateZones(User.getCurrentSport());
+			if (heartRate != null && heartRate > 0) {
+				for (var x = 0; x < heartRateZones.size() && x < 5; x++) {
+					if (heartRate <= heartRateZones[x]) {
+						heartRateZone = x + 1;
+						break;
+					}
+				}
+			}
+		}
 		
 		// Pace
 		if (paceData != null) {
@@ -233,25 +254,42 @@ class WalkerView extends Ui.DataField {
 				: battery <= 20
 					? 2
 					: 3;
-		if (batteryState != previousBatteryState || (batteryState == 3 && previousDarkMode != darkMode)) {
-			switch (batteryState) {
-				case 0:
-					batteryIcon = Ui.loadResource(Rez.Drawables.ibf);
-					batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-					break;
-				case 1:
-					batteryIcon = Ui.loadResource(Rez.Drawables.ibe);
-					batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-					break;
-				case 2:
-					batteryIcon = Ui.loadResource(Rez.Drawables.ibw);
-					batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-					break;
-				case 3:
-					batteryIcon = Ui.loadResource(darkMode ? Rez.Drawables.ibd : Rez.Drawables.ib);
-					batteryTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
-					break;
+		if (batteryIcon == null || batteryState != previousBatteryState || (batteryState == 3 && previousDarkMode != darkMode)) {
+			if (batteryState == 0) {
+				batteryIcon = Ui.loadResource(Rez.Drawables.ibf);
+				batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+			} else if (batteryState == 1) {
+				batteryIcon = Ui.loadResource(Rez.Drawables.ibe);
+				batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+			} else if (batteryState == 2) {
+				batteryIcon = Ui.loadResource(Rez.Drawables.ibw);
+				batteryTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
+			} else {
+				batteryIcon = Ui.loadResource(darkMode ? Rez.Drawables.ibd : Rez.Drawables.ib);
+				batteryTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
 			}
+			previousBatteryState = batteryState;
+		}
+		
+		// Choose the colour of the heart rate icon based on heart rate zone
+		if (heartRateIcon == null || heartRateZone != previousHeartRateZone || (heartRateZone == 1 && previousDarkMode != darkMode)) {
+			if (heartRateZone == 1) {
+				heartRateIcon = Ui.loadResource(darkMode ? Rez.Drawables.ihr1d : Rez.Drawables.ihr1);
+				heartRateZoneTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
+			} else if (heartRateZone == 2) {
+				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr2);
+				heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+			} else if (heartRateZone == 3) {
+				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr3);
+				heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+			} else if (heartRateZone == 4) {
+				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr4);
+				heartRateZoneTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
+			} else {
+				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr5);
+				heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+			}
+			previousHeartRateZone = heartRateZone;
 		}
 		
 		// Max width values for layout debugging
@@ -285,7 +323,6 @@ class WalkerView extends Ui.DataField {
 		// If we've never loaded the icons before or dark mode has been toggled, load the icons
 		if (previousDarkMode != darkMode) {
 			previousDarkMode = darkMode;
-			heartRateIcon = Ui.loadResource(Rez.Drawables.ihr);
 			stepsIcon = Ui.loadResource(darkMode ? Rez.Drawables.isd : Rez.Drawables.is);
 			caloriesIcon = Ui.loadResource(darkMode ? Rez.Drawables.icd : Rez.Drawables.ic);
 		}
@@ -351,6 +388,13 @@ class WalkerView extends Ui.DataField {
 		dc.drawBitmap(halfWidth - (heartRateIcon.getWidth() / 2), heartRateIconY, heartRateIcon);
 		dc.drawText(halfWidth, heartRateTextY, 0 /* Gfx.FONT_XTINY */,
 			heartRateText, 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+		if (showHeartRateZone && heartRateZone != null && heartRateZone > 0) {
+			dc.setColor(heartRateZoneTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
+			dc.drawText(halfWidth, heartRateIconY + (heartRateIcon.getHeight() / 2) - 2, 0 /* Gfx.FONT_XTINY */,
+				heartRateZone.toString(), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			// Reset text rendering colour
+			dc.setColor(darkMode ? 0xFFFFFF /* Gfx.COLOR_WHITE */ : 0x000000 /* Gfx.COLOR_BLACK */, -1 /* Gfx.COLOR_TRANSPARENT */);
+		}
 		
 		// Render current pace
 		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, 0 /* Gfx.FONT_XTINY */,
@@ -361,7 +405,7 @@ class WalkerView extends Ui.DataField {
 			shrinkMiddleText ? 2 /* Gfx.FONT_SMALL */ : 5 /* Gfx.FONT_NUMBER_MILD */,
 			paceText,
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
-			
+		
 		// Render timer
 		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, middleRowLabelY, 0 /* Gfx.FONT_XTINY */,
 			Ui.loadResource(Rez.Strings.timer), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);

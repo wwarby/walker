@@ -6,6 +6,7 @@
     <string id="timer">TIMER</string>
     <string id="paceModeTitle">Tempo modus</string>
 	<string id="heartRateModeTitle">Herzschlag modus</string>
+	<string id="showHeartRateZoneTitle">Herzfrequenzzone anzeigen</string>
 	<string id="modeCurrent">Aktuell</string>
 	<string id="mode3Seconds">3 sekunden durchschnitt</string>
 	<string id="mode5Seconds">5 sekunden durchschnitt</string>

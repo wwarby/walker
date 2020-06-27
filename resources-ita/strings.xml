@@ -6,6 +6,7 @@
     <string id="timer">CHRONO</string>
     <string id="paceModeTitle">Modalità passo</string>
 	<string id="heartRateModeTitle">Modalità del battito cardiaco</string>
+	<string id="showHeartRateZoneTitle">Visualizza la zona di frequenza cardiaca</string>
 	<string id="modeCurrent">Attuale</string>
 	<string id="mode3Seconds">3 secondi in media</string>
 	<string id="mode5Seconds">5 secondi in media</string>

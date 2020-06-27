@@ -2,10 +2,12 @@
 	<properties>
 		<property id="pm" type="number">5</property>
 		<property id="hm" type="number">0</property>
+		<property id="z" type="boolean">false</property>
 	</properties>
 	<strings>
 		<string id="paceModeTitle">Pace mode</string>
 		<string id="heartRateModeTitle">Heart rate mode</string>
+		<string id="showHeartRateZoneTitle">Show heart rate zone</string>
 		<string id="modeCurrent">Current</string>
 		<string id="mode3Seconds">3 second average</string>
 		<string id="mode5Seconds">5 second average</string>
@@ -24,7 +26,6 @@
 	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
 	        </settingConfig>
 		</setting>
-		
 		<setting propertyKey="@Properties.hm" title="@Strings.heartRateModeTitle">
 			<settingConfig type="list">
 	            <listEntry value="0">@Strings.modeCurrent</listEntry>
@@ -34,6 +35,9 @@
 	            <listEntry value="30">@Strings.mode30Seconds</listEntry>
 	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
 	        </settingConfig>
+		</setting>
+		<setting propertyKey="@Properties.z" title="@Strings.showHeartRateZoneTitle">
+			<settingConfig type="boolean" />
 		</setting>
 	</settings>
 </resources>

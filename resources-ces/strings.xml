@@ -6,6 +6,7 @@
     <string id="timer">CHRONO</string>
     <string id="paceModeTitle">Tempo režimu</string>
 	<string id="heartRateModeTitle">Tepová frekvence režimu</string>
+	<string id="showHeartRateZoneTitle">Zobrazit zónu srdeční frekvence</string>
 	<string id="modeCurrent">Aktuální</string>
 	<string id="mode3Seconds">Průměr 3 sekund</string>
 	<string id="mode5Seconds">Průměr 5 sekund</string>

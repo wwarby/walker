@@ -6,6 +6,7 @@
     <string id="timer">CHRONO</string>
     <string id="paceModeTitle">Tryb tempa</string>
 	<string id="heartRateModeTitle">Tryb tętna</string>
+	<string id="showHeartRateZoneTitle">Wyświetl strefę tętna</string>
 	<string id="modeCurrent">Aktualny</string>
 	<string id="mode3Seconds">3 sekundy średnia</string>
 	<string id="mode5Seconds">5 sekundy średnia</string>

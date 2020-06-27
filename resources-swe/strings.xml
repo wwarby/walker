@@ -6,6 +6,7 @@
     <string id="timer">TIMER</string>
     <string id="paceModeTitle">Tempoläge</string>
 	<string id="heartRateModeTitle">Hjärtfrekvensläge</string>
+	<string id="showHeartRateZoneTitle">Visa pulszon</string>
 	<string id="modeCurrent">Nuværende</string>
 	<string id="mode3Seconds">3 sekunders gennemsnit</string>
 	<string id="mode5Seconds">5 sekunders gennemsnit</string>

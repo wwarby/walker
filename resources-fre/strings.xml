@@ -6,6 +6,7 @@
     <string id="timer">CHRONO</string>
     <string id="paceModeTitle">Mode rythme</string>
 	<string id="heartRateModeTitle">Mode rythme cardiaque</string>
+	<string id="showHeartRateZoneTitle">Afficher la zone de rythme cardiaque</string>
 	<string id="modeCurrent">Actuel</string>
 	<string id="mode3Seconds">Moyenne de 3 secondes</string>
 	<string id="mode5Seconds">Moyenne de 5 secondes</string>

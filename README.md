@@ -8,6 +8,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 - Current pace (or rolling 5/10/30/60 second average by changing settings)
 - Total time for current activity
 - Current heart rate (or rolling 5/10/30/60 second average by changing settings)
+- Current heart rate zone and heart icon coloured by zone (if enabled in settings - disabled by default)
 - Steps for the current activity
 - Steps for today
 - Calories for current activity
@@ -73,6 +74,9 @@ Thanks also to [rgergely](https://apps.garmin.com/en-GB/developer/ab0f2743-88d2-
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 0.4.0
+  - Add heart rate zone (configured by setting, disabled by default) to heart icon
+  - Colour heart icon by heart rate zone
 - 0.3.0
   - Add FIT contribution for steps
   - Support for "resume later" on activities

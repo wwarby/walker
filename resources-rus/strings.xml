@@ -6,6 +6,7 @@
     <string id="timer">таймер</string>
     <string id="paceModeTitle">Режим темп</string>
 	<string id="heartRateModeTitle">Режим сердечного ритма</string>
+	<string id="showHeartRateZoneTitle">Показать зону пульса</string>
 	<string id="modeCurrent">текущий</string>
 	<string id="mode3Seconds">3 секунд в среднем</string>
 	<string id="mode5Seconds">5 секунд в среднем</string>
