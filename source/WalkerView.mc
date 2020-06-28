@@ -427,7 +427,7 @@ class WalkerView extends Ui.DataField {
 			(calories == null ? 0 : calories).format("%d"), 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Set grey colour for day counts
-		dc.setColor(darkMode ? 0x555555 /* Gfx.COLOR_DK_GRAY */ : 0xAAAAAA /* Gfx.COLOR_LT_GRAY */, -1 /* Gfx.COLOR_TRANSPARENT */);
+		dc.setColor(0x555555 /* Gfx.COLOR_DK_GRAY */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		
 		// Render day steps
 		dc.drawText(halfWidth - centerOffsetX, bottomRowLowerTextY, 0 /* Gfx.FONT_XTINY */,
