@@ -14,3 +14,12 @@
 (:base) var bottomRowIconY = 157;
 (:base) var batteryY = 220;
 (:base) var batteryX = 9;
+
+(:base) var timeFont = 0 /* Gfx.FONT_XTINY */;
+(:base) var topRowFont = 0 /* Gfx.FONT_XTINY */;
+(:base) var heartRateFont = 0 /* Gfx.FONT_XTINY */;
+(:base) var middleRowLabelFont = 0 /* Gfx.FONT_XTINY */;
+(:base) var middleRowValueFontShrunk = 2 /* Gfx.FONT_SMALL */;
+(:base) var middleRowValueFont = 5 /* Gfx.FONT_NUMBER_MILD */;
+(:base) var bottomRowFont = 0 /* Gfx.FONT_XTINY */;
+(:base) var batteryFont = 0 /* Gfx.FONT_XTINY */;

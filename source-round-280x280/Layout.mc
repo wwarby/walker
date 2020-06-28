@@ -1,11 +1,11 @@
-var lines = [30, 82, 176, 243];
+var lines = [36, 86, 176, 243];
 var stepGoalProgressOffsetX = 4;
 var centerOffsetX = 10;
-var clockY = 15;
+var clockY = 18;
 var clockOffsetX = 0;
-var topRowY = 56;
-var middleRowLabelY = 104;
-var middleRowValueY = 140;
+var topRowY = 60;
+var middleRowLabelY = 110;
+var middleRowValueY = 146;
 var heartRateIconY = 105;
 var heartRateTextY = 145;
 var bottomRowUpperTextY = 196;
