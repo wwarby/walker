@@ -60,8 +60,8 @@ class WalkerView extends Ui.DataField {
 	hidden var stepGoalProgress;
 	
 	// FIT contributor fields
-	hidden var stepsActivityField = null;
-	hidden var stepsLapField = null;
+	hidden var stepsActivityField;
+	hidden var stepsLapField;
 	
 	function initialize() {
 	
@@ -80,15 +80,21 @@ class WalkerView extends Ui.DataField {
 	        if (lapSteps == null) { lapSteps = 0; }
 	    }
 		
+		var stepUnits = Ui.loadResource(Rez.Strings.stepsUnits);
+		
 		// Create FIT contributor fields
 		stepsActivityField = createField(Ui.loadResource(Rez.Strings.steps), 0, 4 /* Fit.DATA_TYPE_UINT16 */,
-            { :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+            { :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => stepUnits });
         stepsLapField = createField(Ui.loadResource(Rez.Strings.steps), 1, 4 /* Fit.DATA_TYPE_UINT16 */,
-            { :mesgType => 19 /* Fit.MESG_TYPE_LAP */, :units => Ui.loadResource(Rez.Strings.stepsUnits) });
+            { :mesgType => 19 /* Fit.MESG_TYPE_LAP */, :units => stepUnits });
         
         // Set initial steps FIT contributions to zero
         stepsActivityField.setData(0);
         stepsLapField.setData(0);
+        
+        // Clean up memory
+        app = null;
+        info = null;
 	}
 	
 	// Called on initialization and when settings change (from a hook in WalkerApp.mc)
@@ -117,6 +123,10 @@ class WalkerView extends Ui.DataField {
 		}
 		
 		showHeartRateZone = app.getProperty("z");
+		
+		// Clean up memory
+		deviceSettings = null;
+		app = null;
 	}
 	
 	// Avoid drawing to the screen when we're not visible
@@ -229,6 +239,9 @@ class WalkerView extends Ui.DataField {
 		// Calories
 		calories = info.calories;
 		dayCalories = activityMonitorInfo.calories;
+		
+		// Clean up memory
+		activityMonitorInfo = null;
 	}
 	
 	function onUpdate(dc) {
@@ -236,7 +249,6 @@ class WalkerView extends Ui.DataField {
 		if (doUpdates == false) { return; }
 		
 		var halfWidth = dc.getWidth() / 2;
-		
 		var paceText = formatTime(pace == null ? null : pace * 1000.0, false);
 		var timeText = formatTime(time == null ? null : time, false);
 		var shrinkMiddleText = paceText.length() > 5 || timeText.length() > 5;
@@ -441,7 +453,7 @@ class WalkerView extends Ui.DataField {
 		dc.drawBitmap(halfWidth - (batteryIcon.getWidth() / 2) + 2 + batteryX, batteryY - (batteryIcon.getHeight() / 2), batteryIcon);
 		dc.setColor(batteryTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
 		dc.drawText(halfWidth + batteryX, batteryY - 1, 0 /* Gfx.FONT_XTINY */,
-			System.getSystemStats().battery.format("%d") + "%", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			battery.format("%d") + "%", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 	}
 	
 	function formatTime(milliseconds, short) {

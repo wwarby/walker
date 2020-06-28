@@ -4,4 +4,13 @@
     <string id="stepsUnits">steps</string>
     <string id="pace">PACE</string>
     <string id="timer">TIMER</string>
+    <string id="paceModeTitle">Pace mode</string>
+	<string id="heartRateModeTitle">Heart rate mode</string>
+	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
+	<string id="modeCurrent">Current</string>
+	<string id="mode3Seconds">3 second average</string>
+	<string id="mode5Seconds">5 second average</string>
+	<string id="mode10Seconds">10 second average</string>
+	<string id="mode30Seconds">30 second average</string>
+	<string id="mode60Seconds">60 second average</string>
 </strings>
