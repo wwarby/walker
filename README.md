@@ -20,7 +20,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 
 Walker also contributes step data to the FIT profile for your activity, showing total steps and lap steps in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
-<img src="/supporting-files/screenshots/screenshot-1.png" height="300" alt="Screenshot Dark"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="300" alt="Screenshot Light"></img>
+<img src="/supporting-files/screenshots/screenshot-1.png" height="250" alt="Screenshot 1"></img> <img src="/supporting-files/screenshots/screenshot-2.png" height="250" alt="Screenshot 2"></img> <img src="/supporting-files/screenshots/screenshot-3.png" height="250" alt="Screenshot 3"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="250" alt="Screenshot 4"></img> <img src="/supporting-files/screenshots/screenshot-5.png" height="250" alt="Screenshot 5"></img>
 
 ## Installation
 1. Install from [https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74)
