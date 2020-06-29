@@ -22,6 +22,10 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 
 <img src="/supporting-files/screenshots/screenshot-1.png" height="300" alt="Screenshot Dark"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="300" alt="Screenshot Light"></img>
 
+## Installation
+1. Install from [https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74)
+2. Follow instructions [here](https://tribeccato.com/2017/01/11/adding-data-fields-from-garmin-connect-iq/) to install
+
 ## Supported Devices
 - Approach S60 / S62
 - Captain Marvel / Darth Vader / First Avenger / Rey
