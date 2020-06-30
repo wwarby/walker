@@ -10,7 +10,7 @@
 	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
 	        </settingConfig>
 		</setting>
-		<setting propertyKey="@Properties.hm" title="@Strings.paceOrSpeedModeTitle">
+		<setting propertyKey="@Properties.hm" title="@Strings.heartRateModeTitle">
 			<settingConfig type="list">
 	            <listEntry value="0">@Strings.modeInstant</listEntry>
 	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
