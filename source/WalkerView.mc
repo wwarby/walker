@@ -12,7 +12,6 @@ class WalkerView extends Ui.DataField {
 	 * the code hard to read, but the codebase is sufficiently small that it shouldn't be a problem
 	 */
 	
-	hidden var doUpdates = false;
 	hidden var is24Hour = false;
 	
 	hidden var previousDarkMode;
@@ -135,10 +134,6 @@ class WalkerView extends Ui.DataField {
 		app = null;
 	}
 	
-	// Avoid drawing to the screen when we're not visible
-	function onShow() { doUpdates = true; }
-	function onHide() { doUpdates = false; }
-	
 	// Handle activity timer events
 	function onTimerStart() { timerStart(); }
 	function onTimerResume() { timerStart(); }
@@ -260,8 +255,6 @@ class WalkerView extends Ui.DataField {
 	
 	function onUpdate(dc) {
 	
-		if (doUpdates == false) { return; }
-		
 		var halfWidth = dc.getWidth() / 2;
 		var paceOrSpeedText = showSpeedInsteadOfPace
 			? formatDistance(paceOrSpeed == null ? null : paceOrSpeed * 1000.0)
