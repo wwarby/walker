@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">проходилка</string>
-    <string id="steps">стъпки</string>
-    <string id="stepsUnits">стъпки</string>
-    <string id="pace">темпо</string>
-    <string id="timer">часовник</string>
-    <string id="paceModeTitle">темп режим</string>
+	<string id="appName">проходилка</string>
+	<string id="steps">стъпки</string>
+	<string id="stepsUnits">стъпки</string>
+	<string id="pace">темпо</string>
+	<string id="speed">скорост</string>
+	<string id="timer">часовник</string>
+	<string id="paceOrSpeedModeTitle">Скорост / темп режим</string>
 	<string id="heartRateModeTitle">Режим на сърдечна честота</string>
 	<string id="showHeartRateZoneTitle">Показване на зона на сърдечната честота</string>
+	<string id="showSpeedInsteadOfPace">Покажете скоростта вместо темпото</string>
 	<string id="modeCurrent">сегашен</string>
 	<string id="mode3Seconds">3 секунди средно</string>
 	<string id="mode5Seconds">5 секунди средно</string>

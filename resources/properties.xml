@@ -3,5 +3,6 @@
 		<property id="pm" type="number">5</property>
 		<property id="hm" type="number">0</property>
 		<property id="z" type="boolean">false</property>
+		<property id="s" type="boolean">false</property>
 	</properties>
 </resources>

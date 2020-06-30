@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Walker</string>
-    <string id="steps">Steps</string>
-    <string id="stepsUnits">steps</string>
-    <string id="pace">PACE</string>
-    <string id="timer">TIMER</string>
-    <string id="paceModeTitle">Pace mode</string>
+	<string id="appName">Walker</string>
+	<string id="steps">Steps</string>
+	<string id="stepsUnits">steps</string>
+	<string id="pace">PACE</string>
+	<string id="speed">SPEED</string>
+	<string id="timer">TIMER</string>
+	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
 	<string id="heartRateModeTitle">Heart rate mode</string>
 	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
+	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
 	<string id="modeCurrent">Current</string>
 	<string id="mode3Seconds">3 second average</string>
 	<string id="mode5Seconds">5 second average</string>

@@ -1,6 +1,6 @@
 <resources>
 	<settings>
-		<setting propertyKey="@Properties.pm" title="@Strings.paceModeTitle">
+		<setting propertyKey="@Properties.pm" title="@Strings.paceOrSpeedModeTitle">
 			<settingConfig type="list">
 	            <listEntry value="0">@Strings.modeCurrent</listEntry>
 	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
@@ -17,6 +17,9 @@
 	        </settingConfig>
 		</setting>
 		<setting propertyKey="@Properties.z" title="@Strings.showHeartRateZoneTitle">
+			<settingConfig type="boolean" />
+		</setting>
+		<setting propertyKey="@Properties.s" title="@Strings.showSpeedInsteadOfPace">
 			<settingConfig type="boolean" />
 		</setting>
 	</settings>

@@ -1,6 +1,6 @@
 <resources>
 	<settings>
-		<setting propertyKey="@Properties.hm" title="@Strings.heartRateModeTitle">
+		<setting propertyKey="@Properties.pm" title="@Strings.paceOrSpeedModeTitle">
 			<settingConfig type="list">
 	            <listEntry value="0">@Strings.modeCurrent</listEntry>
 	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
@@ -10,18 +10,21 @@
 	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
 	        </settingConfig>
 		</setting>
+		<setting propertyKey="@Properties.hm" title="@Strings.paceOrSpeedModeTitle">
+			<settingConfig type="list">
+	            <listEntry value="0">@Strings.modeCurrent</listEntry>
+	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
+	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
+	            <listEntry value="10">@Strings.mode10Seconds</listEntry>
+	            <listEntry value="30">@Strings.mode30Seconds</listEntry>
+	            <listEntry value="60">@Strings.mode60Seconds</listEntry>
+	        </settingConfig>
+		</setting>
+		<setting propertyKey="@Properties.z" title="@Strings.showHeartRateZoneTitle">
+			<settingConfig type="boolean" />
+		</setting>
+		<setting propertyKey="@Properties.s" title="@Strings.showSpeedInsteadOfPace">
+			<settingConfig type="boolean" />
+		</setting>
 	</settings>
-	<setting propertyKey="@Properties.hm" title="@Strings.heartRateModeTitle">
-		<settingConfig type="list">
-            <listEntry value="0">@Strings.modeCurrent</listEntry>
-            <listEntry value="3">@Strings.mode3Seconds</listEntry>
-            <listEntry value="5">@Strings.mode5Seconds</listEntry>
-            <listEntry value="10">@Strings.mode10Seconds</listEntry>
-            <listEntry value="30">@Strings.mode30Seconds</listEntry>
-            <listEntry value="60">@Strings.mode60Seconds</listEntry>
-        </settingConfig>
-	</setting>
-	<setting propertyKey="@Properties.z" title="@Strings.showHeartRateZoneTitle">
-		<settingConfig type="boolean" />
-	</setting>
 </resources>

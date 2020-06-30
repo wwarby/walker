@@ -27,7 +27,7 @@ class WalkerView extends Ui.DataField {
 	hidden var batteryTextColour;
 	hidden var heartRateZoneTextColour;
 	
-	hidden var paceData;
+	hidden var paceOrSpeedData;
 	hidden var heartRateData;
 	
 	hidden var previousDaySteps = 0;
@@ -36,23 +36,25 @@ class WalkerView extends Ui.DataField {
 	hidden var consolidatedSteps = 0;
 	
 	// User definable settings. Stored as numbers rather than enums because enums waste valuable memory.
-	hidden var paceMode = 0;
+	hidden var paceOrSpeedMode = 0;
 	hidden var heartRateMode = 0;
 	hidden var showHeartRateZone = false;
+	hidden var showSpeedInsteadOfPace = false;
 	
 	hidden var timerActive = false;
 	
 	hidden var kmOrMileInMeters;
-	hidden var kmOrMilesLabel;
+	hidden var averagePaceOrSpeedUnitsLabel;
+	hidden var distanceUnitsLabel;
 	
 	// Calculated values that change on every call to compute()
 	var steps;
 	var lapSteps;
-	hidden var averagePace;
+	hidden var averagePaceOrSpeed;
 	hidden var distance;
 	hidden var heartRate;
 	hidden var heartRateZone;
-	hidden var pace;
+	hidden var paceOrSpeed;
 	hidden var time;
 	hidden var daySteps;
 	hidden var calories;
@@ -105,14 +107,11 @@ class WalkerView extends Ui.DataField {
 		
 		is24Hour = deviceSettings.is24Hour;
 		
-		kmOrMileInMeters = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
-		kmOrMilesLabel = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi";
-		
-		paceMode = app.getProperty("pm");
-		if (paceMode > 0) {
-			paceData = new DataQueue(paceMode);
+		paceOrSpeedMode = app.getProperty("pm");
+		if (paceOrSpeedMode > 0) {
+			paceOrSpeedData = new DataQueue(paceOrSpeedMode);
 		} else {
-			paceData = null;
+			paceOrSpeedData = null;
 		}
 		
 		heartRateMode = app.getProperty("hm");
@@ -123,6 +122,13 @@ class WalkerView extends Ui.DataField {
 		}
 		
 		showHeartRateZone = app.getProperty("z");
+		showSpeedInsteadOfPace = app.getProperty("s");
+		
+		kmOrMileInMeters = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
+		distanceUnitsLabel = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi";
+		averagePaceOrSpeedUnitsLabel = showSpeedInsteadOfPace
+			? "/hr"
+			: deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "/km" : "/mi";
 		
 		// Clean up memory
 		deviceSettings = null;
@@ -194,21 +200,29 @@ class WalkerView extends Ui.DataField {
 			}
 		}
 		
-		// Pace
-		if (paceData != null) {
+		// Pace or speed
+		if (paceOrSpeedData != null) {
 			if (info.currentSpeed != null) {
-				paceData.add(info.currentSpeed);
+				paceOrSpeedData.add(info.currentSpeed);
 			} else {
-				paceData.reset();
+				paceOrSpeedData.reset();
 			}
 		}
-		var speed = paceMode == 0
+		var speed = paceOrSpeedMode == 0
 			? info.currentSpeed
-			: paceData != null
-				? paceData.average()
+			: paceOrSpeedData != null
+				? paceOrSpeedData.average()
 				: null;
-		pace = (speed != null && speed > 0.2) ? (kmOrMileInMeters / speed) : null;
-		averagePace = (info.averageSpeed != null && info.averageSpeed > 0.2) ? (kmOrMileInMeters / info.averageSpeed) : null;
+		paceOrSpeed = speed != null && speed > 0.2
+			? showSpeedInsteadOfPace
+				? speed * (1000 / kmOrMileInMeters)
+				: kmOrMileInMeters / speed
+			: null;
+		averagePaceOrSpeed = info.averageSpeed != null && info.averageSpeed > 0.2
+			? showSpeedInsteadOfPace
+			? info.averageSpeed
+			: (kmOrMileInMeters / info.averageSpeed)
+		: null;
 		
 		// Time
 		time = info.timerTime;
@@ -249,9 +263,11 @@ class WalkerView extends Ui.DataField {
 		if (doUpdates == false) { return; }
 		
 		var halfWidth = dc.getWidth() / 2;
-		var paceText = formatTime(pace == null ? null : pace * 1000.0, false);
+		var paceOrSpeedText = showSpeedInsteadOfPace
+			? formatDistance(paceOrSpeed == null ? null : paceOrSpeed * 1000.0)
+			: formatTime(paceOrSpeed == null ? null : paceOrSpeed * 1000.0, false);
 		var timeText = formatTime(time == null ? null : time, false);
-		var shrinkMiddleText = paceText.length() > 5 || timeText.length() > 5;
+		var shrinkMiddleText = paceOrSpeedText.length() > 5 || timeText.length() > 5;
 		
 		// Set colours
 		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : 0xFFFFFF /* Gfx.COLOR_WHITE */;
@@ -306,10 +322,10 @@ class WalkerView extends Ui.DataField {
 		
 		// Max width values for layout debugging
 		/*
-		averagePace = 100000;
+		averagePaceOrSpeed = 100000;
 		distance = 888888.888;
 		heartRate = 888;
-		paceText = "8:88:88";
+		paceOrSpeedText = "8:88:88";
 		timeText = "8:88:88";
 		steps = 88888;
 		daySteps = 88888;
@@ -321,10 +337,10 @@ class WalkerView extends Ui.DataField {
 		
 		// Realistic static values for screenshots
 		/*
-		averagePace = 44520;
+		averagePaceOrSpeed = 44520;
 		distance = 1921;
 		heartRate = 106;
-		paceText = "12:15";
+		paceOrSpeedText = "12:15";
 		timeText = "23:31";
 		steps = 2331;
 		daySteps = 7490;
@@ -374,26 +390,16 @@ class WalkerView extends Ui.DataField {
 			  + (is24Hour ? "" : currentTime.hour >= 12 ? "pm" : "am"),
 			  1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
-		// Render average pace
+		// Render average pace or speed
 		dc.drawText(halfWidth - centerOffsetX, topRowY, topRowFont,
-			formatTime(averagePace == null ? null : averagePace * 1000.0, true) + "/" + kmOrMilesLabel, 0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			showSpeedInsteadOfPace
+				? formatDistance(averagePaceOrSpeed == null ? null : averagePaceOrSpeed * 1000.0) + averagePaceOrSpeedUnitsLabel
+				: formatTime(averagePaceOrSpeed == null ? null : averagePaceOrSpeed * 1000.0, true) + averagePaceOrSpeedUnitsLabel,
+			0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render distance
-		var distanceText;
-		if (distance != null && distance > 0) {
-			var distanceKmOrMiles = distance / kmOrMileInMeters;
-			if (distanceKmOrMiles >= 1000) {
-				distanceText = distanceKmOrMiles.format("%d");
-			} else if (distanceKmOrMiles >= 100) {
-				distanceText = distanceKmOrMiles.format("%.1f");
-			} else {
-				distanceText = distanceKmOrMiles.format("%.2f");
-			}
-		} else {
-			distanceText = "0:00";
-		}
 		dc.drawText(halfWidth + centerOffsetX, topRowY, topRowFont,
-			distanceText + kmOrMilesLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			formatDistance(distance) + distanceUnitsLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render heart rate
 		var heartRateText = (heartRate == null ? 0 : heartRate).format("%d");
@@ -409,14 +415,15 @@ class WalkerView extends Ui.DataField {
 			dc.setColor(darkMode ? 0xFFFFFF /* Gfx.COLOR_WHITE */ : 0x000000 /* Gfx.COLOR_BLACK */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		}
 		
-		// Render current pace
+		// Render current pace or speed
 		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, middleRowLabelFont,
-			Ui.loadResource(Rez.Strings.pace), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			Ui.loadResource(showSpeedInsteadOfPace ? Rez.Strings.speed : Rez.Strings.pace),
+			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 		(halfWidth / 2) - (heartRateWidth / 2) + 5,
 			middleRowValueY,
 			shrinkMiddleText ? middleRowValueFontShrunk : middleRowValueFont,
-			paceText,
+			paceOrSpeedText,
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render timer
@@ -475,6 +482,21 @@ class WalkerView extends Ui.DataField {
 			}
 		} else {
 			return "0:00";
+		}
+	}
+	
+	function formatDistance(meters) {
+		if (meters != null && meters > 0) {
+			var distanceKmOrMiles = meters / kmOrMileInMeters;
+			if (distanceKmOrMiles >= 1000) {
+				return distanceKmOrMiles.format("%d");
+			} else if (distanceKmOrMiles >= 100) {
+				return distanceKmOrMiles.format("%.1f");
+			} else {
+				return distanceKmOrMiles.format("%.2f");
+			}
+		} else {
+			return "0.00";
 		}
 	}
 

@@ -3,9 +3,9 @@
 A free data field for Garmin watches to provide stats for walking activities. Built to provide more data in a more compact format than is typically available on data fields designed for runners (where too much information becomes impossible to digest at speed). Focused on data relevant to casual walking scenarios where step count, distance, pace and calorie burn are the predominant concerns rather than hiking where bearing, ascent and altitude etc. are more relevant. Currently displays:
 
 - Clock time
-- Average pace for the current activity
+- Average pace or speed for the current activity (controlled by settings)
 - Total distance for the current activity
-- Current pace (or rolling 5/10/30/60 second average by changing settings) *
+- Current pace or speed (or rolling 5/10/30/60 second average by changing settings) *
 - Total time for current activity
 - Current heart rate (or rolling 5/10/30/60 second average by changing settings) *
 - Current heart rate zone and heart icon coloured by zone (if enabled in settings - disabled by default)
@@ -40,6 +40,11 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 *Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
 
 ## Supported Languages
+- Arabic
+- Bulgarian
+- Chinese (Simplified)
+- Chinese (Traditional)
+- Croatian
 - Czech
 - Danish
 - Dutch
@@ -68,6 +73,10 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 0.6.0
+  - Fix missing settings
+  - Add setting to show speed instead of pace
+  - Added support for several new languages
 - 0.5.0
   - Use larger fonts where possible on all devices
   - Make daily steps and calories text darker on white backgrounds
