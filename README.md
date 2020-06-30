@@ -74,7 +74,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 ## Changelog
 - 0.6.1
-  - Accurate French translation
+  - Accurate French and Russian translations
 - 0.6.0
   - Fix missing settings
   - Add setting to show speed instead of pace
