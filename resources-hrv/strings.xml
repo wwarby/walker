@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">Način rada srca</string>
 	<string id="showHeartRateZoneTitle">Pokaži zonu otkucaja srca</string>
 	<string id="showSpeedInsteadOfPace">Pokažite brzinu umjesto tempa</string>
-	<string id="modeCurrent">Sadašnji</string>
+	<string id="modeInstant">Sadašnji</string>
 	<string id="mode3Seconds">Prosjek od 3 sekunde</string>
 	<string id="mode5Seconds">Prosjek od 5 sekunde</string>
 	<string id="mode10Seconds">Prosjek od 10 sekunde</string>

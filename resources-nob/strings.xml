@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">Puls modus</string>
 	<string id="showHeartRateZoneTitle">Vis pulssone</string>
 	<string id="showSpeedInsteadOfPace">Vis hastighet i stedet for tempo</string>
-	<string id="modeCurrent">Nuværende</string>
+	<string id="modeInstant">Nuværende</string>
 	<string id="mode3Seconds">3 sekunders gjennomsnitt</string>
 	<string id="mode5Seconds">5 sekunders gjennomsnitt</string>
 	<string id="mode10Seconds">10 sekunders gjennomsnitt</string>

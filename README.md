@@ -73,6 +73,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 0.6.1
+  - Accurate French translation
 - 0.6.0
   - Fix missing settings
   - Add setting to show speed instead of pace

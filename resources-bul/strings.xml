@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">Режим на сърдечна честота</string>
 	<string id="showHeartRateZoneTitle">Показване на зона на сърдечната честота</string>
 	<string id="showSpeedInsteadOfPace">Покажете скоростта вместо темпото</string>
-	<string id="modeCurrent">сегашен</string>
+	<string id="modeInstant">сегашен</string>
 	<string id="mode3Seconds">3 секунди средно</string>
 	<string id="mode5Seconds">5 секунди средно</string>
 	<string id="mode10Seconds">10 секунди средно</string>

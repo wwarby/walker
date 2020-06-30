@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">Modo de ritmo cardiaco</string>
 	<string id="showHeartRateZoneTitle">Mostrar zona de frecuencia cardíaca</string>
 	<string id="showSpeedInsteadOfPace">Mostrar velocidad en lugar de ritmo</string>
-	<string id="modeCurrent">Actual</string>
+	<string id="modeInstant">Actual</string>
 	<string id="mode3Seconds">3 segundos promedio</string>
 	<string id="mode5Seconds">5 segundos promedio</string>
 	<string id="mode10Seconds">10 segundos promedio</string>

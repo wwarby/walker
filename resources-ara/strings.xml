@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">وضع معدل ضربات القلب</string>
 	<string id="showHeartRateZoneTitle">إظهار منطقة معدل ضربات القلب</string>
 	<string id="showSpeedInsteadOfPace">أظهر السرعة بدلاً من السرعة</string>
-	<string id="modeCurrent">حالي</string>
+	<string id="modeInstant">حالي</string>
 	<string id="mode3Seconds">متوسط ​​3 ثوان</string>
 	<string id="mode5Seconds">متوسط ​​5 ثوان</string>
 	<string id="mode10Seconds">متوسط ​​10 ثوان</string>

@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">Heart rate mode</string>
 	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
 	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeCurrent">Current</string>
+	<string id="modeInstant">Instant</string>
 	<string id="mode3Seconds">3 second average</string>
 	<string id="mode5Seconds">5 second average</string>
 	<string id="mode10Seconds">10 second average</string>

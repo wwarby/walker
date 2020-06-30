@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">Tryb tętna</string>
 	<string id="showHeartRateZoneTitle">Wyświetl strefę tętna</string>
 	<string id="showSpeedInsteadOfPace">Pokaż prędkość zamiast tempa</string>
-	<string id="modeCurrent">Aktualny</string>
+	<string id="modeInstant">Aktualny</string>
 	<string id="mode3Seconds">3 sekundy średnia</string>
 	<string id="mode5Seconds">5 sekundy średnia</string>
 	<string id="mode10Seconds">10 sekundy średnia</string>

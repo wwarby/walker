@@ -4,12 +4,12 @@
 	<string id="stepsUnits">шагов</string>
 	<string id="pace">ТЕМП</string>
 	<string id="speed">СКОРОСТЬ</string>
-	<string id="timer">таймер</string>
+	<string id="timer">ТАЙМЕР</string>
 	<string id="paceOrSpeedModeTitle">Режим темпа/скорость</string>
 	<string id="heartRateModeTitle">Режимсердечного ритма</string>
 	<string id="showHeartRateZoneTitle">Показатьзону пульса</string>
 	<string id="showSpeedInsteadOfPace">Показать скорость вместо темпа</string>
-	<string id="modeCurrent">текущий</string>
+	<string id="modeInstant">текущий</string>
 	<string id="mode3Seconds">средний за 3 секунды</string>
 	<string id="mode5Seconds">средний за 5 секунд</string>
 	<string id="mode10Seconds">средний за 10 секунд</string>

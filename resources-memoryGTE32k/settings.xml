@@ -2,7 +2,7 @@
 	<settings>
 		<setting propertyKey="@Properties.pm" title="@Strings.paceOrSpeedModeTitle">
 			<settingConfig type="list">
-	            <listEntry value="0">@Strings.modeCurrent</listEntry>
+	            <listEntry value="0">@Strings.modeInstant</listEntry>
 	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
 	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
 	            <listEntry value="10">@Strings.mode10Seconds</listEntry>
@@ -12,7 +12,7 @@
 		</setting>
 		<setting propertyKey="@Properties.hm" title="@Strings.paceOrSpeedModeTitle">
 			<settingConfig type="list">
-	            <listEntry value="0">@Strings.modeCurrent</listEntry>
+	            <listEntry value="0">@Strings.modeInstant</listEntry>
 	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
 	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
 	            <listEntry value="10">@Strings.mode10Seconds</listEntry>

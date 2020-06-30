@@ -9,7 +9,7 @@
 	<string id="heartRateModeTitle">心率模式</string>
 	<string id="showHeartRateZoneTitle">显示心率区</string>
 	<string id="showSpeedInsteadOfPace">显示速度而不是速度</string>
-	<string id="modeCurrent">现</string>
+	<string id="modeInstant">现</string>
 	<string id="mode3Seconds">平均3秒</string>
 	<string id="mode5Seconds">平均5秒</string>
 	<string id="mode10Seconds">平均10秒</string>
