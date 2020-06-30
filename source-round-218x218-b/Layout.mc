@@ -7,6 +7,9 @@
  * - fenix 3 HR
  */
 
+var batteryWidth = 40;
+var batteryHeight = 18;
+
 var timeFont = 1 /* Gfx.FONT_TINY */;
 var topRowFont = 1 /* Gfx.FONT_TINY */;
 var heartRateFont = 1 /* Gfx.FONT_TINY */;

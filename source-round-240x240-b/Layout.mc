@@ -8,6 +8,9 @@
  * - vivoactive 3 Music LTE
  */
 
+var batteryWidth = 45;
+var batteryHeight = 20;
+
 var timeFont = 1 /* Gfx.FONT_TINY */;
 var topRowFont = 0 /* Gfx.FONT_XTINY */;
 var heartRateFont = 1 /* Gfx.FONT_TINY */;

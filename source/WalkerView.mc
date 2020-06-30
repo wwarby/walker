@@ -12,61 +12,67 @@ class WalkerView extends Ui.DataField {
 	 * the code hard to read, but the codebase is sufficiently small that it shouldn't be a problem
 	 */
 	
-	hidden var is24Hour = false;
+	var is24Hour = false;
 	
-	hidden var previousDarkMode;
-	hidden var previousBatteryState;
-	hidden var previousHeartRateZone;
+	var previousDarkMode;
+	var previousBatteryState;
+	var previousHeartRateZone;
 	
-	hidden var heartRateIcon;
-	hidden var stepsIcon;
-	hidden var caloriesIcon;
-	hidden var batteryIcon;
+	var heartRateIcon;
+	var stepsIcon;
+	var caloriesIcon;
 	
-	hidden var batteryTextColour;
-	hidden var heartRateZoneTextColour;
+	var batteryIconColour;
+	var batteryTextColour;
+	var heartRateZoneTextColour;
 	
-	hidden var paceOrSpeedData;
-	hidden var heartRateData;
+	var paceOrSpeedData;
+	var heartRateData;
 	
-	hidden var previousDaySteps = 0;
-	hidden var stepsWhenTimerBecameActive = 0;
-	hidden var activityStepsAtPreviousLap = 0;
-	hidden var consolidatedSteps = 0;
+	var previousDaySteps = 0;
+	var stepsWhenTimerBecameActive = 0;
+	var activityStepsAtPreviousLap = 0;
+	var consolidatedSteps = 0;
 	
 	// User definable settings. Stored as numbers rather than enums because enums waste valuable memory.
-	hidden var paceOrSpeedMode = 0;
-	hidden var heartRateMode = 0;
-	hidden var showHeartRateZone = false;
-	hidden var showSpeedInsteadOfPace = false;
+	var paceOrSpeedMode = 0;
+	var heartRateMode = 0;
+	var showHeartRateZone = false;
+	var showSpeedInsteadOfPace = false;
 	
-	hidden var timerActive = false;
+	var timerActive = false;
 	
-	hidden var kmOrMileInMeters;
-	hidden var averagePaceOrSpeedUnitsLabel;
-	hidden var distanceUnitsLabel;
+	var kmOrMileInMeters;
+	var averagePaceOrSpeedUnitsLabel;
+	var distanceUnitsLabel;
 	
 	// Calculated values that change on every call to compute()
 	var steps;
 	var lapSteps;
-	hidden var averagePaceOrSpeed;
-	hidden var distance;
-	hidden var heartRate;
-	hidden var heartRateZone;
-	hidden var paceOrSpeed;
-	hidden var time;
-	hidden var daySteps;
-	hidden var calories;
-	hidden var dayCalories;
-	hidden var stepGoalProgress;
+	var averagePaceOrSpeed;
+	var distance;
+	var heartRate;
+	var heartRateZone;
+	var paceOrSpeed;
+	var time;
+	var daySteps;
+	var calories;
+	var dayCalories;
+	var stepGoalProgress;
 	
 	// FIT contributor fields
-	hidden var stepsActivityField;
-	hidden var stepsLapField;
+	var stepsActivityField;
+	var stepsLapField;
+	
+	(:memory16k) var view32;
 	
 	function initialize() {
 	
 		DataField.initialize();
+		
+		if (WalkerView has :view32) {
+			view32 = new WalkerViewGTE32K();
+		}
 		
 		readSettings();
 		
@@ -128,6 +134,10 @@ class WalkerView extends Ui.DataField {
 		averagePaceOrSpeedUnitsLabel = showSpeedInsteadOfPace
 			? "/hr"
 			: deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "/km" : "/mi";
+		
+		if (WalkerView has :view32) {
+			view32.readSettings(self, deviceSettings, app);
+		}
 		
 		// Clean up memory
 		deviceSettings = null;
@@ -249,6 +259,10 @@ class WalkerView extends Ui.DataField {
 		calories = info.calories;
 		dayCalories = activityMonitorInfo.calories;
 		
+		if (WalkerView has :view32) {
+			view32.compute(self, info, activityMonitorInfo);
+		}
+		
 		// Clean up memory
 		activityMonitorInfo = null;
 	}
@@ -263,7 +277,7 @@ class WalkerView extends Ui.DataField {
 		var shrinkMiddleText = paceOrSpeedText.length() > 5 || timeText.length() > 5;
 		
 		// Set colours
-		var backgroundColour = self has :getBackgroundColor ? getBackgroundColor() : 0xFFFFFF /* Gfx.COLOR_WHITE */;
+		var backgroundColour = WalkerView has :getBackgroundColor ? getBackgroundColor() : 0xFFFFFF /* Gfx.COLOR_WHITE */;
 		var darkMode = backgroundColour == 0x000000 /* Gfx.COLOR_BLACK */;
 		
 		// Choose the colour of the battery based on it's state
@@ -275,18 +289,18 @@ class WalkerView extends Ui.DataField {
 				: battery <= 20
 					? 2
 					: 3;
-		if (batteryIcon == null || batteryState != previousBatteryState || (batteryState == 3 && previousDarkMode != darkMode)) {
+		if (batteryIconColour == null || batteryState != previousBatteryState || (batteryState == 3 && previousDarkMode != darkMode)) {
 			if (batteryState == 0) {
-				batteryIcon = Ui.loadResource(Rez.Drawables.ibf);
+				batteryIconColour = 0x00AA00 /* Gfx.COLOR_DK_GREEN */;
 				batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
 			} else if (batteryState == 1) {
-				batteryIcon = Ui.loadResource(Rez.Drawables.ibe);
+				batteryIconColour = 0xFF0000 /* Gfx.COLOR_RED */;
 				batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
 			} else if (batteryState == 2) {
-				batteryIcon = Ui.loadResource(Rez.Drawables.ibw);
+				batteryIconColour = 0xFFAA00 /* Gfx.COLOR_YELLOW */;
 				batteryTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
 			} else {
-				batteryIcon = Ui.loadResource(darkMode ? Rez.Drawables.ibd : Rez.Drawables.ib);
+				batteryIconColour = darkMode ?  0xAAAAAA /* Gfx.COLOR_LT_GRAY */ :  0x555555 /* Gfx.COLOR_DK_GRAY */;
 				batteryTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
 			}
 			previousBatteryState = batteryState;
@@ -451,10 +465,16 @@ class WalkerView extends Ui.DataField {
 			(dayCalories == null ? 0 : dayCalories).format("%d"), 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render battery
-		dc.drawBitmap(halfWidth - (batteryIcon.getWidth() / 2) + 2 + batteryX, batteryY - (batteryIcon.getHeight() / 2), batteryIcon);
+		dc.setColor(batteryIconColour, -1 /* Gfx.COLOR_TRANSPARENT */);
+		dc.fillRoundedRectangle(halfWidth - (batteryWidth / 2) + 2 + batteryX, batteryY - (batteryHeight / 2), batteryWidth - 4, batteryHeight, 2);
+		dc.fillRoundedRectangle(halfWidth - (batteryWidth / 2) + 2 + batteryX + batteryWidth - 7, batteryY - (batteryHeight / 2) + 4, 7, batteryHeight - 8, 2);
 		dc.setColor(batteryTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
 		dc.drawText(halfWidth + batteryX, batteryY - 1, batteryFont,
 			battery.format("%d") + "%", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+		
+		if (WalkerView has :view32) {
+			view32.onUpdate(self, dc);
+		}
 	}
 	
 	function formatTime(milliseconds, short) {

@@ -14,6 +14,9 @@
 (:base) var bottomRowIconY = 157;
 (:base) var batteryY = 220;
 (:base) var batteryX = 9;
+(:base) var batteryWidth = 49;
+(:base) var batteryHeight = 22;
+
 
 (:base) var timeFont = 0 /* Gfx.FONT_XTINY */;
 (:base) var topRowFont = 0 /* Gfx.FONT_XTINY */;

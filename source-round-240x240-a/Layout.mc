@@ -14,6 +14,9 @@
  * - Forerunner 645 Music
  * - Forerunner 935
  */
+ 
+var batteryWidth = 49;
+var batteryHeight = 22;
 
 var timeFont = 0 /* Gfx.FONT_XTINY */;
 var topRowFont = 0 /* Gfx.FONT_XTINY */;

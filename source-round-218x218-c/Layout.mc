@@ -6,6 +6,9 @@
  * - fenix Chronos
  */
 
+var batteryWidth = 45;
+var batteryHeight = 20;
+
 var timeFont = 0 /* Gfx.FONT_XTINY */;
 var topRowFont = 0 /* Gfx.FONT_XTINY */;
 var heartRateFont = 0 /* Gfx.FONT_XTINY */;

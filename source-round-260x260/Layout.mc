@@ -14,3 +14,5 @@ var bottomRowIconX = 25;
 var bottomRowIconY = 172;
 var batteryY = 240;
 var batteryX = 0;
+var batteryWidth = 45;
+var batteryHeight = 20;

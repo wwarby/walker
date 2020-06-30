@@ -2,8 +2,8 @@ class DataQueue {
 
 	var data;
 	
-	hidden var maxSize = 0;
-	hidden var pos = 0;
+	var maxSize = 0;
+	var pos = 0;
 
 	function initialize(arraySize) {
 		data = new[arraySize];
