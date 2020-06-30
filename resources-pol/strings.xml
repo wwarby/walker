@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Spacerowiczów</string>
-    <string id="steps">Kroki</string>
-    <string id="stepsUnits">kroki</string>
-    <string id="pace">TEMPA</string>
-    <string id="timer">CHRONO</string>
-    <string id="paceModeTitle">Tryb tempa</string>
+	<string id="appName">Spacerowiczów</string>
+	<string id="steps">Kroki</string>
+	<string id="stepsUnits">kroki</string>
+	<string id="pace">TEMPA</string>
+	<string id="speed">PRĘDKOŚĆ</string>
+	<string id="timer">CHRONO</string>
+	<string id="paceOrSpeedModeTitle">Tryb tempa/prędkości</string>
 	<string id="heartRateModeTitle">Tryb tętna</string>
 	<string id="showHeartRateZoneTitle">Wyświetl strefę tętna</string>
+	<string id="showSpeedInsteadOfPace">Pokaż prędkość zamiast tempa</string>
 	<string id="modeCurrent">Aktualny</string>
 	<string id="mode3Seconds">3 sekundy średnia</string>
 	<string id="mode5Seconds">5 sekundy średnia</string>

@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Chodec</string>
-    <string id="steps">Kroky</string>
-    <string id="stepsUnits">kroky</string>
-    <string id="pace">TEMPO</string>
-    <string id="timer">CHRONO</string>
-    <string id="paceModeTitle">Tempo režimu</string>
+	<string id="appName">Chodec</string>
+	<string id="steps">Kroky</string>
+	<string id="stepsUnits">kroky</string>
+	<string id="pace">TEMPO</string>
+	<string id="speed">RYCHLOST</string>
+	<string id="timer">CHRONO</string>
+	<string id="paceOrSpeedModeTitle">Tempo režimu</string>
 	<string id="heartRateModeTitle">Tepová frekvence režimu</string>
 	<string id="showHeartRateZoneTitle">Zobrazit zónu srdeční frekvence</string>
+	<string id="showSpeedInsteadOfPace">Zobrazit rychlost namísto tempa</string>
 	<string id="modeCurrent">Aktuální</string>
 	<string id="mode3Seconds">Průměr 3 sekund</string>
 	<string id="mode5Seconds">Průměr 5 sekund</string>

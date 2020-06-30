@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">沃克</string>
-    <string id="steps">腳步</string>
-    <string id="stepsUnits">腳步</string>
-    <string id="pace">步伐</string>
-    <string id="timer">計時器</string>
-    <string id="paceModeTitle">步速模式</string>
+	<string id="appName">沃克</string>
+	<string id="steps">腳步</string>
+	<string id="stepsUnits">腳步</string>
+	<string id="pace">步伐</string>
+	<string id="speed">速度</string>
+	<string id="timer">計時器</string>
+	<string id="paceOrSpeedModeTitle">速度/速度模式</string>
 	<string id="heartRateModeTitle">心率模式</string>
 	<string id="showHeartRateZoneTitle">顯示心率區</string>
+	<string id="showSpeedInsteadOfPace">顯示速度而不是速度</string>
 	<string id="modeCurrent">現</string>
 	<string id="mode3Seconds">平均3秒</string>
 	<string id="mode5Seconds">平均5秒</string>

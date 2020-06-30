@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Caminhante</string>
-    <string id="steps">Passos</string>
-    <string id="stepsUnits">passos</string>
-    <string id="pace">RITMO</string>
-    <string id="timer">CRONÔ</string>
-    <string id="paceModeTitle">Modo de ritmo</string>
+	<string id="appName">Caminhante</string>
+	<string id="steps">Passos</string>
+	<string id="stepsUnits">passos</string>
+	<string id="pace">RITMO</string>
+	<string id="speed">RAPIDEZ</string>
+	<string id="timer">CRONÔ</string>
+	<string id="paceOrSpeedModeTitle">Modo de ritmo/rapidez</string>
 	<string id="heartRateModeTitle">Modo de frequência cardíaca</string>
 	<string id="showHeartRateZoneTitle">Exibir zona de frequência cardíaca</string>
+	<string id="showSpeedInsteadOfPace">Mostrar rapidez em vez de ritmo</string>
 	<string id="modeCurrent">Atual</string>
 	<string id="mode3Seconds">Média de 3 segundos</string>
 	<string id="mode5Seconds">Média de 5 segundos</string>

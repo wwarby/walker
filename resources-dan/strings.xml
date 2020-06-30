@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Vandrer</string>
-    <string id="steps">Trin</string>
-    <string id="stepsUnits">trin</string>
-    <string id="pace">TEMPO</string>
-    <string id="timer">TIMER</string>
-    <string id="paceModeTitle">Tempo modus</string>
+	<string id="appName">Vandrer</string>
+	<string id="steps">Trin</string>
+	<string id="stepsUnits">trin</string>
+	<string id="pace">TEMPO</string>
+	<string id="speed">HAST.</string>
+	<string id="timer">TIMER</string>
+	<string id="paceOrSpeedModeTitle">Tempo/hastighed modus</string>
 	<string id="heartRateModeTitle">Puls modus</string>
 	<string id="showHeartRateZoneTitle">Viz pulszone</string>
+	<string id="showSpeedInsteadOfPace">Vis hastighed i stedet for tempo</string>
 	<string id="modeCurrent">Nuværende</string>
 	<string id="mode3Seconds">3 sekunders gennemsnit</string>
 	<string id="mode5Seconds">5 sekunders gennemsnit</string>

@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Camminatore</string>
-    <string id="steps">Passi</string>
-    <string id="stepsUnits">passi</string>
-    <string id="pace">PASSO</string>
-    <string id="timer">CHRONO</string>
-    <string id="paceModeTitle">Modalità passo</string>
+	<string id="appName">Camminatore</string>
+	<string id="steps">Passi</string>
+	<string id="stepsUnits">passi</string>
+	<string id="pace">PASSO</string>
+	<string id="speed">VELOCITÀ</string>
+	<string id="timer">CHRONO</string>
+	<string id="paceOrSpeedModeTitle">Modalità passo/velocità</string>
 	<string id="heartRateModeTitle">Modalità del battito cardiaco</string>
 	<string id="showHeartRateZoneTitle">Visualizza la zona di frequenza cardiaca</string>
+	<string id="showSpeedInsteadOfPace">Mostra velocità invece di andatura</string>
 	<string id="modeCurrent">Attuale</string>
 	<string id="mode3Seconds">3 secondi in media</string>
 	<string id="mode5Seconds">5 secondi in media</string>

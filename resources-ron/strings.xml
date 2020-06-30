@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Umblător</string>
-    <string id="steps">Pași</string>
-    <string id="stepsUnits">pași</string>
-    <string id="pace">RITM</string>
-    <string id="timer">CRONO</string>
-    <string id="paceModeTitle">Modul de ritm</string>
+	<string id="appName">Umblător</string>
+	<string id="steps">Pași</string>
+	<string id="stepsUnits">pași</string>
+	<string id="pace">RITM</string>
+	<string id="speed">VITEZĂ</string>
+	<string id="timer">CRONO</string>
+	<string id="paceOrSpeedModeTitle">Modul de ritm/viteză</string>
 	<string id="heartRateModeTitle">Modul de ritm cardiac</string>
 	<string id="showHeartRateZoneTitle">Afișează zona de ritm cardiac</string>
+	<string id="showSpeedInsteadOfPace">Afișați viteza în loc de ritm</string>
 	<string id="modeCurrent">Actual</string>
 	<string id="mode3Seconds">3 a doua medie</string>
 	<string id="mode5Seconds">5 a doua medie</string>

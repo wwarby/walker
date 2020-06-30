@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Marcheur</string>
-    <string id="steps">Pas</string>
-    <string id="stepsUnits">pas</string>
-    <string id="pace">RYTHME</string>
-    <string id="timer">CHRONO</string>
-    <string id="paceModeTitle">Mode rythme</string>
+  <string id="appName">Marcheur</string>
+  <string id="steps">Pas</string>
+  <string id="stepsUnits">pas</string>
+  <string id="pace">RYTHME</string>
+  <string id="speed">VITESSE</string>
+	<string id="timer">CHRONO</string>
+  <string id="paceOrSpeedModeTitle">Mode rythme/vitesse</string>
 	<string id="heartRateModeTitle">Mode rythme cardiaque</string>
 	<string id="showHeartRateZoneTitle">Afficher la zone de rythme cardiaque</string>
+	<string id="showSpeedInsteadOfPace">Montrer la vitesse au lieu du rythme</string>
 	<string id="modeCurrent">Actuel</string>
 	<string id="mode3Seconds">Moyenne de 3 secondes</string>
 	<string id="mode5Seconds">Moyenne de 5 secondes</string>

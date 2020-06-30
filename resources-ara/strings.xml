@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">ووكر</string>
-    <string id="steps">خطوات</string>
-    <string id="stepsUnits">خطوات</string>
-    <string id="pace">سرعة</string>
-    <string id="timer">عداد</string>
-    <string id="paceModeTitle">وضع السرعة</string>
+	<string id="appName">ووكر</string>
+	<string id="steps">خطوات</string>
+	<string id="stepsUnits">خطوات</string>
+	<string id="pace">سرعة</string>
+	<string id="speed">السرعة</string>
+	<string id="timer">عداد</string>
+	<string id="paceOrSpeedModeTitle">السرعة / وضع السرعة</string>
 	<string id="heartRateModeTitle">وضع معدل ضربات القلب</string>
 	<string id="showHeartRateZoneTitle">إظهار منطقة معدل ضربات القلب</string>
+	<string id="showSpeedInsteadOfPace">أظهر السرعة بدلاً من السرعة</string>
 	<string id="modeCurrent">حالي</string>
 	<string id="mode3Seconds">متوسط ​​3 ثوان</string>
 	<string id="mode5Seconds">متوسط ​​5 ثوان</string>

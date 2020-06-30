@@ -1,12 +1,14 @@
 <strings>
-    <string id="appName">Walker</string>
-    <string id="steps">Trinn</string>
-    <string id="stepsUnits">trinn</string>
-    <string id="pace">TEMPO</string>
-    <string id="timer">TIMER</string>
-    <string id="paceModeTitle">Tempo modus</string>
+	<string id="appName">Walker</string>
+	<string id="steps">Trinn</string>
+	<string id="stepsUnits">trinn</string>
+	<string id="pace">TEMPO</string>
+	<string id="speed">HAST.</string>
+	<string id="timer">TIMER</string>
+	<string id="paceOrSpeedModeTitle">Tempo/hastighet modus</string>
 	<string id="heartRateModeTitle">Puls modus</string>
 	<string id="showHeartRateZoneTitle">Vis pulssone</string>
+	<string id="showSpeedInsteadOfPace">Vis hastighet i stedet for tempo</string>
 	<string id="modeCurrent">Nuværende</string>
 	<string id="mode3Seconds">3 sekunders gjennomsnitt</string>
 	<string id="mode5Seconds">5 sekunders gjennomsnitt</string>
