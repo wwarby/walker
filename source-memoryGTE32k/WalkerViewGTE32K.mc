@@ -18,28 +18,31 @@ class WalkerViewGTE32K {
 	
 	function readSettings(mainView, deviceSettings, app) {
 		
-		var stepUnits = Ui.loadResource(Rez.Strings.stepsUnits);
-		
 		// Create FIT contributor fields
 		
-		var distanceStepUnits = Ui.loadResource(deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? Rez.Strings.stepsPerKmUnits : Rez.Strings.stepsPerMileUnits);
-		var hourStepsUnits = Ui.loadResource(Rez.Strings.stepsPerHourUnits);
+		var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
 		
-		stepsPerKmOrMileField = mainView.createField(distanceStepUnits,
+		stepsPerKmOrMileField = mainView.createField(
+			Ui.loadResource(deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? Rez.Strings.stepsPerKm : Rez.Strings.stepsPerMile),
 			deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 2 : 3,
-			4 /* Fit.DATA_TYPE_UINT16 */,
-            { :mesgType => 20 /* Fit.MESG_TYPE_RECORD */, :units => stepUnits });
+			8 /* Fit.DATA_TYPE_FLOAT */,
+            { :mesgType => 20 /* Fit.MESG_TYPE_RECORD */, :units => stepsUnits });
         
-        stepsPerHourField = mainView.createField(hourStepsUnits, 4, 4 /* Fit.DATA_TYPE_UINT16 */,
-            { :mesgType => 20 /* Fit.MESG_TYPE_RECORD */, :units => stepUnits });
+        stepsPerHourField = mainView.createField(Ui.loadResource(Rez.Strings.stepsPerHour),
+	        4,
+	        8 /* Fit.DATA_TYPE_FLOAT */,
+            { :mesgType => 20 /* Fit.MESG_TYPE_RECORD */, :units => stepsUnits });
         
-        averageStepsPerKmOrMileField = mainView.createField(distanceStepUnits,
-        	deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 5 : 6,
-        	4 /* Fit.DATA_TYPE_UINT16 */,
-            { :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => stepUnits });
+        averageStepsPerKmOrMileField = mainView.createField(
+        	Ui.loadResource(deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? Rez.Strings.averageStepsPerKm : Rez.Strings.averageStepsPerMile),
+			deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 5 : 6,
+        	8 /* Fit.DATA_TYPE_FLOAT */,
+            { :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => stepsUnits });
         
-        averageStepsPerHourField = mainView.createField(hourStepsUnits, 7, 4 /* Fit.DATA_TYPE_UINT16 */,
-        	{ :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => stepUnits });
+        averageStepsPerHourField = mainView.createField(Ui.loadResource(Rez.Strings.averageStepsPerHour),
+        	7,
+        	8 /* Fit.DATA_TYPE_FLOAT */,
+        	{ :mesgType => 18 /* Fit.MESG_TYPE_SESSION */, :units => stepsUnits });
         
         // Set initial steps FIT contributions to zero
         stepsPerKmOrMileField.setData(0);
