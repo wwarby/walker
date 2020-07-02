@@ -18,7 +18,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 
 * 30 and 60 second modes disabled on some older devices due to memory constraints
 
-Walker also contributes step data to the FIT profile for your activity, showing total steps and lap steps in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
+Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
 <img src="/supporting-files/screenshots/screenshot-1.png" height="250" alt="Screenshot 1"></img> <img src="/supporting-files/screenshots/screenshot-2.png" height="250" alt="Screenshot 2"></img> <img src="/supporting-files/screenshots/screenshot-3.png" height="250" alt="Screenshot 3"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="250" alt="Screenshot 4"></img> <img src="/supporting-files/screenshots/screenshot-5.png" height="250" alt="Screenshot 5"></img>
 
@@ -73,6 +73,12 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 0.7.0
+  - Add FIT contributions for average steps per km/mile/hour
+- 0.6.3
+  - Fix bug where incorrect heart rate zone was shown
+  - Fix bug where speed was calculated incorrectly if units were set to miles and speed display was enabled in settings
+  - Fix bug where pace units setting on watch was ignored (distance units was being used for pace)
 - 0.6.2
   - Fix bug with duplicate label in settings
 - 0.6.1

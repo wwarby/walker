@@ -4,7 +4,6 @@
 		displayInActivityLaps="false"
 		displayInActivitySummary="true"
 		sortOrder="0"
-		precision="0"
 		dataLabel="@Strings.steps"
 		unitLabel="@Strings.stepsUnits" />
 	<fitField id="1"
@@ -12,7 +11,6 @@
 		displayInActivityLaps="true"
 		displayInActivitySummary="false"
 		sortOrder="1"
-		precision="0"
 		dataLabel="@Strings.steps"
 		unitLabel="@Strings.stepsUnits" />
 </fitContributions>

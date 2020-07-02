@@ -16,9 +16,7 @@ class DataQueue {
 	}
 
 	function reset() {
-		for (var i = 0; i < data.size(); i++) {
-			data[i] = null;
-		}
+		for (var i = 0; i < data.size(); i++) { data[i] = null; }
 		pos = 0;
 	}
 	
@@ -31,10 +29,13 @@ class DataQueue {
 				size++;
 			}
 		}
-		if (sumOfData > 0) {
-			return sumOfData / size;
-		}
-		return 0.0;
+		return sumOfData > 0 ? sumOfData.toFloat() / size : 0.0;
+	}
+	
+	function oldest() { return data[pos] != null ? data[pos] : data[0]; }
+	
+	function newest() {
+		return data[pos == 0 ? maxSize - 1 : (pos - 1) % maxSize];
 	}
 	
 }

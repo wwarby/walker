@@ -10,9 +10,5 @@
   <string id="showHeartRateZoneTitle">Показать зону пульса</string>
 	<string id="showSpeedInsteadOfPace">Показать скорость вместо темпа</string>
 	<string id="modeInstant">текущий</string>
-	<string id="mode3Seconds">средний за 3 секунды</string>
 	<string id="mode5Seconds">средний за 5 секунд</string>
-	<string id="mode10Seconds">средний за 10 секунд</string>
-	<string id="mode30Seconds">средний за 30 секунды</string>
-	<string id="mode60Seconds">средний за 60 секунды</string>
 </strings>

@@ -10,9 +10,5 @@
 	<string id="showHeartRateZoneTitle">Afficher les zones du rythme cardiaque</string>
 	<string id="showSpeedInsteadOfPace">Afficher la vitesse au lieu de l'allure</string>
 	<string id="modeInstant">Instantannée</string>
-	<string id="mode3Seconds">Moyenne sur 3 secondes</string>
 	<string id="mode5Seconds">Moyenne sur 5 secondes</string>
-	<string id="mode10Seconds">Moyenne sur 10 secondes</string>
-	<string id="mode30Seconds">Moyenne sur 30 secondes</string>
-	<string id="mode60Seconds">Moyenne sur 60 secondes</string>
 </strings>
