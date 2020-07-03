@@ -193,14 +193,15 @@ class WalkerView extends Ui.DataField {
 		// Heart rate zone
 		if (showHeartRateZone) {
 			var heartRateZones = User.getHeartRateZones(User.getCurrentSport());
-			if (heartRate != null && heartRate > 0) {
+			heartRateZone = '-';
+			if (heartRate != null && heartRate > heartRateZones[0]) {
 				for (var x = 1; x < heartRateZones.size(); x++) {
 					if (heartRate <= heartRateZones[x]) {
 						heartRateZone = x;
 						break;
 					}
 					// We're apparently over the maximum for the highest heart rate zone, so just max out.
-					heartRateZone = 5;
+					heartRateZone = '+';
 				}
 			}
 		}
@@ -304,7 +305,14 @@ class WalkerView extends Ui.DataField {
 		
 		// Choose the colour of the heart rate icon based on heart rate zone
 		heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-		if (heartRateZone == 1) {
+		if (heartRateZone == '-') {
+			if (darkMode) {
+				heartRateIconColour = 0x555555 /* Gfx.COLOR_DK_GRAY */;
+			} else {
+				heartRateIconColour = 0xAAAAAA /* Gfx.COLOR_LT_GRAY */;
+				heartRateZoneTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
+			}
+		} else if (heartRateZone == 1) {
 			if (darkMode) {
 				heartRateIconColour = 0xAAAAAA /* Gfx.COLOR_LT_GRAY */;
 				heartRateZoneTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
@@ -419,7 +427,7 @@ class WalkerView extends Ui.DataField {
 			[halfWidth + (heartRateIconWidth / 2.2), heartRateIconY + (heartRateIconWidth / 1.8) - heartRateIconXOffset]
 		]);
 		
-		if (showHeartRateZone && heartRateZone != null && heartRateZone > 0) {
+		if (showHeartRateZone && heartRateZone != null) {
 			dc.setColor(heartRateZoneTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
 			dc.drawText(halfWidth, heartRateIconY + (heartRateIconWidth / 2) - 3, 0 /* Gfx.FONT_XTINY */,
 				heartRateZone.toString(), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
