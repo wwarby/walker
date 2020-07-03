@@ -1,10 +1,10 @@
 <strings>
-	<string id="averageStepsPerKm">Avg Steps / KM</string>
-	<string id="averageStepsPerMile">Avg Steps / Mile</string>
-	<string id="averageStepsPerHour">Avg Steps / Hour</string>
-	<string id="stepsPerKm">Steps / KM</string>
-	<string id="stepsPerMile">Steps / Mile</string>
-	<string id="stepsPerHour">Steps / Hour</string>
+	<string id="averageStepsPerKm">Prosječni Koraci / KM</string>
+	<string id="averageStepsPerMile">Prosječni Koraci / Milja</string>
+	<string id="averageStepsPerHour">Prosječni Koraci / Sat</string>
+	<string id="stepsPerKm">SteKoracips / KM</string>
+	<string id="stepsPerMile">Koraci / Milja</string>
+	<string id="stepsPerHour">Koraci / Sat</string>
 	<string id="mode3Seconds">Prosjek od 3 sekunde</string>
 	<string id="mode10Seconds">Prosjek od 10 sekunde</string>
 	<string id="mode30Seconds">Prosjek od 30 sekunde</string>

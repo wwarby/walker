@@ -1,10 +1,10 @@
 <strings>
-	<string id="averageStepsPerKm">Avg Steps / KM</string>
-	<string id="averageStepsPerMile">Avg Steps / Mile</string>
-	<string id="averageStepsPerHour">Avg Steps / Hour</string>
-	<string id="stepsPerKm">Steps / KM</string>
-	<string id="stepsPerMile">Steps / Mile</string>
-	<string id="stepsPerHour">Steps / Hour</string>
+	<string id="averageStepsPerKm">Средни Стъпки / Километър</string>
+	<string id="averageStepsPerMile">Средни Стъпки / Мили</string>
+	<string id="averageStepsPerHour">Средни Стъпки / Час</string>
+	<string id="stepsPerKm">Стъпки / Километър</string>
+	<string id="stepsPerMile">Стъпки / Миля</string>
+	<string id="stepsPerHour">Стъпки / Час</string>
 	<string id="mode3Seconds">3 секунди средно</string>
 	<string id="mode10Seconds">10 секунди средно</string>
 	<string id="mode30Seconds">30 секунди средно</string>

@@ -1,10 +1,10 @@
 <strings>
-	<string id="averageStepsPerKm">Avg Steps / KM</string>
-	<string id="averageStepsPerMile">Avg Steps / Mile</string>
-	<string id="averageStepsPerHour">Avg Steps / Hour</string>
-	<string id="stepsPerKm">Steps / KM</string>
-	<string id="stepsPerMile">Steps / Mile</string>
-	<string id="stepsPerHour">Steps / Hour</string>
+	<string id="averageStepsPerKm">Gennemsnitlige Trin / KM</string>
+	<string id="averageStepsPerMile">Gennemsnitlige Trin / Mil</string>
+	<string id="averageStepsPerHour">Gennemsnitlige Trin / Time</string>
+	<string id="stepsPerKm">Trin / KM</string>
+	<string id="stepsPerMile">Trin / Mil</string>
+	<string id="stepsPerHour">Trin / Time</string>
 	<string id="mode3Seconds">3 sekunders gennemsnit</string>
 	<string id="mode10Seconds">10 sekunders gennemsnit</string>
 	<string id="mode30Seconds">30 sekunders gennemsnit</string>
