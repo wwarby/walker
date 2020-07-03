@@ -1,34 +1,4 @@
 <drawables>
-	<bitmap id="ihr1" filename="heart-rate.png" dithering="none">
-		<palette disableTransparency="false">
-            <color>555555</color>
-        </palette>
-	</bitmap>
-	<bitmap id="ihr1d" filename="heart-rate.png" dithering="none">
-		<palette disableTransparency="false">
-            <color>AAAAAA</color>
-        </palette>
-	</bitmap>
-	<bitmap id="ihr2" filename="heart-rate.png" dithering="none">
-		<palette disableTransparency="false">
-            <color>00AAFF</color>
-        </palette>
-	</bitmap>
-	<bitmap id="ihr3" filename="heart-rate.png" dithering="none">
-		<palette disableTransparency="false">
-            <color>00AA00</color>
-        </palette>
-	</bitmap>
-	<bitmap id="ihr4" filename="heart-rate.png" dithering="none">
-		<palette disableTransparency="false">
-            <color>FFAA00</color>
-        </palette>
-	</bitmap>
-	<bitmap id="ihr5" filename="heart-rate.png" dithering="none">
-		<palette disableTransparency="false">
-            <color>FF0000</color>
-        </palette>
-	</bitmap>
 	<bitmap id="is" filename="steps.png" dithering="none">
 		<palette disableTransparency="false">
             <color>000000</color>

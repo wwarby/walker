@@ -15,15 +15,13 @@ class WalkerView extends Ui.DataField {
 	var is24Hour = false;
 	
 	var previousDarkMode;
-	var previousBatteryState;
-	var previousHeartRateZone;
 	
-	var heartRateIcon;
 	var stepsIcon;
 	var caloriesIcon;
 	
 	var batteryIconColour;
 	var batteryTextColour;
+	var heartRateIconColour;
 	var heartRateZoneTextColour;
 	
 	var paceOrSpeedData;
@@ -291,42 +289,37 @@ class WalkerView extends Ui.DataField {
 				: battery <= 20
 					? 2
 					: 3;
-		if (batteryIconColour == null || batteryState != previousBatteryState || (batteryState == 3 && previousDarkMode != darkMode)) {
-			if (batteryState == 0) {
-				batteryIconColour = 0x00AA00 /* Gfx.COLOR_DK_GREEN */;
-				batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-			} else if (batteryState == 1) {
-				batteryIconColour = 0xFF0000 /* Gfx.COLOR_RED */;
-				batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-			} else if (batteryState == 2) {
-				batteryIconColour = 0xFFAA00 /* Gfx.COLOR_YELLOW */;
-				batteryTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
-			} else {
-				batteryIconColour = darkMode ?  0xAAAAAA /* Gfx.COLOR_LT_GRAY */ :  0x555555 /* Gfx.COLOR_DK_GRAY */;
-				batteryTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
-			}
-			previousBatteryState = batteryState;
+		batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+		if (batteryState == 0) {
+			batteryIconColour = 0x00AA00 /* Gfx.COLOR_DK_GREEN */;
+		} else if (batteryState == 1) {
+			batteryIconColour = 0xFF0000 /* Gfx.COLOR_RED */;
+			batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+		} else if (batteryState == 2) {
+			batteryIconColour = 0xFFAA00 /* Gfx.COLOR_YELLOW */;
+		} else {
+			batteryIconColour = darkMode ?  0xAAAAAA /* Gfx.COLOR_LT_GRAY */ :  0x555555 /* Gfx.COLOR_DK_GRAY */;
+			if (darkMode) { batteryTextColour = 0x000000; }
 		}
 		
 		// Choose the colour of the heart rate icon based on heart rate zone
-		if (heartRateIcon == null || heartRateZone != previousHeartRateZone || (heartRateZone == 1 && previousDarkMode != darkMode)) {
-			if (heartRateZone == 1) {
-				heartRateIcon = Ui.loadResource(darkMode ? Rez.Drawables.ihr1d : Rez.Drawables.ihr1);
-				heartRateZoneTextColour = darkMode ? 0x000000 /* Gfx.COLOR_BLACK */ : 0xFFFFFF /* Gfx.COLOR_WHITE */;
-			} else if (heartRateZone == 2) {
-				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr2);
-				heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-			} else if (heartRateZone == 3) {
-				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr3);
-				heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
-			} else if (heartRateZone == 4) {
-				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr4);
+		heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+		if (heartRateZone == 1) {
+			if (darkMode) {
+				heartRateIconColour = 0xAAAAAA /* Gfx.COLOR_LT_GRAY */;
 				heartRateZoneTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
 			} else {
-				heartRateIcon = Ui.loadResource(Rez.Drawables.ihr5);
-				heartRateZoneTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
+				heartRateIconColour = 0x555555 /* Gfx.COLOR_DK_GRAY */;
 			}
-			previousHeartRateZone = heartRateZone;
+		} else if (heartRateZone == 2) {
+			heartRateIconColour = 0x00AAFF /* Gfx.COLOR_BLUE */;
+		} else if (heartRateZone == 3) {
+			heartRateIconColour = 0x00AA00 /* Gfx.COLOR_DK_GREEN */;
+		} else if (heartRateZone == 4) {
+			heartRateIconColour = 0xFFAA00 /* Gfx.COLOR_YELLOW */;
+			heartRateZoneTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
+		} else {
+			heartRateIconColour = 0xFF0000 /* Gfx.COLOR_RED */;
 		}
 		
 		// Max width values for layout debugging
@@ -410,19 +403,30 @@ class WalkerView extends Ui.DataField {
 		dc.drawText(halfWidth + centerOffsetX, topRowY, topRowFont,
 			formatDistance(distance, kmOrMileInMetersDistance) + distanceUnitsLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
-		// Render heart rate
+		// Render heart rate text
 		var heartRateText = (heartRate == null ? 0 : heartRate).format("%d");
 		var heartRateWidth = dc.getTextDimensions(heartRateText, heartRateFont)[0];
-		dc.drawBitmap(halfWidth - (heartRateIcon.getWidth() / 2), heartRateIconY, heartRateIcon);
 		dc.drawText(halfWidth, heartRateTextY, heartRateFont,
 			heartRateText, 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+		
+		// Render heart rate icon
+		dc.setColor(heartRateIconColour, -1 /* Gfx.COLOR_TRANSPARENT */);
+		dc.fillCircle(halfWidth - (heartRateIconWidth / 4.7), heartRateIconY + (heartRateIconWidth / 3.2), heartRateIconWidth / 3.2);
+		dc.fillCircle(halfWidth + (heartRateIconWidth / 4.7), heartRateIconY + (heartRateIconWidth / 3.2), heartRateIconWidth / 3.2);
+		dc.fillPolygon([
+			[halfWidth - (heartRateIconWidth / 2.2), heartRateIconY + (heartRateIconWidth / 1.8) - heartRateIconXOffset],
+			[halfWidth, heartRateIconY + (heartRateIconWidth * 0.95)],
+			[halfWidth + (heartRateIconWidth / 2.2), heartRateIconY + (heartRateIconWidth / 1.8) - heartRateIconXOffset]
+		]);
+		
 		if (showHeartRateZone && heartRateZone != null && heartRateZone > 0) {
 			dc.setColor(heartRateZoneTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
-			dc.drawText(halfWidth, heartRateIconY + (heartRateIcon.getHeight() / 2) - 2, 0 /* Gfx.FONT_XTINY */,
+			dc.drawText(halfWidth, heartRateIconY + (heartRateIconWidth / 2) - 3, 0 /* Gfx.FONT_XTINY */,
 				heartRateZone.toString(), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
-			// Reset text rendering colour
-			dc.setColor(darkMode ? 0xFFFFFF /* Gfx.COLOR_WHITE */ : 0x000000 /* Gfx.COLOR_BLACK */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		}
+		
+		// Reset text rendering colour
+		dc.setColor(darkMode ? 0xFFFFFF /* Gfx.COLOR_WHITE */ : 0x000000 /* Gfx.COLOR_BLACK */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		
 		// Render current pace or speed
 		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, middleRowLabelY, middleRowLabelFont,

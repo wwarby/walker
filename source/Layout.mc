@@ -7,6 +7,8 @@
 (:base) var middleRowLabelY = 90;
 (:base) var middleRowValueY = 120;
 (:base) var heartRateIconY = 85;
+(:base) var heartRateIconWidth = 28;
+(:base) var heartRateIconXOffset = 2;
 (:base) var heartRateTextY = 120;
 (:base) var bottomRowUpperTextY = 160;
 (:base) var bottomRowLowerTextY = 185;
