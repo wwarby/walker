@@ -1,14 +1,14 @@
 <strings>
-	<string id="appName">Walker BETA</string>
-	<string id="steps">Steps</string>
-	<string id="stepsUnits">steps</string>
-	<string id="pace">PACE</string>
-	<string id="speed">SPEED</string>
-	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
-	<string id="heartRateModeTitle">Heart rate mode</string>
-	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
-	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeInstant">Instant</string>
-	<string id="mode5Seconds">5 second average</string>
+	<string id="appName">Chodítko</string>
+	<string id="steps">Kroky</string>
+	<string id="stepsUnits">kroky</string>
+	<string id="pace">TEMPA</string>
+	<string id="speed">RÝCHLOSŤ</string>
+	<string id="timer">ČAS</string>
+	<string id="paceOrSpeedModeTitle">Režim tempa/rýchlosť</string>
+	<string id="heartRateModeTitle">Režim srdcovej frekvencie</string>
+	<string id="showHeartRateZoneTitle">Zobraziť zónu srdcovej frekvencie</string>
+	<string id="showSpeedInsteadOfPace">Zobraziť rýchlosť namiesto tempa</string>
+	<string id="modeInstant">Okamžitý</string>
+	<string id="mode5Seconds">Priemer 5 sekundy</string>
 </strings>
