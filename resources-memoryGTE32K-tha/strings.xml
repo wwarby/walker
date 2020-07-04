@@ -1,12 +1,12 @@
 <strings>
-	<string id="averageStepsPerKm">Avg Steps / KM</string>
-	<string id="averageStepsPerMile">Avg Steps / Mile</string>
-	<string id="averageStepsPerHour">Avg Steps / Hour</string>
-	<string id="stepsPerKm">Steps / KM</string>
-	<string id="stepsPerMile">Steps / Mile</string>
-	<string id="stepsPerHour">Steps / Hour</string>
-	<string id="mode3Seconds">3 second average</string>
-	<string id="mode10Seconds">10 second average</string>
-	<string id="mode30Seconds">30 second average</string>
-	<string id="mode60Seconds">60 second average</string>
+	<string id="averageStepsPerKm">ขั้นตอนเฉลี่ยต่อกิโลเมตร</string>
+	<string id="averageStepsPerMile">ขั้นตอนเฉลี่ยต่อไมล์</string>
+	<string id="averageStepsPerHour">ขั้นตอนเฉลี่ยต่อชั่วโมง</string>
+	<string id="stepsPerKm">ขั้นตอนต่อกิโลเมตร</string>
+	<string id="stepsPerMile">ขั้นตอนต่อไมล์</string>
+	<string id="stepsPerHour">ขั้นตอนต่อชั่วโมง</string>
+	<string id="mode3Seconds">เฉลี่ย 3 วินาที</string>
+	<string id="mode10Seconds">เฉลี่ย 10 วินาที</string>
+	<string id="mode30Seconds">เฉลี่ย 30 วินาที</string>
+	<string id="mode60Seconds">เฉลี่ย 60 วินาที</string>
 </strings>

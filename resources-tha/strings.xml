@@ -1,14 +1,14 @@
 <strings>
-	<string id="appName">Walker BETA</string>
-	<string id="steps">Steps</string>
-	<string id="stepsUnits">steps</string>
-	<string id="pace">PACE</string>
-	<string id="speed">SPEED</string>
-	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
-	<string id="heartRateModeTitle">Heart rate mode</string>
-	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
-	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeInstant">Instant</string>
-	<string id="mode5Seconds">5 second average</string>
+	<string id="appName">ที่ช่วยเดิน</string>
+	<string id="steps">ขั้นตอน</string>
+	<string id="stepsUnits">ขั้นตอน</string>
+	<string id="pace">ก้าว</string>
+	<string id="speed">ความเร็ว</string>
+	<string id="timer">เวลา</string>
+	<string id="paceOrSpeedModeTitle">โหมดความเร็ว</string>
+	<string id="heartRateModeTitle">โหมดอัตราการเต้นของหัวใจ</string>
+	<string id="showHeartRateZoneTitle">แสดงโซนอัตราการเต้นของหัวใจ</string>
+	<string id="showSpeedInsteadOfPace">แสดงความเร็วแทนการก้าว</string>
+	<string id="modeInstant">ทันที</string>
+	<string id="mode5Seconds">เฉลี่ย 5 วินาที</string>
 </strings>
