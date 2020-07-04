@@ -2,7 +2,7 @@
 	<string id="averageStepsPerKm">Prosječni Koraci / KM</string>
 	<string id="averageStepsPerMile">Prosječni Koraci / Milja</string>
 	<string id="averageStepsPerHour">Prosječni Koraci / Sat</string>
-	<string id="stepsPerKm">SteKoracips / KM</string>
+	<string id="stepsPerKm">Koraci / KM</string>
 	<string id="stepsPerMile">Koraci / Milja</string>
 	<string id="stepsPerHour">Koraci / Sat</string>
 	<string id="mode3Seconds">Prosjek od 3 sekunde</string>

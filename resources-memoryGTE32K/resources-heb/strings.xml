@@ -1,0 +1,12 @@
+<strings>
+	<string id="averageStepsPerKm">מדרגות / קילומטר ממוצע</string>
+	<string id="averageStepsPerMile">מדרגות / מייל ממוצע</string>
+	<string id="averageStepsPerHour">צעדים / שעה ממוצעים</string>
+	<string id="stepsPerKm">צעדים / קילומטר</string>
+	<string id="stepsPerMile">צעדים / מייל</string>
+	<string id="stepsPerHour">צעדים / שעה</string>
+	<string id="mode3Seconds">ממוצע של 3 שניות</string>
+	<string id="mode10Seconds">ממוצע של 10 שניות</string>
+	<string id="mode30Seconds">ממוצע של 30 שניות</string>
+	<string id="mode60Seconds">ממוצע של 60 שניות</string>
+</strings>

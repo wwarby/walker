@@ -1,0 +1,14 @@
+<strings>
+	<string id="appName">Pejalan Kaki</string>
+	<string id="steps">Langkah</string>
+	<string id="stepsUnits">langkah</string>
+	<string id="pace">LANGKAH</string>
+	<string id="speed">KECEPATAN</string>
+	<string id="timer">WAKTU</string>
+	<string id="paceOrSpeedModeTitle">Mode kecepatan / kecepatan</string>
+	<string id="heartRateModeTitle">Tampilkan zona detak jantung</string>
+	<string id="showHeartRateZoneTitle">Mutassa a pulzuszónát</string>
+	<string id="showSpeedInsteadOfPace">Tampilkan kecepatan, bukan langkah</string>
+	<string id="modeInstant">Instan</string>
+	<string id="mode5Seconds">Rata-rata 5 detik</string>
+</strings>

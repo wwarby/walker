@@ -1,0 +1,14 @@
+<strings>
+	<string id="appName">Járás</string>
+	<string id="steps">Lépések</string>
+	<string id="stepsUnits">lépések</string>
+	<string id="pace">TEMPÓ</string>
+	<string id="speed">SEBESSÉG</string>
+	<string id="timer">KRONO</string>
+	<string id="paceOrSpeedModeTitle">Ütem / sebesség mód</string>
+	<string id="heartRateModeTitle">Pulzus üzemmód</string>
+	<string id="showHeartRateZoneTitle">Mutassa a pulzuszónát</string>
+	<string id="showSpeedInsteadOfPace">A sebesség megjelenítése a tempó helyett</string>
+	<string id="modeInstant">Azonnali</string>
+	<string id="mode5Seconds">60 másodperces átlag</string>
+</strings>

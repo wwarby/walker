@@ -1,0 +1,12 @@
+<strings>
+	<string id="averageStepsPerKm">Langkah / KM rata-rata</string>
+	<string id="averageStepsPerMile">Langkah / Mil rata-rata</string>
+	<string id="averageStepsPerHour">Langkah / Jam Rata-rata</string>
+	<string id="stepsPerKm">Langkah / Mil</string>
+	<string id="stepsPerMile">Langkah / Mérföld</string>
+	<string id="stepsPerHour">Langkah / Jam</string>
+	<string id="mode3Seconds">Rata-rata 3 detik</string>
+	<string id="mode10Seconds">Rata-rata 10 detik</string>
+	<string id="mode30Seconds">Rata-rata 30 detik</string>
+	<string id="mode60Seconds">Rata-rata 60 detik</string>
+</strings>

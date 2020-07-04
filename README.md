@@ -77,6 +77,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 - French
 - German
 - Greek
+- Hebrew
 - Italian
 - Norwegian
 - Polish
@@ -104,7 +105,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
   - Smaller heart icon when HRZ is disabled
   - Show + or - if HR is outside HR zones
   - Memory optimisation
-  - Add language support for Estonian, Finnish and Greek
+  - Add language support for several more languages
 - 0.6.3
   - Fix bug where incorrect heart rate zone was shown
   - Fix bug where speed was calculated incorrectly if units were set to miles and speed display was enabled in settings
