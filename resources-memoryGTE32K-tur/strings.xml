@@ -1,12 +1,12 @@
 <strings>
-	<string id="averageStepsPerKm">Avg Steps / KM</string>
-	<string id="averageStepsPerMile">Avg Steps / Mile</string>
-	<string id="averageStepsPerHour">Avg Steps / Hour</string>
-	<string id="stepsPerKm">Steps / KM</string>
-	<string id="stepsPerMile">Steps / Mile</string>
-	<string id="stepsPerHour">Steps / Hour</string>
-	<string id="mode3Seconds">3 second average</string>
-	<string id="mode10Seconds">10 second average</string>
-	<string id="mode30Seconds">30 second average</string>
-	<string id="mode60Seconds">60 second average</string>
+	<string id="averageStepsPerKm">Ortalama Adım / KM</string>
+	<string id="averageStepsPerMile">Ortalama Adım / Mil</string>
+	<string id="averageStepsPerHour">Ortalama Adım / Saat</string>
+	<string id="stepsPerKm">Adım / KM</string>
+	<string id="stepsPerMile">Adım / Mil</string>
+	<string id="stepsPerHour">Adım / Saat</string>
+	<string id="mode3Seconds">3 saniye ortalaması</string>
+	<string id="mode10Seconds">10 saniye ortalaması</string>
+	<string id="mode30Seconds">30 saniye ortalaması</string>
+	<string id="mode60Seconds">60 saniye ortalaması</string>
 </strings>
