@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">Tunjukkan zon degupan jantung</string>
 	<string id="showSpeedInsteadOfPace">Tunjukkan kelajuan dan bukannya laju</string>
 	<string id="modeInstant">Sekejap</string>
+	<string id="mode3Seconds">Purata 3 saat</string>
 	<string id="mode5Seconds">Purata 5 saat</string>
+	<string id="mode10Seconds">Purata 10 saat</string>
+	<string id="mode30Seconds">Purata 30 saat</string>
+	<string id="mode60Seconds">Purata 60 saat</string>
+	<string id="averageStepsPerKm">Langkah Purata / KM</string>
+	<string id="averageStepsPerMile">Purata Langkah / Batu</string>
+	<string id="averageStepsPerHour">Langkah / Jam Purata</string>
+	<string id="stepsPerKm">Langkah / KM</string>
+	<string id="stepsPerMile">Langkah / Batu</string>
+	<string id="stepsPerHour">Langkah / Jam</string>
 </strings>

@@ -5,10 +5,20 @@
 	<string id="pace">TEMPA</string>
 	<string id="speed">RÝCHLOSŤ</string>
 	<string id="timer">ČAS</string>
-	<string id="paceOrSpeedModeTitle">Režim tempa/rýchlosť</string>
+	<string id="paceOrSpeedModeTitle">Režim tempa / rýchlosť</string>
 	<string id="heartRateModeTitle">Režim srdcovej frekvencie</string>
 	<string id="showHeartRateZoneTitle">Zobraziť zónu srdcovej frekvencie</string>
 	<string id="showSpeedInsteadOfPace">Zobraziť rýchlosť namiesto tempa</string>
 	<string id="modeInstant">Okamžitý</string>
+	<string id="mode3Seconds">Priemer 3 sekundy</string>
 	<string id="mode5Seconds">Priemer 5 sekundy</string>
+	<string id="mode10Seconds">Priemer 10 sekundy</string>
+	<string id="mode30Seconds">Priemer 30 sekundy</string>
+	<string id="mode60Seconds">Priemer 60 sekundy</string>
+	<string id="averageStepsPerKm">Priemerné Kroky / KM</string>
+	<string id="averageStepsPerMile">Priemerné Kroky / Míľu</string>
+	<string id="averageStepsPerHour">Priemerné Kroky / Hodinu</string>
+	<string id="stepsPerKm">Kroky / KM</string>
+	<string id="stepsPerMile">Kroky / Míľu</string>
+	<string id="stepsPerHour">Kroky / Hodinu</string>
 </strings>

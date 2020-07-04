@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">Zobraziť zónu srdcovej frekvencie</string>
 	<string id="showSpeedInsteadOfPace">Pokažite hitrost namesto tempa</string>
 	<string id="modeInstant">Takojšnji</string>
+	<string id="mode3Seconds">3 sekund povprečje</string>
 	<string id="mode5Seconds">5 sekund povprečje</string>
+	<string id="mode10Seconds">10 sekund povprečje</string>
+	<string id="mode30Seconds">30 sekund povprečje</string>
+	<string id="mode60Seconds">60 sekund povprečje</string>
+	<string id="averageStepsPerKm">Povprečni Koraki / KM</string>
+	<string id="averageStepsPerMile">Povprečni Koraki / Milja</string>
+	<string id="averageStepsPerHour">Povprečni Koraki / Uro</string>
+	<string id="stepsPerKm">Koraki / KM</string>
+	<string id="stepsPerMile">Koraki / Milja</string>
+	<string id="stepsPerHour">Koraki / Uro</string>
 </strings>

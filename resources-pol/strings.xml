@@ -5,10 +5,20 @@
 	<string id="pace">TEMPA</string>
 	<string id="speed">PRĘDKOŚĆ</string>
 	<string id="timer">CHRONO</string>
-	<string id="paceOrSpeedModeTitle">Tryb tempa/prędkości</string>
+	<string id="paceOrSpeedModeTitle">Tryb tempa / prędkości</string>
 	<string id="heartRateModeTitle">Tryb tętna</string>
 	<string id="showHeartRateZoneTitle">Wyświetl strefę tętna</string>
 	<string id="showSpeedInsteadOfPace">Pokaż prędkość zamiast tempa</string>
 	<string id="modeInstant">Aktualny</string>
+	<string id="mode3Seconds">3 sekundy średnia</string>
 	<string id="mode5Seconds">5 sekundy średnia</string>
+	<string id="mode10Seconds">10 sekundy średnia</string>
+	<string id="mode30Seconds">30 sekundy średnia</string>
+	<string id="mode60Seconds">60 sekundy średnia</string>
+	<string id="averageStepsPerKm">Średnia Liczba Kroków / KM</string>
+	<string id="averageStepsPerMile">Średnia Liczba Kroków / Mila</string>
+	<string id="averageStepsPerHour">Średnia Liczba Kroków / Godz</string>
+	<string id="stepsPerKm">Kroki / KM</string>
+	<string id="stepsPerMile">Kroki / Mila</string>
+	<string id="stepsPerHour">Kroki / Godz</string>
 </strings>

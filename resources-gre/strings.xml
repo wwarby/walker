@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">Εμφάνιση ζώνης καρδιακού ρυθμού</string>
 	<string id="showSpeedInsteadOfPace">Εμφάνιση ταχύτητας αντί ρυθμού</string>
 	<string id="modeInstant">Αμεσος</string>
+	<string id="mode3Seconds">Μέσος όρος 3 δευτερολέπτων</string>
 	<string id="mode5Seconds">Μέσος όρος 5 δευτερολέπτων</string>
+	<string id="mode10Seconds">Μέσος όρος 10 δευτερολέπτων</string>
+	<string id="mode30Seconds">Μέσος όρος 30 δευτερολέπτων</string>
+	<string id="mode60Seconds">Μέσος όρος 60 δευτερολέπτων</string>
+	<string id="averageStepsPerKm">Μέσα Βήματα / Χιλιόμετρο</string>
+	<string id="averageStepsPerMile">Μέσα Βήματα / Μίλι</string>
+	<string id="averageStepsPerHour">Μέσα Βήματα / Ωρα</string>
+	<string id="stepsPerKm">Βήματα / Χιλιόμετρο</string>
+	<string id="stepsPerMile">Βήματα / Μίλι</string>
+	<string id="stepsPerHour">Βήματα / Ωρα</string>
 </strings>

@@ -5,10 +5,20 @@
 	<string id="pace">PACE</string>
 	<string id="speed">SPEED</string>
 	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
+	<string id="paceOrSpeedModeTitle">Pace / speed mode</string>
 	<string id="heartRateModeTitle">Heart rate mode</string>
 	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
 	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
 	<string id="modeInstant">Instant</string>
+	<string id="mode3Seconds">3 second average</string>
 	<string id="mode5Seconds">5 second average</string>
+	<string id="mode10Seconds">10 second average</string>
+	<string id="mode30Seconds">30 second average</string>
+	<string id="mode60Seconds">60 second average</string>
+	<string id="averageStepsPerKm">Avg Steps / KM</string>
+	<string id="averageStepsPerMile">Avg Steps / Mile</string>
+	<string id="averageStepsPerHour">Avg Steps / Hour</string>
+	<string id="stepsPerKm">Steps per KM</string>
+	<string id="stepsPerMile">Steps per Mile</string>
+	<string id="stepsPerHour">Steps per Hour</string>
 </strings>

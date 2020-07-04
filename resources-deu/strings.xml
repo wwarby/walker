@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">Herzfrequenzzone anzeigen</string>
 	<string id="showSpeedInsteadOfPace">Zeigen sie geschwindigkeit statt tempo</string>
 	<string id="modeInstant">Aktuell</string>
+	<string id="mode3Seconds">3 sekunden durchschnitt</string>
 	<string id="mode5Seconds">5 sekunden durchschnitt</string>
+	<string id="mode10Seconds">10 sekunden durchschnitt</string>
+	<string id="mode30Seconds">30 sekunden durchschnitt</string>
+	<string id="mode60Seconds">60 sekunden durchschnitt</string>
+	<string id="averageStepsPerKm">Durchschn Schritte / KM</string>
+	<string id="averageStepsPerMile">Durchschn Schritte / Meile</string>
+	<string id="averageStepsPerHour">Durchschn Schritte / Stunde</string>
+	<string id="stepsPerKm">Schritte / KM</string>
+	<string id="stepsPerMile">Schritte / Meile</string>
+	<string id="stepsPerHour">Schritte / Stunde</string>
 </strings>

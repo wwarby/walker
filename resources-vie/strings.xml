@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">Hiển thị vùng nhịp tim</string>
 	<string id="showSpeedInsteadOfPace">Hiển thị tốc độ thay vì tốc độ</string>
 	<string id="modeInstant">Hiện hành</string>
+	<string id="mode3Seconds">Trung bình 3 giây</string>
 	<string id="mode5Seconds">Trung bình 5 giây</string>
+	<string id="mode10Seconds">Trung bình 10 giây</string>
+	<string id="mode30Seconds">Trung bình 30 giây</string>
+	<string id="mode60Seconds">Trung bình 60 giây</string>
+	<string id="averageStepsPerKm">Bước Trung Bình / KM</string>
+	<string id="averageStepsPerMile">Bước Trung Bình / Dặm</string>
+	<string id="averageStepsPerHour">Bước Trung Bình / Giờ</string>
+	<string id="stepsPerKm">Bước / KM</string>
+	<string id="stepsPerMile">Bước / Dặm</string>
+	<string id="stepsPerHour">Bước / Giờ</string>
 </strings>

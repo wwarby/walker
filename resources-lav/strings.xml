@@ -5,10 +5,20 @@
 	<string id="pace">TEMPS</string>
 	<string id="speed">ĀTRUMS</string>
 	<string id="timer">HRONO</string>
-	<string id="paceOrSpeedModeTitle">Temps/ātruma režīms</string>
+	<string id="paceOrSpeedModeTitle">Temps / ātruma režīms</string>
 	<string id="heartRateModeTitle">Sirdsdarbības režīma režīms</string>
 	<string id="showHeartRateZoneTitle">Rādīt sirdsdarbības zonu</string>
 	<string id="showSpeedInsteadOfPace">Rādīt ātrumu, nevis tempu</string>
 	<string id="modeInstant">Tūlītējs</string>
+	<string id="mode3Seconds">3 sekundes vidējais</string>
 	<string id="mode5Seconds">5 sekundes vidējais</string>
+	<string id="mode10Seconds">10 sekundes vidējais</string>
+	<string id="mode30Seconds">30 sekundes vidējais</string>
+	<string id="mode60Seconds">60 sekundes vidējais</string>
+	<string id="averageStepsPerKm">Vidējie Soļi / KM</string>
+	<string id="averageStepsPerMile">Vidējie Soļi / Jūdze</string>
+	<string id="averageStepsPerHour">Vidējie Soļi / Stunda</string>
+	<string id="stepsPerKm">Soļi / KM</string>
+	<string id="stepsPerMile">Soļi / Jūdze</string>
+	<string id="stepsPerHour">Soļi / Stunda</string>
 </strings>

@@ -5,10 +5,20 @@
 	<string id="pace">PASSO</string>
 	<string id="speed">VELOCITÀ</string>
 	<string id="timer">CHRONO</string>
-	<string id="paceOrSpeedModeTitle">Modalità passo/velocità</string>
+	<string id="paceOrSpeedModeTitle">Modalità passo / velocità</string>
 	<string id="heartRateModeTitle">Modalità del battito cardiaco</string>
 	<string id="showHeartRateZoneTitle">Visualizza la zona di frequenza cardiaca</string>
 	<string id="showSpeedInsteadOfPace">Mostra velocità invece di andatura</string>
 	<string id="modeInstant">Attuale</string>
+	<string id="mode3Seconds">3 secondi in media</string>
 	<string id="mode5Seconds">5 secondi in media</string>
+	<string id="mode10Seconds">10 secondi in media</string>
+	<string id="mode30Seconds">30 secondi in media</string>
+	<string id="mode60Seconds">60 secondi in media</string>
+	<string id="averageStepsPerKm">Passi / Chilometri Medi</string>
+	<string id="averageStepsPerMile">Passi / Miglio Medi</string>
+	<string id="averageStepsPerHour">Passi / Ora Medi</string>
+	<string id="stepsPerKm">Passi / Chilometri</string>
+	<string id="stepsPerMile">Passi / Miglio</string>
+	<string id="stepsPerHour">Passi / Ora</string>
 </strings>

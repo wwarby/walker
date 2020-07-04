@@ -63,7 +63,6 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 *Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
 
 ## Supported Languages
-- Arabic
 - Bulgarian
 - Chinese (Simplified)
 - Chinese (Traditional)
@@ -77,7 +76,6 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 - French
 - German
 - Greek
-- Hebrew
 - Hungarian
 - Indonesian
 - Italian
@@ -95,9 +93,11 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 - Slovenian
 - Spanish
 - Swedish
-- Thai
 - Turkish
 - Vietnamese
+
+### Note on unsupported languages
+Arabic, Hebrew and Thai are theoretically supported by the Garmin ConnectIQ SDK, but in practice I have found their implementations to be broken, at least in the SDK simulator. Arabic and Hebrew display garbled symbols instead of the intended text on the watch face, whilst Thai shows no text and crashes the watch when Thai text is used in a FIT contribution.
 
 Help with internationalisation would be welcomed. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. More languages may be added in future if requested.
 

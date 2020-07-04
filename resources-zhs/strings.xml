@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">显示心率区</string>
 	<string id="showSpeedInsteadOfPace">显示速度而不是速度</string>
 	<string id="modeInstant">现</string>
+	<string id="mode3Seconds">平均3秒</string>
 	<string id="mode5Seconds">平均5秒</string>
+	<string id="mode10Seconds">平均10秒</string>
+	<string id="mode30Seconds">平均30秒</string>
+	<string id="mode60Seconds">平均60秒</string>
+	<string id="averageStepsPerKm">平均步数/公里</string>
+	<string id="averageStepsPerMile">平均步数/英里</string>
+	<string id="averageStepsPerHour">平均步数/小时</string>
+	<string id="stepsPerKm">步数/公里</string>
+	<string id="stepsPerMile">步数/英里</string>
+	<string id="stepsPerHour">步数/小时</string>
 </strings>

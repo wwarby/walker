@@ -10,5 +10,15 @@
 	<string id="showHeartRateZoneTitle">Näytä sykevyöhyke</string>
 	<string id="showSpeedInsteadOfPace">Näytä nopeus tahdin sijasta</string>
 	<string id="modeInstant">Välitön</string>
+	<string id="mode3Seconds">3 sekunnin keskiarvo</string>
 	<string id="mode5Seconds">5 sekunnin keskiarvo</string>
+	<string id="mode10Seconds">10 sekunnin keskiarvo</string>
+	<string id="mode30Seconds">30 sekunnin keskiarvo</string>
+	<string id="mode60Seconds">60 sekunnin keskiarvo</string>
+	<string id="averageStepsPerKm">Keskimääräiset Samm / KM</string>
+	<string id="averageStepsPerMile">Keskimääräiset Samm / Maili</string>
+	<string id="averageStepsPerHour">Keskimääräiset Samm / Tunti</string>
+	<string id="stepsPerKm">Vaiheet / KM</string>
+	<string id="stepsPerMile">Vaiheet / Maili</string>
+	<string id="stepsPerHour">Vaiheet / Tunti</string>
 </strings>

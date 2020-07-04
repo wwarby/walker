@@ -5,10 +5,20 @@
 	<string id="pace">TEMPAS</string>
 	<string id="speed">GREIČIO</string>
 	<string id="timer">CHRONO</string>
-	<string id="paceOrSpeedModeTitle">Tempas/greičio režimas</string>
+	<string id="paceOrSpeedModeTitle">Tempas / greičio režimas</string>
 	<string id="heartRateModeTitle">Širdies ritmo režimas</string>
 	<string id="showHeartRateZoneTitle">Rodyti širdies ritmo zoną</string>
 	<string id="showSpeedInsteadOfPace">Parodykite greitį, o ne tempą</string>
 	<string id="modeInstant">Momentinis</string>
+	<string id="mode3Seconds">3 sekundžių vidurkis</string>
 	<string id="mode5Seconds">5 sekundžių vidurkis</string>
+	<string id="mode10Seconds">10 sekundžių vidurkis</string>
+	<string id="mode30Seconds">30 sekundžių vidurkis</string>
+	<string id="mode60Seconds">60 sekundžių vidurkis</string>
+	<string id="averageStepsPerKm">Vidutiniai Žingsniai / KM</string>
+	<string id="averageStepsPerMile">Vidutiniai Žingsniai / Mylios</string>
+	<string id="averageStepsPerHour">Vidutiniai Žingsniai / Val</string>
+	<string id="stepsPerKm">Žingsniai / KM</string>
+	<string id="stepsPerMile">Žingsniai / Mylios</string>
+	<string id="stepsPerHour">Žingsniai / Val</string>
 </strings>
