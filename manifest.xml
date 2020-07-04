@@ -77,15 +77,25 @@
             <iq:language>ind</iq:language>
             <iq:language>ita</iq:language>
             <iq:language>jpn</iq:language>
+            <iq:language>kor</iq:language>
+            <iq:language>lav</iq:language>
+            <iq:language>lit</iq:language>
             <iq:language>nob</iq:language>
             <iq:language>pol</iq:language>
             <iq:language>por</iq:language>
             <iq:language>ron</iq:language>
             <iq:language>rus</iq:language>
+            <iq:language>slo</iq:language>
+            <iq:language>slv</iq:language>
             <iq:language>spa</iq:language>
             <iq:language>swe</iq:language>
+            <iq:language>tha</iq:language>
+            <iq:language>tur</iq:language>
+            <iq:language>ukr</iq:language>
+            <iq:language>vie</iq:language>
             <iq:language>zhs</iq:language>
             <iq:language>zht</iq:language>
+            <iq:language>zsm</iq:language>
         </iq:languages>
         <iq:barrels/>
     </iq:application>

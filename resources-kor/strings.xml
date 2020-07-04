@@ -1,0 +1,14 @@
+<strings>
+	<string id="appName">도보 여행자</string>
+	<string id="steps">단계</string>
+	<string id="stepsUnits">단계</string>
+	<string id="pace">페이스</string>
+	<string id="speed">속도</string>
+	<string id="timer">메트로놈</string>
+	<string id="paceOrSpeedModeTitle">페이스 / 스피드 모드</string>
+	<string id="heartRateModeTitle">심박수 모드</string>
+	<string id="showHeartRateZoneTitle">심박수 구간 표시</string>
+	<string id="showSpeedInsteadOfPace">페이스 대신 속도 표시</string>
+	<string id="modeInstant">즉시</string>
+	<string id="mode5Seconds">평균 5 초</string>
+</strings>

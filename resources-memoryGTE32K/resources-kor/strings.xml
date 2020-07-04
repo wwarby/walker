@@ -1,0 +1,12 @@
+<strings>
+	<string id="averageStepsPerKm">킬로미터 당 평균 단계</string>
+	<string id="averageStepsPerMile">마일 당 평균 단계</string>
+	<string id="averageStepsPerHour">시간당 평균 단계</string>
+	<string id="stepsPerKm">킬로미터 당 단계</string>
+	<string id="stepsPerMile">마일 당 단계</string>
+	<string id="stepsPerHour">시간당 단계</string>
+	<string id="mode3Seconds">평균 3 초</string>
+	<string id="mode10Seconds">평균 10 초</string>
+	<string id="mode30Seconds">평균 30 초</string>
+	<string id="mode60Seconds">평균 60 초</string>
+</strings>
