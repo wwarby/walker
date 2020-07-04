@@ -1,14 +1,14 @@
 <strings>
-	<string id="appName">Walker BETA</string>
-	<string id="steps">Steps</string>
-	<string id="stepsUnits">steps</string>
-	<string id="pace">PACE</string>
-	<string id="speed">SPEED</string>
-	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
-	<string id="heartRateModeTitle">Heart rate mode</string>
-	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
-	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeInstant">Instant</string>
-	<string id="mode5Seconds">5 second average</string>
+	<string id="appName">Người Đi Dạo</string>
+	<string id="steps">Bước</string>
+	<string id="stepsUnits">bước</string>
+	<string id="pace">TỐC ĐỘ</string>
+	<string id="speed">VẬN TỐC</string>
+	<string id="timer">HẸN GIỜ</string>
+	<string id="paceOrSpeedModeTitle">Chế độ tốc độ / vận tốc</string>
+	<string id="heartRateModeTitle">Chế độ nhịp tim</string>
+	<string id="showHeartRateZoneTitle">Hiển thị vùng nhịp tim</string>
+	<string id="showSpeedInsteadOfPace">Hiển thị tốc độ thay vì tốc độ</string>
+	<string id="modeInstant">Hiện hành</string>
+	<string id="mode5Seconds">Trung bình 5 giây</string>
 </strings>
