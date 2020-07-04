@@ -1,0 +1,14 @@
+<strings>
+	<string id="appName">Kävelijä</string>
+	<string id="steps">Vaiheet</string>
+	<string id="stepsUnits">vaiheet</string>
+	<string id="pace">VAUHTI</string>
+	<string id="speed">NOPEUS</string>
+	<string id="timer">KRONO</string>
+	<string id="paceOrSpeedModeTitle">Vauhti / nopeus -tila</string>
+	<string id="heartRateModeTitle">Syketila</string>
+	<string id="showHeartRateZoneTitle">Näytä sykevyöhyke</string>
+	<string id="showSpeedInsteadOfPace">Näytä nopeus tahdin sijasta</string>
+	<string id="modeInstant">Välitön</string>
+	<string id="mode5Seconds">5 sekunnin keskiarvo</string>
+</strings>

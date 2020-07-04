@@ -1,0 +1,14 @@
+<strings>
+	<string id="appName">Jalutaja</string>
+	<string id="steps">Sammud</string>
+	<string id="stepsUnits">sammud</string>
+	<string id="pace">TEMPO</string>
+	<string id="speed">KIIRUS</string>
+	<string id="timer">TAIMER</string>
+	<string id="paceOrSpeedModeTitle">Tempo / kiiruse režiim</string>
+	<string id="heartRateModeTitle">Pulsisageduse modus</string>
+	<string id="showHeartRateZoneTitle">Herzfrequenzzone anzeigen</string>
+	<string id="showSpeedInsteadOfPace">Näita kiirust, mitte tempot</string>
+	<string id="modeInstant">Praegune</string>
+	<string id="mode5Seconds">5 sekundi keskmine</string>
+</strings>

@@ -1,0 +1,12 @@
+<strings>
+	<string id="averageStepsPerKm">Keskmine Samm / KM</string>
+	<string id="averageStepsPerMile">Keskmine Samm / Miil</string>
+	<string id="averageStepsPerHour">Keskmine Samm / Tund</string>
+	<string id="stepsPerKm">Samm / KM</string>
+	<string id="stepsPerMile">Samm / Miil</string>
+	<string id="stepsPerHour">Samm / Tund</string>
+	<string id="mode3Seconds">3 sekundi keskmine</string>
+	<string id="mode10Seconds">10 sekundi keskmine</string>
+	<string id="mode30Seconds">30 sekundi keskmine</string>
+	<string id="mode60Seconds">60 sekundi keskmine</string>
+</strings>
