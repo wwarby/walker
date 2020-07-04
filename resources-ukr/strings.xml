@@ -1,14 +1,14 @@
 <strings>
-	<string id="appName">Walker BETA</string>
-	<string id="steps">Steps</string>
-	<string id="stepsUnits">steps</string>
-	<string id="pace">PACE</string>
-	<string id="speed">SPEED</string>
-	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
-	<string id="heartRateModeTitle">Heart rate mode</string>
-	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
-	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeInstant">Instant</string>
-	<string id="mode5Seconds">5 second average</string>
+	<string id="appName">Ходак</string>
+	<string id="steps">Кроки</string>
+	<string id="stepsUnits">кроки</string>
+	<string id="pace">ТЕМП</string>
+	<string id="speed">ШВИДКІСТЬ</string>
+	<string id="timer">ТАЙМЕР</string>
+	<string id="paceOrSpeedModeTitle">Режим темпу / швидкості</string>
+  <string id="heartRateModeTitle">Режим серцебиття</string>
+  <string id="showHeartRateZoneTitle">Показати зону серцебиття</string>
+	<string id="showSpeedInsteadOfPace">Показати швидкість замість темпу</string>
+	<string id="modeInstant">Миттєвий</string>
+	<string id="mode5Seconds">5 секунди середнього</string>
 </strings>
