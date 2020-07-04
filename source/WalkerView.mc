@@ -63,7 +63,7 @@ class WalkerView extends Ui.DataField {
 	var stepsActivityField;
 	var stepsLapField;
 	
-	(:memory16k) var view32;
+	(:memory16K) var view32;
 	
 	function initialize() {
 	
@@ -191,6 +191,7 @@ class WalkerView extends Ui.DataField {
 				: null;
 		
 		// Heart rate zone
+		heartRateZone = null;
 		if (showHeartRateZone) {
 			var heartRateZones = User.getHeartRateZones(User.getCurrentSport());
 			heartRateZone = '-';
@@ -418,18 +419,30 @@ class WalkerView extends Ui.DataField {
 			heartRateText, 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render heart rate icon
+		var hrIconY;
+		var hrIconWidth;
+		var hrIconXOffset;
+		if (showHeartRateZone && heartRateZone != null) {
+			hrIconY = heartRateIconHRZY;
+			hrIconWidth = heartRateIconHRZWidth;
+			hrIconXOffset = heartRateIconHRZXOffset;
+		} else {
+			hrIconY = heartRateIconY;
+			hrIconWidth = heartRateIconWidth;
+			hrIconXOffset = heartRateIconXOffset;
+		}
 		dc.setColor(heartRateIconColour, -1 /* Gfx.COLOR_TRANSPARENT */);
-		dc.fillCircle(halfWidth - (heartRateIconWidth / 4.7), heartRateIconY + (heartRateIconWidth / 3.2), heartRateIconWidth / 3.2);
-		dc.fillCircle(halfWidth + (heartRateIconWidth / 4.7), heartRateIconY + (heartRateIconWidth / 3.2), heartRateIconWidth / 3.2);
+		dc.fillCircle(halfWidth - (hrIconWidth / 4.7), hrIconY + (hrIconWidth / 3.2), hrIconWidth / 3.2);
+		dc.fillCircle(halfWidth + (hrIconWidth / 4.7), hrIconY + (hrIconWidth / 3.2), hrIconWidth / 3.2);
 		dc.fillPolygon([
-			[halfWidth - (heartRateIconWidth / 2.2), heartRateIconY + (heartRateIconWidth / 1.8) - heartRateIconXOffset],
-			[halfWidth, heartRateIconY + (heartRateIconWidth * 0.95)],
-			[halfWidth + (heartRateIconWidth / 2.2), heartRateIconY + (heartRateIconWidth / 1.8) - heartRateIconXOffset]
+			[halfWidth - (hrIconWidth / 2.2), hrIconY + (hrIconWidth / 1.8) - hrIconXOffset],
+			[halfWidth, hrIconY + (hrIconWidth * 0.95)],
+			[halfWidth + (hrIconWidth / 2.2), hrIconY + (hrIconWidth / 1.8) - hrIconXOffset]
 		]);
 		
 		if (showHeartRateZone && heartRateZone != null) {
 			dc.setColor(heartRateZoneTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
-			dc.drawText(halfWidth, heartRateIconY + (heartRateIconWidth / 2) - 3, 0 /* Gfx.FONT_XTINY */,
+			dc.drawText(halfWidth, hrIconY + (hrIconWidth / 2) - 3, 0 /* Gfx.FONT_XTINY */,
 				heartRateZone.toString(), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		}
 		

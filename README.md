@@ -23,8 +23,31 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 <img src="/supporting-files/screenshots/screenshot-1.png" height="250" alt="Screenshot 1"></img> <img src="/supporting-files/screenshots/screenshot-2.png" height="250" alt="Screenshot 2"></img> <img src="/supporting-files/screenshots/screenshot-3.png" height="250" alt="Screenshot 3"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="250" alt="Screenshot 4"></img> <img src="/supporting-files/screenshots/screenshot-5.png" height="250" alt="Screenshot 5"></img>
 
 ## Installation
-1. Install from [https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74)
-2. Follow instructions [here](https://tribeccato.com/2017/01/11/adding-data-fields-from-garmin-connect-iq/) to install
+Installation and setup of data fields on Garmin watches is not as straightforward as one might hope. Once you know the procedure it us a fairly quick process, and hopefully these step-by-step instructions will make it easy to follow. These instructions are confirmed to work correctly with my own watch (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
+1. Go to [https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74) in a web browser and (after logging in with your Garmin account) press the "Download" button.
+	- You will be asked which device you want to install to.
+	- Select the device from the dropdown list and press "Confirm Device".
+2. Alternatively, search for "Walker" in the Garmin **ConnectIQ** app on your phone, select Walker by wwarby from the search results and press "Install".
+3. Sync your device using the Garmin **Connect** app
+4. Once the sync is complete, the Walker Data Field is installed on your phone, but you must also assign it to the sporting activities on which you want to use it.
+  - Typically with will be for the "Walk" activity so the instructions that follow are for the "Walk" activity, but you may also want to repeat these steps for "Hike", "Treadmill" etc. or for older watch models that don't have the "Walk" activity you might want to use the activity type "Other".
+5. Starting from the watch face, press the top right button. That should display the list of available activities.
+6. Use the bottom left button to scroll down until “Walk” is highlighted in bold
+7. Press and hold the middle left button. You should see a menu with “Walk Settings” highlighted.
+8. Press the top tight button to enter the “Walk Settings” menu. You should then be in a sub-menu with “Data Screens” highlighted.
+9. Press the top tight button to enter the “Data Screens” menu. You should now see a data screen with a pencil icon in the top right.
+10. At this point you can scroll up and down through the data screens you already have configured for Walk activities using the middle left and bottom left buttons. Scroll down to the end of the list using the bottom left button and you should see a screen with a big green + and the words “Add New”
+11. Press the top right button to add a new Data Screen. You should land in a menu with “Custom Data” highlighted.
+12. Press the top right button. You should be asked to “Choose Layout”, where you’ll be able to scroll up and down through different layouts. You want the top one, which just has “Field 1” in the middle.
+13. Press the top right button to move to choosing the field. You should land in a menu with Connect IQ Fields highlighted and 0/2 Added underneath.
+14. Press the top right button. You should land in another submenu, where you’ll be able to select the downloaded data field you want to use.
+15. Scroll down using the bottom left button until “Walker” is selected, then press the top right button to select it.
+16. You should now see the Walker data field on your screen, but it will be the last data field in the list. You probably want it to be the first so that it s7ows by default when you start a walk.
+18. Press the top right button to edit the position of the field. You should land in a menu with “Layout 1 Field” highlighted. Use the bottom left button to scroll down to “Reorder”
+19. Press the top right button. You should now land in a submenu where “Walker” is highlighted.
+20. Press the middle right button repeatedly to move Walker up to the top of the list, then press the top right button to confirm.
+21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with “Walk” selected.
+22. Press the top right button to select the “Walk” activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
 
 ## Supported Devices
 - Approach S60 / S62
@@ -75,6 +98,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 ## Changelog
 - 0.7.0
   - Add FIT contributions for average steps per km/mile/hour
+  - Smaller heart icon when HRZ is disabled
   - Show + or - if HR is outside HR zones
   - Memory optimisation
 - 0.6.3

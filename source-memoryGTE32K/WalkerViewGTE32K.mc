@@ -2,6 +2,8 @@ using Toybox.WatchUi as Ui;
 using Toybox.Application as App;
 
 class WalkerViewGTE32K {
+
+	var previousDistanceUnits;
 	
 	// FIT contributor fields
 	var stepsPerKmOrMileField;
@@ -17,6 +19,9 @@ class WalkerViewGTE32K {
 	}
 	
 	function readSettings(mainView, deviceSettings, app) {
+	
+		// Short circuit if we have already created our FIT contributor fields and the distance unit setting hasn't changed
+		if (deviceSettings.distanceUnits == previousDistanceUnits) { return; }
 		
 		// Create FIT contributor fields
 		
@@ -49,6 +54,8 @@ class WalkerViewGTE32K {
         stepsPerHourField.setData(0);
         averageStepsPerKmOrMileField.setData(0);
         averageStepsPerHourField.setData(0);
+        
+        previousDistanceUnits = deviceSettings.distanceUnits;
 	}
 	
 	function compute(mainView, info, activityMonitorInfo) {

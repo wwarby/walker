@@ -1,24 +1,26 @@
 (:base) var lines = [30, 70, 145, 203];
 (:base) var stepGoalProgressOffsetX = 3;
-(:base) var centerOffsetX = 10;
+(:base) var centerOffsetX = 8;
 (:base) var clockY = 15;
 (:base) var clockOffsetX = 0;
 (:base) var topRowY = 50;
 (:base) var middleRowLabelY = 90;
 (:base) var middleRowValueY = 120;
-(:base) var heartRateIconY = 85;
-(:base) var heartRateIconWidth = 28;
+(:base) var heartRateIconY = 87;
+(:base) var heartRateIconHRZY = 83;
+(:base) var heartRateIconWidth = 20;
+(:base) var heartRateIconHRZWidth = 28;
 (:base) var heartRateIconXOffset = 2;
-(:base) var heartRateTextY = 120;
+(:base) var heartRateIconHRZXOffset = 2;
+(:base) var heartRateTextY = 123;
 (:base) var bottomRowUpperTextY = 160;
 (:base) var bottomRowLowerTextY = 185;
-(:base) var bottomRowIconX = 25;
+(:base) var bottomRowIconX = 23;
 (:base) var bottomRowIconY = 157;
 (:base) var batteryY = 220;
-(:base) var batteryX = 9;
+(:base) var batteryX = 0;
 (:base) var batteryWidth = 49;
 (:base) var batteryHeight = 22;
-
 
 (:base) var timeFont = 0 /* Gfx.FONT_XTINY */;
 (:base) var topRowFont = 0 /* Gfx.FONT_XTINY */;
