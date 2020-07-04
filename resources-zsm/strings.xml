@@ -1,14 +1,14 @@
 <strings>
-	<string id="appName">Walker BETA</string>
-	<string id="steps">Steps</string>
-	<string id="stepsUnits">steps</string>
-	<string id="pace">PACE</string>
-	<string id="speed">SPEED</string>
-	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
-	<string id="heartRateModeTitle">Heart rate mode</string>
-	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
-	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeInstant">Instant</string>
-	<string id="mode5Seconds">5 second average</string>
+	<string id="appName">Pejalan Kaki</string>
+	<string id="steps">Langkah</string>
+	<string id="stepsUnits">langkah</string>
+	<string id="pace">LAJU</string>
+	<string id="speed">KELAJUAN</string>
+	<string id="timer">PEMASA</string>
+	<string id="paceOrSpeedModeTitle">Mod laju/kelajuan</string>
+	<string id="heartRateModeTitle">Mod degupan jantung</string>
+	<string id="showHeartRateZoneTitle">Tunjukkan zon degupan jantung</string>
+	<string id="showSpeedInsteadOfPace">Tunjukkan kelajuan dan bukannya laju</string>
+	<string id="modeInstant">Sekejap</string>
+	<string id="mode5Seconds">Purata 5 saat</string>
 </strings>
