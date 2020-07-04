@@ -1,0 +1,14 @@
+<strings>
+	<string id="appName">Πεζοπόρος</string>
+	<string id="steps">Βήματα</string>
+	<string id="stepsUnits">βήματα</string>
+	<string id="pace">Ταχύτητα</string>
+	<string id="speed">Ταχύτης</string>
+	<string id="timer">Χρόνο</string>
+	<string id="paceOrSpeedModeTitle">Λειτουργία ρυθμού / ταχύτητας</string>
+	<string id="heartRateModeTitle">Λειτουργία καρδιακού ρυθμού</string>
+	<string id="showHeartRateZoneTitle">Εμφάνιση ζώνης καρδιακού ρυθμού</string>
+	<string id="showSpeedInsteadOfPace">Εμφάνιση ταχύτητας αντί ρυθμού</string>
+	<string id="modeInstant">Αμεσος</string>
+	<string id="mode5Seconds">Μέσος όρος 5 δευτερολέπτων</string>
+</strings>
