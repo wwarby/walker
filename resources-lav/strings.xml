@@ -1,14 +1,14 @@
 <strings>
-	<string id="appName">Walker BETA</string>
-	<string id="steps">Steps</string>
-	<string id="stepsUnits">steps</string>
-	<string id="pace">PACE</string>
-	<string id="speed">SPEED</string>
-	<string id="timer">TIMER</string>
-	<string id="paceOrSpeedModeTitle">Pace/speed mode</string>
-	<string id="heartRateModeTitle">Heart rate mode</string>
-	<string id="showHeartRateZoneTitle">Show heart rate zone</string>
-	<string id="showSpeedInsteadOfPace">Show speed instead of pace</string>
-	<string id="modeInstant">Instant</string>
-	<string id="mode5Seconds">5 second average</string>
+	<string id="appName">Staigātājs</string>
+	<string id="steps">Soļi</string>
+	<string id="stepsUnits">soļi</string>
+	<string id="pace">TEMPS</string>
+	<string id="speed">ĀTRUMS</string>
+	<string id="timer">HRONO</string>
+	<string id="paceOrSpeedModeTitle">Temps/ātruma režīms</string>
+	<string id="heartRateModeTitle">Sirdsdarbības režīma režīms</string>
+	<string id="showHeartRateZoneTitle">Rādīt sirdsdarbības zonu</string>
+	<string id="showSpeedInsteadOfPace">Rādīt ātrumu, nevis tempu</string>
+	<string id="modeInstant">Tūlītējs</string>
+	<string id="mode5Seconds">5 sekundes vidējais</string>
 </strings>
