@@ -113,7 +113,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
-- 0.7.0
+- 1.0.0
   - Add FIT contributions for average steps per km/mile/hour
   - Smaller heart icon when HRZ is disabled
   - Show + or - if HR is outside HR zones
