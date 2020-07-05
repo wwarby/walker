@@ -100,7 +100,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 Arabic, Hebrew and Thai are theoretically supported by the Garmin ConnectIQ SDK, but in practice I have found their implementations to be broken, at least in the SDK simulator. Arabic and Hebrew display garbled symbols instead of the intended text on the watch face, whilst Thai shows no text and crashes the watch when Thai text is used in a FIT contribution.
 
 ### Translation help
-Help with internationalisation would be welcomed. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. More languages may be added in future if requested.
+Help with internationalisation would be appreciated. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback.
 
 ## Source
 Walker is open source (MIT license) and it's code resides on GitHub at https://github.com/wwarby/walker
