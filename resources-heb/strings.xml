@@ -1,0 +1,24 @@
+<strings>
+	<string id="appName">מְטַיֵל</string>
+	<string id="steps">צעדים</string>
+	<string id="stepsUnits">מדרגות</string>
+	<string id="pace">לִפְסוֹעַ</string>
+	<string id="speed">מְהִירוּת</string>
+	<string id="timer">שָׁעוֹן עֶצֶר</string>
+	<string id="paceOrSpeedModeTitle">מצב קצב / מהירות</string>
+	<string id="heartRateModeTitle">מצב דופק</string>
+	<string id="showHeartRateZoneTitle">הצג אזור דופק</string>
+	<string id="showSpeedInsteadOfPace">הצג מהירות במקום קצב</string>
+	<string id="modeInstant">עַכשָׁוִי</string>
+	<string id="mode3Seconds">ממוצע של 3 שניות</string>
+	<string id="mode5Seconds">ממוצע של 5 שניות</string>
+	<string id="mode10Seconds">ממוצע של 10 שניות</string>
+	<string id="mode30Seconds">ממוצע של 30 שניות</string>
+	<string id="mode60Seconds">ממוצע של 60 שניות</string>
+	<string id="averageStepsPerKm">מדרגות / קילומטר ממוצע</string>
+	<string id="averageStepsPerMile">מדרגות / מייל ממוצע</string>
+	<string id="averageStepsPerHour">צעדים / שעה ממוצעים</string>
+	<string id="stepsPerKm">צעדים / קילומטר</string>
+	<string id="stepsPerMile">צעדים / מייל</string>
+	<string id="stepsPerHour">צעדים / שעה</string>
+</strings>

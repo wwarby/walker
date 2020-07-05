@@ -63,6 +63,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 *Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
 
 ## Supported Languages
+- Arabic
 - Bulgarian
 - Chinese (Simplified)
 - Chinese (Traditional)
@@ -76,6 +77,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 - French
 - German
 - Greek
+- Hebrew
 - Hungarian
 - Indonesian
 - Italian
@@ -93,11 +95,12 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 - Slovenian
 - Spanish
 - Swedish
+- Thai
 - Turkish
 - Vietnamese
 
-### Note on unsupported languages
-Arabic, Hebrew and Thai are theoretically supported by the Garmin ConnectIQ SDK, but in practice I have found their implementations to be broken, at least in the SDK simulator. Arabic and Hebrew display garbled symbols instead of the intended text on the watch face, whilst Thai shows no text and crashes the watch when Thai text is used in a FIT contribution.
+### Note on language support in the Garmin simulator
+Arabic, Hebrew and Thai supported by the Garmin ConnectIQ SDK but are not rendered correctly in the device simulator. The simulator also seems to throw an exception when a Thai string resource is used for the units of a FIT contribution. I have tested Arabic and Hebrew on a real fenix 5x watch and it seems to work fine, but my watch doesn't support Thai. Due to these issues it is impossible for me to thoroughly test these languages on all devices.
 
 ### Translation help
 Help with internationalisation would be appreciated. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback.
@@ -113,6 +116,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 1.0.1
+  - Add Arabic, Hebrew and Thai language translations
 - 1.0.0
   - Add FIT contributions for average steps per km/mile/hour
   - Smaller heart icon when HRZ is disabled

@@ -1,0 +1,23 @@
+<strings>
+	<string id="appName">ووكر</string>
+	<string id="steps">خطوات</string>
+	<string id="stepsUnits">خطوات</string>
+	<string id="pace">سرعة</string>
+	<string id="speed">السرعة</string>
+	<string id="timer">عداد</string>
+	<string id="paceOrSpeedModeTitle">السرعة / وضع السرعة</string>
+	<string id="heartRateModeTitle">وضع معدل ضربات القلب</string>
+	<string id="showHeartRateZoneTitle">إظهار منطقة معدل ضربات القلب</string>
+	<string id="showSpeedInsteadOfPace">أظهر السرعة بدلاً من السرعة</string>
+	<string id="modeInstant">حالي</string>
+	<string id="mode3Seconds">متوسط 3 ثوان</string>
+	<string id="mode5Seconds">متوسط ​​5 ثوان</string>
+	<string id="mode10Seconds">متوسط ​​10 ثوان</string>
+	<string id="mode30Seconds">متوسط ​​30 ثوان</string>
+	<string id="mode60Seconds">متوسط ​​60 ثوان</string>	<string id="averageStepsPerKm">متوسط ​​الخطوات / كيلومتر</string>
+	<string id="averageStepsPerMile">متوسط ​​الخطوات / الميل</string>
+	<string id="averageStepsPerHour">متوسط ​​الخطوات / الساعة</string>
+	<string id="stepsPerKm">خطوات / كيلومتر</string>
+	<string id="stepsPerMile">خطوات / ميل</string>
+	<string id="stepsPerHour">خطوات / ساعة</string>
+</strings>
