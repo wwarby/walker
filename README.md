@@ -20,7 +20,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 
 Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
-<img src="/supporting-files/screenshots/screenshot-1.png" height="240" alt="Screenshot 1"></img> <img src="/supporting-files/screenshots/screenshot-2.png" height="240" alt="Screenshot 2"></img> <img src="/supporting-files/screenshots/screenshot-3.png" height="240" alt="Screenshot 3"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="240" alt="Screenshot 4"></img> <img src="/supporting-files/screenshots/screenshot-5.png" height="240" alt="Screenshot 5"></img>
+<img src="/supporting-files/screenshots/screenshot-1.png" height="350" alt="Screenshot 1"></img> <img src="/supporting-files/screenshots/screenshot-2.png" height="350" alt="Screenshot 2"></img> <img src="/supporting-files/screenshots/screenshot-3.png" height="350" alt="Screenshot 3"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4"></img> <img src="/supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5"></img>
 
 ## Installation
 Installation and setup of data fields on Garmin watches is not as straightforward as one might hope. Once you know the procedure it us a fairly quick process, and hopefully these step-by-step instructions will make it easy to follow. These instructions are confirmed to work correctly with my own watch (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
@@ -30,7 +30,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 2. Alternatively, search for "Walker" in the Garmin **ConnectIQ** app on your phone, select Walker by wwarby from the search results and press "Install".
 3. Sync your device using the Garmin **Connect** app
 4. Once the sync is complete, the Walker Data Field is installed on your phone, but you must also assign it to the sporting activities on which you want to use it.
-  - Typically with will be for the "Walk" activity so the instructions that follow are for the "Walk" activity, but you may also want to repeat these steps for "Hike", "Treadmill" etc. or for older watch models that don't have the "Walk" activity you might want to use the activity type "Other".
+	- Typically with will be for the "Walk" activity so the instructions that follow are for the "Walk" activity, but you may also want to repeat these steps for "Hike", "Treadmill" etc. or for older watch models that don't have the "Walk" activity you might want to use the activity type "Other".
 5. Starting from the watch face, press the top right button. That should display the list of available activities.
 6. Use the bottom left button to scroll down until “Walk” is highlighted in bold
 7. Press and hold the middle left button. You should see a menu with “Walk Settings” highlighted.
@@ -99,6 +99,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 ### Note on unsupported languages
 Arabic, Hebrew and Thai are theoretically supported by the Garmin ConnectIQ SDK, but in practice I have found their implementations to be broken, at least in the SDK simulator. Arabic and Hebrew display garbled symbols instead of the intended text on the watch face, whilst Thai shows no text and crashes the watch when Thai text is used in a FIT contribution.
 
+### Translation help
 Help with internationalisation would be welcomed. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. More languages may be added in future if requested.
 
 ## Source
