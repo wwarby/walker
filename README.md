@@ -5,9 +5,9 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 - Clock time
 - Average pace or speed for the current activity (controlled by settings)
 - Total distance for the current activity
-- Current pace or speed (or rolling 5/10/30/60 second average by changing settings) *
+- Current pace or speed (or rolling 3/5/10/30/60 second average by changing settings) *
 - Total time for current activity
-- Current heart rate (or rolling 5/10/30/60 second average by changing settings) *
+- Current heart rate (or rolling 3/5/10/30/60 second average by changing settings) *
 - Current heart rate zone and heart icon coloured by zone (if enabled in settings - disabled by default)
 - Steps for the current activity
 - Steps for today
@@ -16,7 +16,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 - Battery charge level with colour changing battery icon
 - Progress bar showing progress towards step goal (if step goal is set)
 
-* 30 and 60 second modes disabled on some older devices due to memory constraints
+* 3, 10, 30 and 60 second modes disabled on some older devices due to memory constraints
 
 Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
