@@ -20,7 +20,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 
 Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
-<img src="/supporting-files/screenshots/screenshot-1.png" height="350" alt="Screenshot 1"></img> <img src="/supporting-files/screenshots/screenshot-2.png" height="350" alt="Screenshot 2"></img> <img src="/supporting-files/screenshots/screenshot-3.png" height="350" alt="Screenshot 3"></img> <img src="/supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4"></img> <img src="/supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5"></img>
+<img src="supporting-files/screenshots/screenshot-1.png" height="350" alt="Screenshot 1"></img> <img src="supporting-files/screenshots/screenshot-2.png" height="350" alt="Screenshot 2"></img> <img src="supporting-files/screenshots/screenshot-3.png" height="350" alt="Screenshot 3"></img> <img src="supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4"></img> <img src="supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5"></img>
 
 ## Installation
 Installation and setup of data fields on Garmin watches is not as straightforward as one might hope. Once you know the procedure it us a fairly quick process, and hopefully these step-by-step instructions will make it easy to follow. These instructions are confirmed to work correctly with my own watch (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
@@ -40,11 +40,11 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 11. Press the top right button to add a new Data Screen. You should land in a menu with “Custom Data” highlighted.
 12. Press the top right button. You should be asked to “Choose Layout”, where you’ll be able to scroll up and down through different layouts. You want the top one, which just has “Field 1” in the middle.
 13. Press the top right button to move to choosing the field. You should land in a menu with Connect IQ Fields highlighted and 0/2 Added underneath.
-14. Press the top right button. You should land in another submenu, where you’ll be able to select the downloaded data field you want to use.
+14. Press the top right button. You should land in another sub-menu, where you’ll be able to select the downloaded data field you want to use.
 15. Scroll down using the bottom left button until “Walker” is selected, then press the top right button to select it.
-16. You should now see the Walker data field on your screen, but it will be the last data field in the list. You probably want it to be the first so that it s7ows by default when you start a walk.
+16. You should now see the Walker data field on your screen, but it will be the last data field in the list. You probably want it to be the first so that it shows by default when you start a walk.
 18. Press the top right button to edit the position of the field. You should land in a menu with “Layout 1 Field” highlighted. Use the bottom left button to scroll down to “Reorder”
-19. Press the top right button. You should now land in a submenu where “Walker” is highlighted.
+19. Press the top right button. You should now land in a sub-menu where “Walker” is highlighted.
 20. Press the middle right button repeatedly to move Walker up to the top of the list, then press the top right button to confirm.
 21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with “Walk” selected.
 22. Press the top right button to select the “Walk” activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
