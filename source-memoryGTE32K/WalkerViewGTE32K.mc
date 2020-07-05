@@ -12,6 +12,7 @@ class WalkerViewGTE32K {
 	var averageStepsPerHourField;
 	
 	var stepData;
+	var stepDataCount = 0;
 	
 	function initialize() {
 		// Fixed window of 60 seconds for determining "steps per" values for chart FIT contributions
@@ -63,6 +64,13 @@ class WalkerViewGTE32K {
 		// Add step data to the circular queue
 		if (mainView.time != null && mainView.time > 0 && info.elapsedDistance != null && info.elapsedDistance > 0 && mainView.steps != null && mainView.steps > 0) {
 			stepData.add([mainView.time, info.elapsedDistance, mainView.steps]);
+			
+			// Short circuit at this point if we have less than 30 seconds worth of data to avoid a massive spike at the beginning
+			// of the charts where the numbers are too low to make sensible averages from
+			if (stepDataCount <= 30) {
+				stepDataCount++;
+				return;
+			}
 		}
 		
 		var oldestStepData = stepData.oldest();
