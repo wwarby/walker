@@ -345,6 +345,7 @@ class WalkerView extends Ui.DataField {
 		*/
 		
 		// Realistic static values for screenshots
+		/*
 		averagePaceOrSpeed = 12.22;
 		distance = 1.92;
 		heartRate = 106;
@@ -355,7 +356,6 @@ class WalkerView extends Ui.DataField {
 		calories = 135;
 		dayCalories = 1742;
 		stepGoalProgress = 0.75;
-		/*
 		*/
 		
 		// If we've never loaded the icons before or dark mode has been toggled, load the icons
