@@ -116,6 +116,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
 ## Changelog
+- 1.0.2
+  - Fix calculation bug when speed display mode was selected
 - 1.0.1
   - Add Arabic, Hebrew and Thai language translations
 - 1.0.0

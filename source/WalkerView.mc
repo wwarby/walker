@@ -41,7 +41,7 @@ class WalkerView extends Ui.DataField {
 	var timerActive = false;
 	
 	var kmOrMileInMetersDistance;
-	var kmOrMileInMetersPace;
+	var kmOrMileInKmPace;
 	var averagePaceOrSpeedUnitsLabel;
 	var distanceUnitsLabel;
 	
@@ -128,7 +128,7 @@ class WalkerView extends Ui.DataField {
 		showSpeedInsteadOfPace = app.getProperty("s");
 		
 		kmOrMileInMetersDistance = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
-		kmOrMileInMetersPace = deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
+		kmOrMileInKmPace = deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? 1.0f : 1.60934f;
 		distanceUnitsLabel = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi";
 		averagePaceOrSpeedUnitsLabel = showSpeedInsteadOfPace ? "/hr" : "/" + (deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi");
 		
@@ -173,7 +173,7 @@ class WalkerView extends Ui.DataField {
 		var activityMonitorInfo = ActivityMonitor.getInfo();
 		
 		// Distance
-		distance = info.elapsedDistance;
+		distance = (info.elapsedDistance != null ? info.elapsedDistance : 0) / kmOrMileInMetersDistance;
 		
 		// Heart rate
 		if (heartRateData != null) {
@@ -219,17 +219,18 @@ class WalkerView extends Ui.DataField {
 			: paceOrSpeedData != null
 				? paceOrSpeedData.average()
 				: null;
-		paceOrSpeed = speed != null && speed > 0.2 // Walking at a speed of less than 1km per hour probably isn't walking
-			? (showSpeedInsteadOfPace
-				? speed
-				: kmOrMileInMetersPace / speed) * 1000.0
+		paceOrSpeed = speed != null && speed > 0.1 // Walking at a speed of less than 0.22 miles per hour probably isn't walking
+			? showSpeedInsteadOfPace
+				// Speed is in meters per second
+				? speed * kmOrMileInKmPace * 3.6
+				: (kmOrMileInKmPace / speed) * 1000000.0
 			: null;
-		averagePaceOrSpeed = info.averageSpeed != null && info.averageSpeed > 0.2 // Walking at a speed of less than 1km per hour probably isn't walking
-			? (showSpeedInsteadOfPace
-				? info.averageSpeed
-				: (kmOrMileInMetersPace / info.averageSpeed)) * 1000.0
+		averagePaceOrSpeed = info.averageSpeed != null && info.averageSpeed > 0.1 // Walking at a speed of less than 0.22 miles per hour probably isn't walking
+			? showSpeedInsteadOfPace
+				? info.averageSpeed * kmOrMileInKmPace * 3.6
+				: (kmOrMileInKmPace / info.averageSpeed) * 1000000.0
 			: null;
-		
+			
 		// Time
 		time = info.timerTime;
 		
@@ -271,10 +272,8 @@ class WalkerView extends Ui.DataField {
 	function onUpdate(dc) {
 	
 		var halfWidth = dc.getWidth() / 2;
-		var paceOrSpeedText = showSpeedInsteadOfPace
-			? formatDistance(paceOrSpeed == null ? null : paceOrSpeed, kmOrMileInMetersPace)
-			: formatTime(paceOrSpeed == null ? null : paceOrSpeed, false);
-		var timeText = formatTime(time == null ? null : time, false);
+		var paceOrSpeedText = showSpeedInsteadOfPace ? formatDistance(paceOrSpeed) : formatTime(paceOrSpeed, false);
+		var timeText = formatTime(time, false);
 		var shrinkMiddleText = paceOrSpeedText.length() > 5 || timeText.length() > 5;
 		
 		// Set colours
@@ -402,14 +401,12 @@ class WalkerView extends Ui.DataField {
 		
 		// Render average pace or speed
 		dc.drawText(halfWidth - centerOffsetX, topRowY, topRowFont,
-			showSpeedInsteadOfPace
-				? formatDistance(averagePaceOrSpeed == null ? null : averagePaceOrSpeed, kmOrMileInMetersPace) + averagePaceOrSpeedUnitsLabel
-				: formatTime(averagePaceOrSpeed == null ? null : averagePaceOrSpeed, true) + averagePaceOrSpeedUnitsLabel,
+			(showSpeedInsteadOfPace ? formatDistance(averagePaceOrSpeed) : formatTime(averagePaceOrSpeed, true)) + averagePaceOrSpeedUnitsLabel,
 			0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render distance
 		dc.drawText(halfWidth + centerOffsetX, topRowY, topRowFont,
-			formatDistance(distance, kmOrMileInMetersDistance) + distanceUnitsLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
+			formatDistance(distance) + distanceUnitsLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render heart rate text
 		var heartRateText = (heartRate == null ? 0 : heartRate).format("%d");
@@ -506,7 +503,7 @@ class WalkerView extends Ui.DataField {
 	function formatTime(milliseconds, short) {
 		if (milliseconds != null && milliseconds > 0) {
 			var hours = null;
-			var minutes = Math.floor(milliseconds / 1000 / 60).toNumber();
+			var minutes = Math.floor(milliseconds / 60000).toNumber();
 			var seconds = Math.floor(milliseconds / 1000).toNumber() % 60;
 			if (minutes >= 60) {
 				hours = minutes / 60;
@@ -524,15 +521,14 @@ class WalkerView extends Ui.DataField {
 		}
 	}
 	
-	function formatDistance(meters, kmOrMileInMeters) {
-		if (meters != null && meters > 0) {
-			var distanceKmOrMiles = meters / kmOrMileInMeters;
-			if (distanceKmOrMiles >= 1000) {
-				return distanceKmOrMiles.format("%d");
-			} else if (distanceKmOrMiles >= 100) {
-				return distanceKmOrMiles.format("%.1f");
+	function formatDistance(distance) {
+		if (distance != null && distance > 0) {
+			if (distance >= 1000) {
+				return distance.format("%d");
+			} else if (distance >= 100) {
+				return distance.format("%.1f");
 			} else {
-				return distanceKmOrMiles.format("%.2f");
+				return distance.format("%.2f");
 			}
 		} else {
 			return "0.00";

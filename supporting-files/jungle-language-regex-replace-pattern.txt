@@ -1,5 +1,0 @@
-Search:
-(.*?)\.lang\.(eng) = \$\((.*?)\.lang\.\2\);resources-memoryGTE32K\/resources-\2
-
-Replace:
-$0\r\n$1.lang.est = $($1.lang.est);resources-memoryGTE32K-est
