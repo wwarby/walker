@@ -1,0 +1,22 @@
+<drawables>
+	<bitmap id="is" filename="steps.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>000000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="isd" filename="steps.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ic" filename="calories.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>000000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="icd" filename="calories.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+	</bitmap>
+</drawables>

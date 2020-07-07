@@ -7,11 +7,11 @@
  * - Forerunner 735xt
  */
 
-var timeFont = 0 /* Gfx.FONT_XTINY */;
-var topRowFont = 0 /* Gfx.FONT_XTINY */;
-var heartRateFont = 0 /* Gfx.FONT_XTINY */;
-var middleRowLabelFont = 0 /* Gfx.FONT_XTINY */;
-var middleRowValueFontShrunk = 2 /* Gfx.FONT_SMALL */;
+var timeFont = 3 /* Gfx.FONT_MEDIUM */;
+var topRowFont = 3 /* Gfx.FONT_MEDIUM */;
+var heartRateFont = 3 /* Gfx.FONT_MEDIUM */;
+var middleRowLabelFont = 3 /* Gfx.FONT_MEDIUM */;
+var middleRowValueFontShrunk = 5 /* Gfx.FONT_NUMBER_MILD */;
 var middleRowValueFont = 5 /* Gfx.FONT_NUMBER_MILD */;
-var bottomRowFont = 0 /* Gfx.FONT_XTINY */;
-var batteryFont = 0 /* Gfx.FONT_XTINY */;
+var bottomRowFont = 3 /* Gfx.FONT_XTINY */;
+var batteryFont = 3 /* Gfx.FONT_XTINY */;
