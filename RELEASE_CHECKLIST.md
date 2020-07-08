@@ -4,6 +4,7 @@
 - appName property doesn't contain "BETA" label
 - Correct UUID assigned in manifest.xml
 - Version number updated in manifest.xml
+- New strings converted to all languages
 - Tested against fenix 5x
 - Tested against Forerunner 235
 - Code checked in
