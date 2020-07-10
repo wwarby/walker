@@ -10,7 +10,7 @@ h1 { text-transform: capitalize; }
 #main_content h1 { display: none; }
 img { box-shadow: none !important; }
 
-.language-list + ul {
+ul.language-list {
   li {
     display: inline-block;
     list-style: none;
