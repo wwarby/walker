@@ -39,7 +39,9 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 - I see you've released a new version of Walker. Why isn't it updating on my watch or showing as available in the Connect IQ app?
 	- The Garmin ConnectIQ app doesn't immediately update every user's device when a new version is released. This is probably deliberate to protect Garmin's servers from a surge in traffic when a popular app is updated. Please be patient, updates ususally trickle through in a few hours.
 - The translation to my language isn't quite right
-	- The translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. Please [get in touch](#contact) if you're willing and able to provide an accurate translation into your preferred language.
+	- The translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. Please get in touch if you're willing and able to provide an accurate translation into your preferred language.
+- Walker isn't translated to my native language. Can you add a translation?
+	- Garmin supports a fixed number of languages on each device, and as far as I'm aware they do not add new languages to existing devices retrospectively, although they do tend to expand the list of supported languages on new devices. I can only offer translations in the languages supported by Garmin for a given device. If you are sure that Garmin supports a language on your device (in other words you can change the language setting on the watch to that language) and I haven't added a translation for that language, please [get in touch](#contact). I'll do the translation using Google Translate, but if you'd like to help by providing an accurate translation into your language I can give you a template in English for conversion.
 - My watch is set to KM units but Walker is showing miles (or vice versa)
 	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
 - I have a feature suggestion
@@ -101,6 +103,9 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 
 <a name="languages"></a>
 ## Supported Languages
+
+Walker (watch face text and settings) is currently translated into the following languages, which at the time of writing is every language supported by the Garmin SDK:
+
 - Arabic
 - Bulgarian
 - Chinese (Simplified)
