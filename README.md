@@ -1,7 +1,4 @@
-<span>
-	<h1 style="vertical-align:middle;">Walker</h1>
-	<img src="supporting-files/available-connect-iq-badge.svg" style="height:40px; margin: 0 0 10px 10px; vertical-align:middle;" alt="Download" style="float:right;" />
-</span>
+<span><h1 style="vertical-align:middle;">Walker</h1><img src="supporting-files/available-connect-iq-badge.svg" height="40" style="margin:0 0 10px 10px; vertical-align:middle; float:right;" alt="Download" /></span>
 
 <span style="display:block;text-align:center;">![Walker](supporting-files/hero.png)</span>
 
