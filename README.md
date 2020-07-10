@@ -108,42 +108,43 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 
 Walker (watch face text and settings) is currently translated into the following languages, which at the time of writing is every language supported by the Garmin SDK:
 
-<a name="language-list" class="language-list"></a>
-- Arabic
-- Bulgarian
-- Chinese (Simplified)
-- Chinese (Traditional)
-- Croatian
-- Czech
-- Danish
-- Dutch
-- English
-- Estonian
-- Finnish
-- French
-- German
-- Greek
-- Hebrew
-- Hungarian
-- Indonesian
-- Italian
-- Japanese
-- Korean
-- Latvian
-- Lithuanian
-- Malay
-- Norwegian
-- Polish
-- Portuguese
-- Romanian
-- Russian
-- Slovak
-- Slovenian
-- Spanish
-- Swedish
-- Thai
-- Turkish
-- Vietnamese
+<ul class="language-list">
+  <li>Arabic</li>
+  <li>Bulgarian</li>
+  <li>Chinese (Simplified)</li>
+  <li>Chinese (Traditional)</li>
+  <li>Croatian</li>
+  <li>Czech</li>
+  <li>Danish</li>
+  <li>Dutch</li>
+  <li>English</li></li>
+  <li>Estonian</li>
+  <li>Finnish</li>
+  <li>French</li>
+  <li>German</li>
+  <li>Greek</li>
+  <li>Hebrew</li>
+  <li>Hungarian</li>
+  <li>Indonesian</li>
+  <li>Italian</li>
+  <li>Japanese</li>
+  <li>Korean</li>
+  <li>Latvian</li>
+  <li>Lithuanian</li>
+  <li>Malay</li>
+  <li>Norwegian</li>
+  <li>Polish</li>
+  <li>Portuguese</li>
+  <li>Romanian</li>
+  <li>Russian</li>
+  <li>Slovak</li>
+  <li>Slovenian</li>
+  <li>Spanish</li>
+  <li>Swedish</li>
+  <li>Thai</li>
+  <li>Turkish</li>
+  <li>Vietnamese</li>
+</ul>
 
 ### Note on language support in the Garmin simulator
 Arabic, Hebrew and Thai supported by the Garmin ConnectIQ SDK but are not rendered correctly in the device simulator. The simulator also seems to throw an exception when a Thai string resource is used for the units of a FIT contribution. I have tested Arabic and Hebrew on a real fenix 5x watch and it seems to work fine, but my watch doesn't support Thai. Due to these issues it is impossible for me to thoroughly test these languages on all devices.
