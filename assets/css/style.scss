@@ -3,6 +3,8 @@
 
 @import "{{ site.theme }}";
 
+.inner { max-width: 960px; }
+
 h1 { text-transform: capitalize; }
 #main_content h1 { display: none; }
 img { box-shadow: none !important; }
