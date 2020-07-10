@@ -30,6 +30,26 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	![Screenshot 5](supporting-files/screenshots/screenshot-5.png)
 </div>
 
+<a name="faq"></a>
+## FAQ
+- How do I install Walker on my Watch?
+	- See [Installation Guide](#installation)
+- I read the installation guide and on this page and I still can't figure out how to install it. Can you help?
+	- If you think there is a mistake in the installation guide, please feel free to [get in touch](#contact). However, please be aware that I have no affiliation with Garmin and cannot provide technical support on their behalf, nor do I have knowledge of how every model of Garmin watch works or the free time to answer general technical support questions about how to use Garmin watches. If you are having difficulty installing apps on your watch, please get in touch with Garmin technical support. 
+- I see you've released a new version of Walker. Why isn't it updating on my watch or showing as available in the Connect IQ app?
+	- The Garmin ConnectIQ app doesn't immediately update every user's device when a new version is released. This is probably deliberate to protect Garmin's servers from a surge in traffic when a popular app is updated. Please be patient, updates ususally trickle through in a few hours.
+- The translation to my language isn't quite right
+	- The translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. Please [get in touch](#contact) if you're willing and able to provide an accurate translation into your preferred language.
+- My watch is set to KM units but Walker is showing miles (or vice versa)
+	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
+- I have a feature suggestion
+	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc. 
+- My watch isn't supported. Can you add support for it please?
+	- Please first [check the supported devices list](#devices). If your watch is listed there, it *is* supported. A common reason why you might not be able to install Walker on your watch is that the firmware on your watch is out of date. In this case, update the firmware on your watch first and if you don't know how to do that, get in touch with Garmin technical support. If your watch is a newer model it is likely I just haven't gotten around to supporting it yet. Please [get in touch](#contact) and give me a nudge to add support.
+- I think I've found a bug
+	- It's possible. Please check that the issue you've found isn't covered in the above list. If it's not, please [get in touch](#contact).
+
+<a name="installation"></a>
 ## Installation
 Installation and setup of data fields on Garmin watches is not as straightforward as one might hope. Once you know the procedure it us a fairly quick process, and hopefully these step-by-step instructions will make it easy to follow. These instructions are confirmed to work correctly with my own watch (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
 1. Go to [https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74) in a web browser and (after logging in with your Garmin account) press the "Download" button.
@@ -57,6 +77,10 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with “Walk” selected.
 22. Press the top right button to select the “Walk” activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
 
+<a name="contact"></a>
+## Get In Touch
+
+<a name="devices"></a>
 ## Supported Devices
 - Approach S60 / S62
 - Captain Marvel / Darth Vader / First Avenger / Rey
@@ -70,6 +94,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 
 *Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
 
+<a name="languages"></a>
 ## Supported Languages
 - Arabic
 - Bulgarian
@@ -116,6 +141,7 @@ Help with internationalisation would be appreciated. Current translations are ba
 ## Source
 Walker is open source (MIT license) and it's code resides on GitHub at https://github.com/wwarby/walker
 
+<a name="credits"></a>
 ## Credits
 Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/RunnersField) and [steps2fit by rgergely](https://github.com/rgergely/steps2fit). Thanks for open sourcing your projects.
 
@@ -123,6 +149,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - Icons by [Freepic](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com)
 - Flame icon by [Those Icons](https://www.flaticon.com/authors/those-icons) from [www.flaticon.com](https://www.flaticon.com/free-icon/fire_483675)
 
+<a name="changelog"></a>
 ## Changelog
 - 1.0.5
   - Removed "BETA" from the app name
