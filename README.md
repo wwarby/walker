@@ -161,53 +161,55 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.0.6
+	- Add "English" as a language in addition to it being the "Default" language
 - 1.0.5
-  - Removed "BETA" from the app name
+	- Removed "BETA" from the app name
 - 1.0.4
-  - Fixed where I accidentally left screenshot hard-coded values in the build
+	- Fixed where I accidentally left screenshot hard-coded values in the build
 - 1.0.3
-  - Increase font sizes for Forerunner 230, 235, 630 and 735XT
+	- Increase font sizes for Forerunner 230, 235, 630 and 735XT
 - 1.0.2
-  - Fix calculation bug when speed display mode was selected
+	- Fix calculation bug when speed display mode was selected
 - 1.0.1
-  - Add Arabic, Hebrew and Thai language translations
+	- Add Arabic, Hebrew and Thai language translations
 - 1.0.0
-  - Add FIT contributions for average steps per km/mile/hour
-  - Smaller heart icon when HRZ is disabled
-  - Show + or - if HR is outside HR zones
-  - Memory optimisation
-  - Add language support for all remaining languages supported by Garmin
+	- Add FIT contributions for average steps per km/mile/hour
+	- Smaller heart icon when HRZ is disabled
+	- Show + or - if HR is outside HR zones
+	- Memory optimisation
+	- Add language support for all remaining languages supported by Garmin
 - 0.6.3
-  - Fix bug where incorrect heart rate zone was shown
+	- Fix bug where incorrect heart rate zone was shown
   - Fix bug where speed was calculated incorrectly if units were set to miles and speed display was enabled in settings
-  - Fix bug where pace units setting on watch was ignored (distance units was being used for pace)
+	- Fix bug where pace units setting on watch was ignored (distance units was being used for pace)
 - 0.6.2
-  - Fix bug with duplicate label in settings
+	- Fix bug with duplicate label in settings
 - 0.6.1
-  - Accurate French and Russian translations
+	- Accurate French and Russian translations
 - 0.6.0
-  - Fix missing settings
-  - Add setting to show speed instead of pace
-  - Added support for several new languages
+	- Fix missing settings
+	- Add setting to show speed instead of pace
+	- Added support for several new languages
 - 0.5.0
-  - Use larger fonts where possible on all devices
-  - Make daily steps and calories text darker on white backgrounds
-  - Add support for new watch models
+	- Use larger fonts where possible on all devices
+	- Make daily steps and calories text darker on white backgrounds
+	- Add support for new watch models
 - 0.4.1
-  - Fix battery icon position bug on 240x240px screens
+	- Fix battery icon position bug on 240x240px screens
 - 0.4.0
-  - Add heart rate zone (configured by setting, disabled by default) to heart icon
-  - Colour heart icon by heart rate zone
+	- Add heart rate zone (configured by setting, disabled by default) to heart icon
+	- Colour heart icon by heart rate zone
 - 0.3.0
-  - Add FIT contribution for steps
-  - Support for "resume later" on activities
-  - Localised language support for several European languages
-  - Fix bug that would reset activity steps on activity "stop" (as opposed to "reset")
-  - Memory usage optimisation
+	- Add FIT contribution for steps
+	- Support for "resume later" on activities
+	- Localised language support for several European languages
+	- Fix bug that would reset activity steps on activity "stop" (as opposed to "reset")
+	- Memory usage optimisation
 - 0.2.0
-  - Add step goal progress bar
-  - Hopefully support stable transition across midnight boundary for step counter
-  - Optimised images for compression efficiency
-  - Screenshots for Garmin Store
+	- Add step goal progress bar
+	- Hopefully support stable transition across midnight boundary for step counter
+	- Optimised images for compression efficiency
+	- Screenshots for Garmin Store
 - 0.1.0
-  - Initial alpha release
+	- Initial alpha release
