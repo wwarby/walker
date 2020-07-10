@@ -3,5 +3,6 @@
 
 @import "{{ site.theme }}";
 
-h1 { text-transform: capitalize; display: none; }
-h1:first-child { display: block; }
+h1 { text-transform: capitalize; }
+#main_content h1 { display: none; }
+img { box-shadow: none !important; }
