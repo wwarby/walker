@@ -1,6 +1,6 @@
 # Walker
 
-<span class="hero" style="display:block;text-align:center;">![Walker](supporting-files/hero.png)</span>
+![Walker](supporting-files/hero.png)
 
 <a href="https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74" target="_blank"><img src="supporting-files/available-connect-iq-badge.svg" height="60" alt="Download" /></a>
 
