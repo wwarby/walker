@@ -1,6 +1,6 @@
 # Walker
 
-<img src="supporting-files/screenshots/hero.png" alt="Walker" />
+<span style="display:block;text-align:center;">![Walker](supporting-files/screenshots/hero.png)</span>
 
 A free data field for Garmin watches to provide stats for walking activities. Built to provide more data in a more compact format than is typically available on data fields designed for runners (where too much information becomes impossible to digest at speed). Focused on data relevant to casual walking scenarios where step count, distance, pace and calorie burn are the predominant concerns rather than hiking where bearing, ascent and altitude etc. are more relevant. Currently displays:
 
@@ -22,12 +22,12 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 
 Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
-<div style="text-align: center;">
-	<img src="supporting-files/screenshots/screenshot-1.png" height="350" alt="Screenshot 1" />
-	<img src="supporting-files/screenshots/screenshot-2.png" height="350" alt="Screenshot 2" />
-	<img src="supporting-files/screenshots/screenshot-3.png" height="350" alt="Screenshot 3" />
-	<img src="supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4" />
-	<img src="supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5" />
+<span style="display:block;text-align:center;">
+	![Screenshot 1](supporting-files/screenshots/screenshot-1.png)
+	![Screenshot 2](supporting-files/screenshots/screenshot-2.png)
+	![Screenshot 3](supporting-files/screenshots/screenshot-3.png)
+	![Screenshot 4](supporting-files/screenshots/screenshot-4.png)
+	![Screenshot 5](supporting-files/screenshots/screenshot-5.png)
 </div>
 
 ## Installation
