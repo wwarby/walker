@@ -34,27 +34,27 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 
 <a name="faq"></a>
 ## FAQ
-- How do I install Walker on my Watch?
+- **How do I install Walker on my Watch?**
 	- See [Installation Guide](#installation)
-- I read the installation guide and on this page and I still can't figure out how to install it. Can you help?
+- **I read the installation guide and on this page and I still can't figure out how to install it. Can you help?**
 	- If you think there is a mistake in the installation guide, please feel free to [get in touch](#contact). However, please be aware that I have no affiliation with Garmin and cannot provide technical support on their behalf, nor do I have knowledge of how every model of Garmin watch works or the free time to answer general technical support questions about how to use Garmin watches. If you are having difficulty installing apps on your watch, please get in touch with Garmin technical support. 
-- I see you've released a new version of Walker. Why isn't it updating on my watch or showing as available in the Connect IQ app?
+- **Why isn't the latest version updating on my watch or showing as available in the Connect IQ app?**
 	- The Garmin ConnectIQ app doesn't immediately update every user's device when a new version is released. This is probably deliberate to protect Garmin's servers from a surge in traffic when a popular app is updated. Please be patient, updates ususally trickle through in a few hours.
-- The translation to my language isn't quite right
+- **The translation to my language isn't quite right**
 	- The translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. Please get in touch if you're willing and able to provide an accurate translation into your preferred language.
-- Walker isn't translated to my native language. Can you add a translation?
+- **Walker isn't translated to my native language**
 	- Garmin supports a fixed number of languages on each device, and as far as I'm aware they do not add new languages to existing devices retrospectively, although they do tend to expand the list of supported languages on new devices. I can only offer translations in the languages supported by Garmin for a given device. If you are sure that Garmin supports a language on your device (in other words you can change the language setting on the watch to that language) and I haven't added a translation for that language, please [get in touch](#contact). I'll do the translation using Google Translate, but if you'd like to help by providing an accurate translation into your language I can give you a template in English for conversion.
-- My watch is set to KM units but Walker is showing miles (or vice versa)
+- **My watch is set to KM units but Walker is showing miles (or vice versa)**
 	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
-- I have a feature suggestion
+- **I have a feature suggestion**
 	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc. 
-- My watch isn't supported. Can you add support for it please?
+- **My watch isn't supported**
 	- Please first [check the supported devices list](#devices). If your watch is listed there, it *is* supported. A common reason why you might not be able to install Walker on your watch is that the firmware on your watch is out of date. In this case, update the firmware on your watch first and if you don't know how to do that, get in touch with Garmin technical support. If your watch is a newer model it is likely I just haven't gotten around to supporting it yet. Please [get in touch](#contact) and give me a nudge to add support.
-- I think I've found a bug
+- **I think I've found a bug**
 	- It's possible. Please check that the issue you've found isn't covered in the above list. If it's not, please [get in touch](#contact).
-- Can I contribute to the source code of Walker?
+- **Can I contribute to the source code of Walker?**
 	- Depends what you want to contribute. I'm not opposed in principle to collaboration but the changes would have to be aligned with my intentions for the design and purpose of Walker (i.e. not a feature I don't want the app to have). It would also have to not break support for older devices currently supported (most notably it would have to keep memory usage below 16KB on older devices). I'd suggest [getting in touch](#contact) if this is something you're interested in.
-- Can I make a forked version of Walker and upload it to the ConnectIQ store?
+- **Can I make a forked version of Walker and upload it to the ConnectIQ store?**
 	- Yes. Walker is open source and I support the pricnciples of open source software development. The only thing I'd ask is that you don't brand your work as a new and improved version of mine by calling it *Walker 2* or *Walker Pro* or something.
 
 <a name="installation"></a>
