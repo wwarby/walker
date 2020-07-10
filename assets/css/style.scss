@@ -3,4 +3,5 @@
 
 @import "{{ site.theme }}";
 
-h1 { color: red !important; }
+h1 { text-transform: capitalize; display: none; }
+h1:first-child { display: block; }
