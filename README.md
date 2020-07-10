@@ -35,7 +35,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 <a name="faq"></a>
 ## FAQ
 - **How do I install Walker on my Watch?**
-	- See [Installation Guide](#installation)
+	- See the [installation guide](#installation)
 - **I read the installation guide and on this page and I still can't figure out how to install it. Can you help?**
 	- If you think there is a mistake in the installation guide, please feel free to [get in touch](#contact). However, please be aware that I have no affiliation with Garmin and cannot provide technical support on their behalf, nor do I have knowledge of how every model of Garmin watch works or the free time to answer general technical support questions about how to use Garmin watches. If you are having difficulty installing apps on your watch, please get in touch with Garmin technical support. 
 - **Why isn't the latest version updating on my watch or showing as available in the Connect IQ app?**
