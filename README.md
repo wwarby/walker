@@ -28,7 +28,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	<img src="supporting-files/screenshots/screenshot-3.png" height="350" alt="Screenshot 3" />
 	<img src="supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4" />
 	<img src="supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5" />
-</div>
+</span>
 
 <a name="faq"></a>
 ## FAQ
