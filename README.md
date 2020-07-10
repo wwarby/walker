@@ -79,6 +79,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 
 <a name="contact"></a>
 ## Get In Touch
+Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74/contactdeveloper) to get in touch with me directly through the ConnectIQ store
 
 <a name="devices"></a>
 ## Supported Devices
