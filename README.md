@@ -108,6 +108,7 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 
 Walker (watch face text and settings) is currently translated into the following languages, which at the time of writing is every language supported by the Garmin SDK:
 
+<a name="language-list" class="language-list"></a>
 - Arabic
 - Bulgarian
 - Chinese (Simplified)
