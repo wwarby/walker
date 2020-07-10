@@ -25,11 +25,11 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
 <span class="screenshots" style="display:block;text-align:center;background:#fff;padding: 1rem;">
-	<img src="supporting-files/screenshots/screenshot-1.png" style="max-height:350px;" alt="Screenshot 1" />
-	<img src="supporting-files/screenshots/screenshot-2.png" style="max-height:350px;" alt="Screenshot 2" />
-	<img src="supporting-files/screenshots/screenshot-3.png" style="max-height:350px;" alt="Screenshot 3" />
-	<img src="supporting-files/screenshots/screenshot-4.png" style="max-height:350px;" alt="Screenshot 4" />
-	<img src="supporting-files/screenshots/screenshot-5.png" style="max-height:350px;" alt="Screenshot 5" />
+	<img src="supporting-files/screenshots/screenshot-1.png" height="350" alt="Screenshot 1" />
+	<img src="supporting-files/screenshots/screenshot-2.png" height="350" alt="Screenshot 2" />
+	<img src="supporting-files/screenshots/screenshot-3.png" height="350" alt="Screenshot 3" />
+	<img src="supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4" />
+	<img src="supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5" />
 </span>
 
 <a name="faq"></a>
