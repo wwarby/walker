@@ -5,6 +5,7 @@
 <a name="download"></a>
 <a href="https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74" target="_blank" class="download"><img src="supporting-files/available-connect-iq-badge.svg" height="60" alt="Download" /></a>
 
+## Table of Contents
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](#faq)
@@ -117,7 +118,7 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 - Venu
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S
 
-*Note: Only tested in on a real fenix 5X in the field, all other watches tested only in the SDK device simulator.*
+*Note: Only tested in on a real fenix 5X and Forerunner 235 in the field, all other watches tested only in the SDK device simulator.*
 
 <a name="languages"></a>
 ## Supported Languages
