@@ -68,11 +68,11 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 - **My watch isn't supported**
 	- Please first [check the supported devices list](#devices). If your watch is listed there, it *is* supported. A common reason why you might not be able to install Walker on your watch is that the firmware on your watch is out of date. In this case, update the firmware on your watch first and if you don't know how to do that, get in touch with Garmin technical support. If your watch is a newer model it is likely I just haven't gotten around to supporting it yet. Please [get in touch](#contact) and give me a nudge to add support.
 - **I think I've found a bug**
-	- It's possible. Please check that the issue you've found isn't covered in the above list. If it's not, please [get in touch](#contact).
-- **Can I contribute to the source code of Walker?**
-	- Depends what you want to contribute. I'm not opposed in principle to collaboration but the changes would have to be aligned with my intentions for the design and purpose of Walker (i.e. not a feature I don't want the app to have). It would also have to not break support for older devices currently supported (most notably it would have to keep memory usage below 16KB on older devices). I'd suggest [getting in touch](#contact) if this is something you're interested in.
+	- It's possible. Please check that the issue you've found isn't covered in this FAQ, and make sure you are running the latest version of Walker. It's impossible to tell from looking at the watch itself if you're running the latest version, so you'll need to use the Connect IQ app on your phone, make sure there are no updates showing as available, and sync your device to your phone. If you're confident the issue you're experiencing is not covered in this not covered in this FAQ and you're running the latest version of Walker, please [get in touch](#contact).
+- **Can I contribute to the project?**
+	- It depends what you want to contribute. I'm not opposed in principle to collaboration but the changes would have to be aligned with my intentions for the design and purpose of Walker (i.e. not a feature I don't want the app to have). It would also have to not break support for older devices currently supported (most notably it would have to keep memory usage below 16KB on older devices). I'd suggest [getting in touch](#contact) if this is something you're interested in.
 - **Can I make a forked version of Walker and upload it to the ConnectIQ store?**
-	- Yes. Walker is open source and I support the pricnciples of open source software development. The only thing I'd ask is that you don't brand your work as a new and improved version of mine by calling it *Walker 2* or *Walker Pro* or something.
+	- Yes. Walker is open source and I support the pricnciples of open source software development. The only thing I'd ask is that you keep your project open source and don't brand your work as a new and improved version of mine by calling it *Walker 2* or *Walker Pro* or something.
 
 <a name="installation"></a>
 ## Installation
