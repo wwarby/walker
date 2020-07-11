@@ -77,7 +77,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 <a name="installation"></a>
 ## Installation
 Installation and setup of data fields on Garmin watches is not as straightforward as one might hope. Once you know the procedure it us a fairly quick process, and hopefully these step-by-step instructions will make it easy to follow. These instructions are confirmed to work correctly with my own watch (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
-1. Go to [https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74) in a web browser and (after logging in with your Garmin account) press the "Download" button.
+1. Go to the [download page](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74) in the Connect IQ store in a web browser and (after logging in with your Garmin account) press the "Download" button.
 	- You will be asked which device you want to install to.
 	- Select the device from the dropdown list and press "Confirm Device".
 2. Alternatively, search for "Walker" in the Garmin **ConnectIQ** app on your phone, select Walker by wwarby from the search results and press "Install".
