@@ -2,8 +2,22 @@
 
 ![Walker](supporting-files/hero.png)
 
-<a href="https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74" target="_blank" class="downlooad"><img src="supporting-files/available-connect-iq-badge.svg" height="60" alt="Download" /></a>
+<a name="download"></a>
+<a href="https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74" target="_blank" class="download"><img src="supporting-files/available-connect-iq-badge.svg" height="60" alt="Download" /></a>
 
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [FAQ](#faq)
+- [Installation](#installation)
+- [Contact](#contact)
+- [Supported Devices](#devices)
+- [Supported Languages](#languages)
+- [Source](#source)
+- [Credits](#credits)
+- [Changelog](#changelog)
+
+<a name="heatures"></a>
+## Features
 A free data field for Garmin watches to provide stats for walking activities. Built to provide more data in a more compact format than is typically available on data fields designed for runners (where too much information becomes impossible to digest at speed). Focused on data relevant to casual walking scenarios where step count, distance, pace and calorie burn are the predominant concerns rather than hiking where bearing, ascent and altitude etc. are more relevant. Currently displays:
 
 - Clock time
@@ -20,10 +34,12 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 - Battery charge level with colour changing battery icon
 - Progress bar showing progress towards step goal (if step goal is set)
 
-* 3, 10, 30 and 60 second modes disabled on some older devices due to memory constraints
+*Note: 3, 10, 30 and 60 second modes disabled on some older devices due to memory constraints*
 
 Walker also contributes step data to the FIT profile for your activity, showing total steps, lap steps and average steps per km/mile/hour in the activity summary in Garmin Connect. It is aware of and supports device settings for distance units (KM or miles), background colours (black or white), and 12/24 hour clock mode. Feature suggestions are welcome and will be considered.
 
+<a name="screenshots"></a>
+## Screenshots
 <span class="screenshots" style="display:block;text-align:center;background:#fff;padding: 1rem;">
 	<img src="supporting-files/screenshots/screenshot-1.png" height="350" alt="Screenshot 1" />
 	<img src="supporting-files/screenshots/screenshot-2.png" height="350" alt="Screenshot 2" />
@@ -86,7 +102,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 22. Press the top right button to select the “Walk” activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
 
 <a name="contact"></a>
-## Get In Touch
+## Contact
 Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74/contactdeveloper) to get in touch with me directly through the ConnectIQ store
 
 <a name="devices"></a>
