@@ -294,12 +294,12 @@ class WalkerView extends Ui.DataField {
 			batteryIconColour = 0x00AA00 /* Gfx.COLOR_DK_GREEN */;
 		} else if (batteryState == 1) {
 			batteryIconColour = 0xFF0000 /* Gfx.COLOR_RED */;
-			batteryTextColour = 0xFFFFFF /* Gfx.COLOR_WHITE */;
 		} else if (batteryState == 2) {
 			batteryIconColour = 0xFFAA00 /* Gfx.COLOR_YELLOW */;
+			batteryTextColour = 0x000000 /* Gfx.COLOR_BLACK */;
 		} else {
 			batteryIconColour = darkMode ?  0xAAAAAA /* Gfx.COLOR_LT_GRAY */ :  0x555555 /* Gfx.COLOR_DK_GRAY */;
-			if (darkMode) { batteryTextColour = 0x000000; }
+			if (darkMode) { batteryTextColour = 0x000000 /* Gfx.COLOR_BLACK */; }
 		}
 		
 		// Choose the colour of the heart rate icon based on heart rate zone

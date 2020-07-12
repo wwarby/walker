@@ -163,6 +163,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.0.7
+	- Black battery percentage text colour when battery is yellow (10-20%)
 - 1.0.6
 	- Add "English" as a language in addition to it being the "Default" language
 - 1.0.5
