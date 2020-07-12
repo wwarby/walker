@@ -1,0 +1,22 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.inner { max-width: 960px; }
+h1 { text-transform: capitalize; }
+img { box-shadow: none !important; }
+#project_tagline { line-height: 1.1em; }
+#main_content h1 { display: none; }
+.screenshots { box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1); margin: 1rem; }
+a.download { display: inline-block; margin: .5rem 0; }
+@media screen and (max-width: 640px) {
+  .screenshots img {
+    max-height: 200px;
+  }
+  a.download {
+    img {
+      max-height: 40px;
+    }
+  }
+}
