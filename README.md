@@ -59,10 +59,10 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
 - **How do I apply the black background seen in the screenshots?**
 	- This is a setting on the watch itself. For most watches, it's in the activity settings, so assuming you've installed Walker as a data screen for the _Walk_ activity, the steps to change it are as follows (steps for a fenix 5x watch - procedure may vary slightly for other models):
-	  1. Starting from the watch face, press the top right button. That should display the list of available activities.
-    2. Use the bottom left button to scroll down until "Walk" is highlighted in bold.
-    3. Press and hold the middle left button. You should see a menu with "Walk Settings" highlighted.
-    4. Press the top right button to enter the "Walk Settings" menu. You should then be in a sub-menu with "Data Screens" highlighted.
+		1. Starting from the watch face, press the top right button. That should display the list of available activities.
+		2. Use the bottom left button to scroll down until "Walk" is highlighted in bold.
+		3. Press and hold the middle left button. You should see a menu with "Walk Settings" highlighted.
+		4. Press the top right button to enter the "Walk Settings" menu. You should then be in a sub-menu with "Data Screens" highlighted.
 		5. Use the bottom left button to scroll down until "Background Color" is highlighted in bold.
 		6. Press the to right botton to enter the "Background Color" menu. You should then be in a sub-menu with "White" highlighted.
 		7. Use the bottom left button to scroll down until "Black" is highlighted in bold.
