@@ -9,8 +9,8 @@
 	<string id="heartRateModeTitle">心拍数モード</string>
 	<string id="showHeartRateZoneTitle">心拍数ゾーンを表示</string>
 	<string id="showSpeedInsteadOfPace">ペースではなくスピードを表示する</string>
+	<string id="darkMode">ブラック</string>
 	<string id="modeInstant">当座</string>
-	<string id="mode3Seconds">3秒平均</string>
 	<string id="mode5Seconds">5秒平均</string>
 	<string id="mode10Seconds">10秒平均</string>
 	<string id="mode30Seconds">30秒平均</string>

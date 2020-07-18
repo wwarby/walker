@@ -3,7 +3,6 @@
 		<setting propertyKey="@Properties.pm" title="@Strings.paceOrSpeedModeTitle">
 			<settingConfig type="list">
 	            <listEntry value="0">@Strings.modeInstant</listEntry>
-	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
 	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
 	            <listEntry value="10">@Strings.mode10Seconds</listEntry>
 	            <listEntry value="30">@Strings.mode30Seconds</listEntry>
@@ -13,7 +12,6 @@
 		<setting propertyKey="@Properties.hm" title="@Strings.heartRateModeTitle">
 			<settingConfig type="list">
 	            <listEntry value="0">@Strings.modeInstant</listEntry>
-	            <listEntry value="3">@Strings.mode3Seconds</listEntry>
 	            <listEntry value="5">@Strings.mode5Seconds</listEntry>
 	            <listEntry value="10">@Strings.mode10Seconds</listEntry>
 	            <listEntry value="30">@Strings.mode30Seconds</listEntry>
@@ -24,6 +22,9 @@
 			<settingConfig type="boolean" />
 		</setting>
 		<setting propertyKey="@Properties.s" title="@Strings.showSpeedInsteadOfPace">
+			<settingConfig type="boolean" />
+		</setting>
+		<setting propertyKey="@Properties.d" title="@Strings.darkMode">
 			<settingConfig type="boolean" />
 		</setting>
 	</settings>

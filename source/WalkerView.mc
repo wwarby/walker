@@ -15,6 +15,7 @@ class WalkerView extends Ui.DataField {
 	var is24Hour = false;
 	
 	var previousDarkMode;
+	var darkModeFromSetting = false;
 	
 	var stepsIcon;
 	var caloriesIcon;
@@ -105,8 +106,13 @@ class WalkerView extends Ui.DataField {
 		var deviceSettings = System.getDeviceSettings();
 		var app = Application.getApp();
 		
+		// 12 / 24 hour mode
 		is24Hour = deviceSettings.is24Hour;
 		
+		// Dark mode
+		darkModeFromSetting = app.getProperty("d") == true;
+		
+		// Speed / pace mode 
 		paceOrSpeedMode = app.getProperty("pm");
 		if (paceOrSpeedMode > 0) {
 			paceOrSpeedData = new DataQueue(paceOrSpeedMode);
@@ -268,8 +274,13 @@ class WalkerView extends Ui.DataField {
 		var timeText = formatTime(time, false);
 		var shrinkMiddleText = paceOrSpeedText.length() > 5 || timeText.length() > 5;
 		
-		// Set colours
-		var backgroundColour = WalkerView has :getBackgroundColor ? getBackgroundColor() : 0xFFFFFF /* Gfx.COLOR_WHITE */;
+		// Background colour
+		var backgroundColour =
+			darkModeFromSetting
+		 		? 0x000000 /* Gfx.COLOR_BLACK */
+		 		: WalkerView has :getBackgroundColor
+		 			? getBackgroundColor()
+		 			: 0xFFFFFF /* Gfx.COLOR_WHITE */;
 		var darkMode = backgroundColour == 0x000000 /* Gfx.COLOR_BLACK */;
 		
 		// Choose the colour of the battery based on it's state

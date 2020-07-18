@@ -1,5 +1,5 @@
 <drawables>
-	<bitmap id="il" filename="launcher.png" dithering="none" />
+	<bitmap id="il" filename="steps.png" dithering="none" />
 	<bitmap id="is" filename="steps.png" dithering="none">
 		<palette disableTransparency="false">
             <color>000000</color>

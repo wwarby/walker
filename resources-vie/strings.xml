@@ -7,10 +7,10 @@
 	<string id="timer">HẸN GIỜ</string>
 	<string id="paceOrSpeedModeTitle">Chế độ tốc độ / vận tốc</string>
 	<string id="heartRateModeTitle">Chế độ nhịp tim</string>
-	<string id="showHeartRateZoneTitle">Hiển thị vùng nhịp tim</string>
-	<string id="showSpeedInsteadOfPace">Hiển thị tốc độ thay vì tốc độ</string>
+	<string id="showHeartRateZoneTitle">Vùng nhịp tim</string>
+	<string id="showSpeedInsteadOfPace">Sử dụng tốc độ</string>
+	<string id="darkMode">Đen</string>
 	<string id="modeInstant">Hiện hành</string>
-	<string id="mode3Seconds">Trung bình 3 giây</string>
 	<string id="mode5Seconds">Trung bình 5 giây</string>
 	<string id="mode10Seconds">Trung bình 10 giây</string>
 	<string id="mode30Seconds">Trung bình 30 giây</string>

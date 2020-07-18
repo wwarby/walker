@@ -7,10 +7,10 @@
 	<string id="timer">เวลา</string>
 	<string id="paceOrSpeedModeTitle">โหมดความเร็ว</string>
 	<string id="heartRateModeTitle">โหมดอัตราการเต้นของหัวใจ</string>
-	<string id="showHeartRateZoneTitle">แสดงโซนอัตราการเต้นของหัวใจ</string>
-	<string id="showSpeedInsteadOfPace">แสดงความเร็วแทนการก้าว</string>
+	<string id="showHeartRateZoneTitle">โซนอัตราการเต้นของหัวใจ</string>
+	<string id="showSpeedInsteadOfPace">ใช้ความเร็ว</string>
+	<string id="darkMode">สีดำ</string>
 	<string id="modeInstant">ทันที</string>
-	<string id="mode3Seconds">เฉลี่ย 3 วินาที</string>
 	<string id="mode5Seconds">เฉลี่ย 5 วินาที</string>
 	<string id="mode10Seconds">เฉลี่ย 10 วินาที</string>
 	<string id="mode30Seconds">เฉลี่ย 30 วินาที</string>

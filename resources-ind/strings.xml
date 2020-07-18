@@ -7,10 +7,10 @@
 	<string id="timer">WAKTU</string>
 	<string id="paceOrSpeedModeTitle">Mode kecepatan / kecepatan</string>
 	<string id="heartRateModeTitle">Tampilkan zona detak jantung</string>
-	<string id="showHeartRateZoneTitle">Mutassa a pulzuszónát</string>
-	<string id="showSpeedInsteadOfPace">Tampilkan kecepatan, bukan langkah</string>
+	<string id="showHeartRateZoneTitle">Pulzuszónát</string>
+	<string id="showSpeedInsteadOfPace">Gunakan kecepatan</string>
+	<string id="darkMode">Hitam</string>
 	<string id="modeInstant">Instan</string>
-	<string id="mode3Seconds">Rata-rata 3 detik</string>
 	<string id="mode5Seconds">Rata-rata 5 detik</string>
 	<string id="mode10Seconds">Rata-rata 10 detik</string>
 	<string id="mode30Seconds">Rata-rata 30 detik</string>

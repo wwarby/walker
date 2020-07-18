@@ -7,10 +7,10 @@
 	<string id="timer">CRONO</string>
 	<string id="paceOrSpeedModeTitle">Modul de ritm / viteză</string>
 	<string id="heartRateModeTitle">Modul de ritm cardiac</string>
-	<string id="showHeartRateZoneTitle">Afișează zona de ritm cardiac</string>
-	<string id="showSpeedInsteadOfPace">Afișați viteza în loc de ritm</string>
+	<string id="showHeartRateZoneTitle">Zona de ritm cardiac</string>
+	<string id="showSpeedInsteadOfPace">Utilizați viteza</string>
+	<string id="darkMode">Negru</string>
 	<string id="modeInstant">Actual</string>
-	<string id="mode3Seconds">3 a doua medie</string>
 	<string id="mode5Seconds">5 a doua medie</string>
 	<string id="mode10Seconds">10 a doua medie</string>
 	<string id="mode30Seconds">30 a doua medie</string>

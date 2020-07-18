@@ -58,7 +58,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 - **My watch is set to KM units but Walker is showing miles (or vice versa)**
 	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
 - **How do I apply the black background seen in the screenshots?**
-	- This is a setting on the watch itself. For most watches, it's in the activity settings, so assuming you've installed Walker as a data screen for the _Walk_ activity, the steps to change it are as follows (steps for a fenix 5x watch - procedure may vary slightly for other models):
+	- There are two ways. First and easiest, the app has checkbox setting named "Black" - if you check this box, Walker will always render with a black background. If you **don't** check this box, then Walker will respect the _Background Color_ setting on the watch itself. For most watches, it's in the activity settings, so assuming you've installed Walker as a data screen for the _Walk_ activity, the steps to change it are as follows (steps for a fenix 5x watch - procedure may vary slightly for other models):
 		1. Starting from the watch face, press the top right button. That should display the list of available activities.
 		2. Use the bottom left button to scroll down until "Walk" is highlighted in bold.
 		3. Press and hold the middle left button. You should see a menu with "Walk Settings" highlighted.
@@ -68,7 +68,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 		7. Use the bottom left button to scroll down until "Black" is highlighted in bold.
 		8. Press the top right button. This should take you back to the previous menu.
 		9. Now press the bottom right button to exit out of the settings menu.
-	- If the above procedure doesn't work for you, it may be because you have an older watch model where the background colour is a global setting for the whole watch, not a per-activity setting. I believe this is the case with the Forerunner 235 for example. I believe it's still possible to change the setting on these models but it will change everything on your watch which may not be what you wanted. I will implement an app setting to overcome this limitation at some point if I can, but at the moment I am up against the limit of available memory on the older models and have no space to add new settings without removing other features, so it is not a trivial change to make.
+	- Some older watches such as the Forerunner 235 don't have a per-activity setting for background colour. In this case, just use the app setting which you can change in the Garmin ConnectIQ app on your phone.
 - **Why isn't the latest version updating on my watch or showing as available in the Connect IQ app?**
 	- The Garmin ConnectIQ app doesn't immediately update every user's device when a new version is released. This is probably deliberate to protect Garmin's servers from a surge in traffic when a popular app is updated. Please be patient, updates ususally trickle through in a few hours.
 - **The translation to my language isn't quite right**
@@ -193,7 +193,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 <a name="changelog"></a>
 ## Changelog
 - 1.1.0
-	-  Memory optimisation
+	- Setting for black background
+	- Memory optimisation
 - 1.0.8
 	- Fix calculation bug when speed display mode was selected in combination with miles units
 - 1.0.7

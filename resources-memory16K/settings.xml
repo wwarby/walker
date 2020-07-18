@@ -18,5 +18,8 @@
 		<setting propertyKey="@Properties.s" title="@Strings.showSpeedInsteadOfPace">
 			<settingConfig type="boolean" />
 		</setting>
+		<setting propertyKey="@Properties.d" title="@Strings.darkMode">
+			<settingConfig type="boolean" />
+		</setting>
 	</settings>
 </resources>
