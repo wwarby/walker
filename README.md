@@ -192,8 +192,10 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.1.0
+	-  Memory optimisation
 - 1.0.8
-	- Fix calculation bug when speed display mode was selected in combination with miles units 
+	- Fix calculation bug when speed display mode was selected in combination with miles units
 - 1.0.7
 	- Black battery percentage text colour when battery is yellow (10-20%)
 - 1.0.6

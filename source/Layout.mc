@@ -1,26 +1,30 @@
-(:base) var lines = [30, 70, 145, 203];
-(:base) var stepGoalProgressOffsetX = 3;
-(:base) var centerOffsetX = 8;
-(:base) var clockY = 15;
-(:base) var clockOffsetX = 0;
-(:base) var topRowY = 50;
-(:base) var middleRowLabelY = 90;
-(:base) var middleRowValueY = 120;
-(:base) var heartRateIconY = 87;
-(:base) var heartRateIconHRZY = 83;
-(:base) var heartRateIconWidth = 20;
-(:base) var heartRateIconHRZWidth = 28;
-(:base) var heartRateIconXOffset = 2;
-(:base) var heartRateIconHRZXOffset = 2;
-(:base) var heartRateTextY = 123;
-(:base) var bottomRowUpperTextY = 160;
-(:base) var bottomRowLowerTextY = 185;
-(:base) var bottomRowIconX = 23;
-(:base) var bottomRowIconY = 157;
-(:base) var batteryY = 220;
-(:base) var batteryX = 0;
-(:base) var batteryWidth = 49;
-(:base) var batteryHeight = 22;
+(:base) function getLayout() {
+	return [
+		30, 70, 145, 203, // lines
+		3,   // stepGoalProgressOffsetX
+		8,   // centerOffsetX
+		15,  // clockY
+		0,   // clockOffsetX
+		50,  // topRowY
+		90,  // middleRowLabelY
+		120, // middleRowValueY
+		87,  // heartRateIconY
+		83,  // heartRateIconHRZY
+		20,  // heartRateIconWidth
+		28,  // heartRateIconHRZWidth
+		2,   // heartRateIconXOffset
+		2,   // heartRateIconHRZXOffset
+		123, // heartRateTextY
+		160, // bottomRowUpperTextY
+		185, // bottomRowLowerTextY
+		23,  // bottomRowIconX
+		157, // bottomRowIconY
+		220, // batteryY
+		0,   // batteryX
+		49,  // batteryWidth
+		22   // batteryHeight
+	];
+}
 
 (:base) var timeFont = 0 /* Gfx.FONT_XTINY */;
 (:base) var topRowFont = 0 /* Gfx.FONT_XTINY */;

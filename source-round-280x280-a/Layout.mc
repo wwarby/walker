@@ -4,11 +4,38 @@
  * - fenix 6X Pro
  */
 
-var timeFont = 1 /* Gfx.FONT_TINY */;
-var topRowFont = 1 /* Gfx.FONT_TINY */;
-var heartRateFont = 1 /* Gfx.FONT_TINY */;
-var middleRowLabelFont = 1 /* Gfx.FONT_TINY */;
-var middleRowValueFontShrunk = 3 /* Gfx.FONT_MEDIUM */;
-var middleRowValueFont = 5 /* Gfx.FONT_NUMBER_MILD */;
-var bottomRowFont = 2 /* Gfx.FONT_SMALL */;
-var batteryFont = 0 /* Gfx.FONT_XTINY */;
+function getLayout() {
+	return [
+		36, 86, 176, 243, // [0-3] lines
+		4,                // [4]   stepGoalProgressOffsetX
+		10,               // [5]   centerOffsetX
+		18,               // [6]   clockY
+		0,                // [7]   clockOffsetX
+		60,               // [8]   topRowY
+		110,              // [9]   middleRowLabelY
+		146,              // [10]  middleRowValueY
+		109,              // [11]  heartRateIconY
+		105,              // [12]  heartRateIconHRZY
+		20,               // [13]  heartRateIconWidth
+		28,               // [14]  heartRateIconHRZWidth
+		2,                // [15]  heartRateIconXOffset
+		2,                // [16]  heartRateIconHRZXOffset
+		145,              // [17]  heartRateTextY
+		196,              // [18]  bottomRowUpperTextY
+		222,              // [19]  bottomRowLowerTextY
+		32,               // [20]  bottomRowIconX
+		192,              // [21]  bottomRowIconY
+		260,              // [22]  batteryY
+		0,                // [23]  batteryX
+		45,               // [24]  batteryWidth
+		20,               // [25]  batteryHeight
+		1,                // [26]  timeFont                 Gfx.FONT_TINY
+		1,                // [27]  topRowFont               Gfx.FONT_TINY
+		1,                // [28]  heartRateFont            Gfx.FONT_TINY
+		1,                // [29]  middleRowLabelFont       Gfx.FONT_TINY
+		3,                // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
+		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
+		2,                // [32]  bottomRowFont            Gfx.FONT_SMALL
+		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+	];
+}
