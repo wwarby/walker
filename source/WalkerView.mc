@@ -222,15 +222,15 @@ class WalkerView extends Ui.DataField {
 		paceOrSpeed = speed != null && speed > 0.1 // Walking at a speed of less than 0.22 miles per hour probably isn't walking
 			? showSpeedInsteadOfPace
 				// Speed is in meters per second
-				? speed * kmOrMileInKmPace * 3.6
+				? (speed / kmOrMileInKmPace) * 3.6
 				: (kmOrMileInKmPace / speed) * 1000000.0
 			: null;
 		averagePaceOrSpeed = info.averageSpeed != null && info.averageSpeed > 0.1 // Walking at a speed of less than 0.22 miles per hour probably isn't walking
 			? showSpeedInsteadOfPace
-				? info.averageSpeed * kmOrMileInKmPace * 3.6
+				? (info.averageSpeed / kmOrMileInKmPace) * 3.6
 				: (kmOrMileInKmPace / info.averageSpeed) * 1000000.0
 			: null;
-			
+		
 		// Time
 		time = info.timerTime;
 		

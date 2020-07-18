@@ -55,14 +55,26 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	- See the [installation guide](#installation)
 - **I read the installation guide and on this page and I still can't figure out how to install it. Can you help?**
 	- If you think there is a mistake in the installation guide, please feel free to [get in touch](#contact). However, please be aware that I have no affiliation with Garmin and cannot provide technical support on their behalf, nor do I have knowledge of how every model of Garmin watch works or the free time to answer general technical support questions about how to use Garmin watches. If you are having difficulty installing apps on your watch, please get in touch with Garmin technical support. 
+- **My watch is set to KM units but Walker is showing miles (or vice versa)**
+	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
+- **How do I apply the black background seen in the screenshots?**
+	- This is a setting on the watch itself. For most watches, it's in the activity settings, so assuming you've installed Walker as a data screen for the _Walk_ activity, the steps to change it are as follows (steps for a fenix 5x watch - procedure may vary slightly for other models):
+	  1. Starting from the watch face, press the top right button. That should display the list of available activities.
+    2. Use the bottom left button to scroll down until "Walk" is highlighted in bold.
+    3. Press and hold the middle left button. You should see a menu with "Walk Settings" highlighted.
+    4. Press the top right button to enter the "Walk Settings" menu. You should then be in a sub-menu with "Data Screens" highlighted.
+		5. Use the bottom left button to scroll down until "Background Color" is highlighted in bold.
+		6. Press the to right botton to enter the "Background Color" menu. You should then be in a sub-menu with "White" highlighted.
+		7. Use the bottom left button to scroll down until "Black" is highlighted in bold.
+		8. Press the top right button. This should take you back to the previous menu.
+		9. Now press the bottom right button to exit out of the settings menu.
+	- If the above procedure doesn't work for you, it may be because you have an older watch model where the background colour is a global setting for the whole watch, not a per-activity setting. I believe this is the case with the Forerunner 235 for example. I believe it's still possible to change the setting on these models but it will change everything on your watch which may not be what you wanted. I will implement an app setting to overcome this limitation at some point if I can, but at the moment I am up against the limit of available memory on the older models and have no space to add new settings without removing other features, so it is not a trivial change to make.
 - **Why isn't the latest version updating on my watch or showing as available in the Connect IQ app?**
 	- The Garmin ConnectIQ app doesn't immediately update every user's device when a new version is released. This is probably deliberate to protect Garmin's servers from a surge in traffic when a popular app is updated. Please be patient, updates ususally trickle through in a few hours.
 - **The translation to my language isn't quite right**
 	- The translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback. Please get in touch if you're willing and able to provide an accurate translation into your preferred language.
 - **Walker isn't translated to my native language**
 	- Garmin supports a fixed number of languages on each device, and as far as I'm aware they do not add new languages to existing devices retrospectively, although they do tend to expand the list of supported languages on new devices. I can only offer translations in the languages supported by Garmin for a given device. If you are sure that Garmin supports a language on your device (in other words you can change the language setting on the watch to that language) and I haven't added a translation for that language, please [get in touch](#contact). I'll do the translation using Google Translate, but if you'd like to help by providing an accurate translation into your language I can give you a template in English for conversion.
-- **My watch is set to KM units but Walker is showing miles (or vice versa)**
-	- Garmin's settings for units are confusing. There's a single setting in the Garmin Connect app for units with the options "Metric" or "Statute", which sets up a default baseline for the units settings on the watch, but some of the watch models have more granular units settings on the watch settings themselves, with separate settings for *Distance Units* and *Pace Units*. These settings override the defaults set in the app, if set. Walker uses these settings (there really isn't any choice in the ConnectIQ SDK) - it will use the *Distance Units* setting for total distance and the the *Pace Units* setting for speed and pace. Please check that both of these settings have been set to eith KM or Miles - otherwise you might see pace in KM and distance in miles or the other way around.
 - **I have a feature suggestion**
 	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc. 
 - **My watch isn't supported**
@@ -85,22 +97,22 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 4. Once the sync is complete, the Walker Data Field is installed on your phone, but you must also assign it to the sporting activities on which you want to use it.
 	- Typically with will be for the "Walk" activity so the instructions that follow are for the "Walk" activity, but you may also want to repeat these steps for "Hike", "Treadmill" etc. or for older watch models that don't have the "Walk" activity you might want to use the activity type "Other".
 5. Starting from the watch face, press the top right button. That should display the list of available activities.
-6. Use the bottom left button to scroll down until “Walk” is highlighted in bold
-7. Press and hold the middle left button. You should see a menu with “Walk Settings” highlighted.
-8. Press the top tight button to enter the “Walk Settings” menu. You should then be in a sub-menu with “Data Screens” highlighted.
-9. Press the top tight button to enter the “Data Screens” menu. You should now see a data screen with a pencil icon in the top right.
-10. At this point you can scroll up and down through the data screens you already have configured for Walk activities using the middle left and bottom left buttons. Scroll down to the end of the list using the bottom left button and you should see a screen with a big green + and the words “Add New”
-11. Press the top right button to add a new Data Screen. You should land in a menu with “Custom Data” highlighted.
-12. Press the top right button. You should be asked to “Choose Layout”, where you’ll be able to scroll up and down through different layouts. You want the top one, which just has “Field 1” in the middle.
+6. Use the bottom left button to scroll down until "Walk" is highlighted in bold.
+7. Press and hold the middle left button. You should see a menu with "Walk Settings" highlighted.
+8. Press the top right button to enter the "Walk Settings" menu. You should then be in a sub-menu with "Data Screens" highlighted.
+9. Press the top right button to enter the "Data Screens" menu. You should now see a data screen with a pencil icon in the top right.
+10. At this point you can scroll up and down through the data screens you already have configured for Walk activities using the middle left and bottom left buttons. Scroll down to the end of the list using the bottom left button and you should see a screen with a big green + and the words "Add New"
+11. Press the top right button to add a new Data Screen. You should land in a menu with "Custom Data" highlighted.
+12. Press the top right button. You should be asked to "Choose Layout", where you’ll be able to scroll up and down through different layouts. You want the top one, which just has "Field 1" in the middle.
 13. Press the top right button to move to choosing the field. You should land in a menu with Connect IQ Fields highlighted and 0/2 Added underneath.
 14. Press the top right button. You should land in another sub-menu, where you’ll be able to select the downloaded data field you want to use.
-15. Scroll down using the bottom left button until “Walker” is selected, then press the top right button to select it.
+15. Scroll down using the bottom left button until "Walker" is selected, then press the top right button to select it.
 16. You should now see the Walker data field on your screen, but it will be the last data field in the list. You probably want it to be the first so that it shows by default when you start a walk.
-18. Press the top right button to edit the position of the field. You should land in a menu with “Layout 1 Field” highlighted. Use the bottom left button to scroll down to “Reorder”
-19. Press the top right button. You should now land in a sub-menu where “Walker” is highlighted.
+18. Press the top right button to edit the position of the field. You should land in a menu with "Layout 1 Field" highlighted. Use the bottom left button to scroll down to "Reorder"
+19. Press the top right button. You should now land in a sub-menu where "Walker" is highlighted.
 20. Press the middle right button repeatedly to move Walker up to the top of the list, then press the top right button to confirm.
-21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with “Walk” selected.
-22. Press the top right button to select the “Walk” activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
+21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with "Walk" selected.
+22. Press the top right button to select the "Walk" activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
 
 <a name="contact"></a>
 ## Contact
@@ -180,6 +192,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.0.8
+	- Fix calculation bug when speed display mode was selected in combination with miles units 
 - 1.0.7
 	- Black battery percentage text colour when battery is yellow (10-20%)
 - 1.0.6
