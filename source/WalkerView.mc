@@ -455,7 +455,7 @@ class WalkerView extends Ui.DataField {
 		dc.drawText(
 		(halfWidth / 2) - (heartRateWidth / 2) + 5,
 			layout[10] /* middleRowValueY */,
-			shrinkMiddleText ? layout[31] /* middleRowValueFontShrunk */ : layout[31] /* middleRowValueFont */,
+			shrinkMiddleText ? layout[30] /* middleRowValueFontShrunk */ : layout[31] /* middleRowValueFont */,
 			paceOrSpeedText,
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
@@ -465,7 +465,7 @@ class WalkerView extends Ui.DataField {
 		dc.drawText(
 			(halfWidth * 1.5) + (heartRateWidth / 2) - 5,
 			layout[10] /* middleRowValueY */,
-			shrinkMiddleText ? layout[31] /* middleRowValueFontShrunk */ : layout[31] /* middleRowValueFont */,
+			shrinkMiddleText ? layout[30] /* middleRowValueFontShrunk */ : layout[31] /* middleRowValueFont */,
 			timeText,
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		

@@ -193,6 +193,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.1.1
+    - Fix bug with reducing font size on walks over 1 hour
 - 1.1.0
 	- Setting for black background
 	- Memory optimisation
