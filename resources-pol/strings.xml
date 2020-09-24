@@ -1,10 +1,10 @@
 <strings>
-	<string id="appName">Spacerowiczów</string>
+	<string id="appName">Chodziarz</string>
 	<string id="steps">Kroki</string>
 	<string id="stepsUnits">kroki</string>
-	<string id="pace">TEMPA</string>
+	<string id="pace">TEMPO</string>
 	<string id="speed">PRĘDKOŚĆ</string>
-	<string id="timer">CHRONO</string>
+	<string id="timer">STOPER</string>
 	<string id="paceOrSpeedModeTitle">Tryb tempa / prędkości</string>
 	<string id="heartRateModeTitle">Tryb tętna</string>
 	<string id="showHeartRateZoneTitle">Strefa tętna</string>
