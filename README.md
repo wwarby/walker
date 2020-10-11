@@ -93,7 +93,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 
 <a name="installation"></a>
 ## Installation
-Installation and setup of data fields on Garmin watches is not as straightforward as one might hope. Once you know the procedure it us a fairly quick process, and hopefully these step-by-step instructions will make it easy to follow. These instructions are confirmed to work correctly with my own watch (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
+Installation and setup of data fields on Garmin watches is not as straightforward as one might hope, and unfortunately is not the same on every model. The following step-by-step instructions are based on my own watch model (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
 1. Go to the [download page](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74) in the Connect IQ store in a web browser and (after logging in with your Garmin account) press the "Download" button.
 	- You will be asked which device you want to install to.
 	- Select the device from the dropdown list and press "Confirm Device".
@@ -118,6 +118,38 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 20. Press the middle right button repeatedly to move Walker up to the top of the list, then press the top right button to confirm.
 21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with "Walk" selected.
 22. Press the top right button to select the "Walk" activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
+
+### Other models
+The following installation steps for other watch models were kindly provided by a users of Walker. I have no way to independently verify these installation instructions since the Garmin simulator does not provide simulation of the installation experience, but I have every confidence that these instructions are accurate and succeeded for the users who provided them. Thanks to Tom and Gary for taking the time to provide this information.
+
+#### vivoactive 3
+1. Starting from the watch face, press the button (Key). That should display the list of available activities.
+2. Scroll to the "Walk" activity and tap the screen to select.
+3. Tap "Settings".
+4. Tap "Data Screens".
+5. Tap "Layout"  and scroll to the "1-Field" layout and tap the screen select.
+6. Scroll to "Screen 1" and tap to select.
+7. Tap "Edit Data Fields".
+8. Tap the screen which should show the default/existing Data Field.
+9. In the list of Data Fields scroll and tap to select "Connect IQ 0/2 Added".
+10 Tap to select "Walker".
+11. The Walker Data Field should now show as your default screen.
+
+#### vivoactive 4
+1. Select activity list.
+2. Long press bottom button.
+3. Select "Manage apps".
+4. Select "Walk".
+5. Select "Walk settings".
+6. Select |Data Screens".
+7. Select "Screen 1".
+8. Select "Layout".
+9. Use finger to scroll up / down until a screen with 1 data field presents itself.
+10. Use finger to touch screen to confirm 1 data field.
+11. Select "Edit Data Fields".
+12. Use finger to touch screen to choose data field.
+13. Select "Connect Fields".
+14. Select "Walker".
 
 <a name="contact"></a>
 ## Contact
