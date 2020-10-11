@@ -80,8 +80,8 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	- Garmin supports a fixed number of languages on each device, and as far as I'm aware they do not add new languages to existing devices retrospectively, although they do tend to expand the list of supported languages on new devices. I can only offer translations in the languages supported by Garmin for a given device. If you are sure that Garmin supports a language on your device (in other words you can change the language setting on the watch to that language) and I haven't added a translation for that language, please [get in touch](#contact). I'll do the translation using Google Translate, but if you'd like to help by providing an accurate translation into your language I can give you a template in English for conversion.
 - **I have a feature suggestion**
 	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc. 
-- **It doesn't work on vivoactive 3**
-	- I've had several reports from users that can't find or can't load Walker on a vivoactive 3 watch. It works fine in the Garmin simulator for that model, so to investigate I either need physical access to a vivoactive 3 watch or somebody with this watch to engage in a back-and-forth dialog to help diagnose the problem and send me photos or video of exactly what happens when you try to access Walker on the watch. If this is you, please [get in touch](#contact).
+- **It doesn't work on vivoactive**
+	- I've had several reports from users that can't find or can't load Walker on a vivoactive 3/4 watch model. I have reports from users of both models confirming that it does install on both models, but that the installation process is different from some of the other models. See these [installation steps](#othermodels) for guidance on installation provided by users who have Walker installed and working on these models.
 - **My watch isn't supported**
 	- Please first [check the supported devices list](#devices). If your watch is listed there, it *is* supported. A common reason why you might not be able to install Walker on your watch is that the firmware on your watch is out of date. In this case, update the firmware on your watch first and if you don't know how to do that, get in touch with Garmin technical support. If your watch is a newer model it is likely I just haven't gotten around to supporting it yet. Please [get in touch](#contact) and give me a nudge to add support.
 - **I think I've found a bug**
@@ -119,6 +119,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with "Walk" selected.
 22. Press the top right button to select the "Walk" activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
 
+<a name="othermodels"></a>
 ### Other models
 The following installation steps for other watch models were kindly provided by a users of Walker. I have no way to independently verify these installation instructions since the Garmin simulator does not provide simulation of the installation experience, but I have every confidence that these instructions are accurate and succeeded for the users who provided them. Thanks to Tom and Gary for taking the time to provide this information.
 
@@ -229,6 +230,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.1.2
+    - Update Polish translation
 - 1.1.1
     - Fix bug with reducing font size on walks over 1 hour
 - 1.1.0
