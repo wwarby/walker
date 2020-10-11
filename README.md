@@ -142,7 +142,7 @@ The following installation steps for other watch models were kindly provided by 
 3. Select "Manage apps".
 4. Select "Walk".
 5. Select "Walk settings".
-6. Select |Data Screens".
+6. Select "Data Screens".
 7. Select "Screen 1".
 8. Select "Layout".
 9. Use finger to scroll up / down until a screen with 1 data field presents itself.
