@@ -9,6 +9,7 @@
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](#faq)
+- [Help Requests](#help)
 - [Installation](#installation)
 - [Contact](#contact)
 - [Supported Devices](#devices)
@@ -90,6 +91,12 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	- It depends what you want to contribute. I'm not opposed in principle to collaboration but the changes would have to be aligned with my intentions for the design and purpose of Walker (i.e. not a feature I don't want the app to have). It would also have to not break support for older devices currently supported (most notably it would have to keep memory usage below 16KB on older devices). I'd suggest [getting in touch](#contact) if this is something you're interested in.
 - **Can I make a forked version of Walker and upload it to the ConnectIQ store?**
 	- Yes. Walker is open source and I support the pricnciples of open source software development. The only thing I'd ask is that you keep your project open source and don't brand your work as a new and improved version of mine by calling it *Walker 2* or *Walker Pro* or something.
+
+<a name="help"></a>
+## Help Requests
+Since Walk was released I have consistently received 10-20 emails a week about the app, almost all of which are about difficulties with installation. I created Walker for my own personal use and decided to share it for free in the hope that other Garmin fans would find it useful. Whilst I am very glad that it has become popular, I simply do not have the time to respond to the same questions over and over, week after week. In an effort to reduce the volume of these emails I wrote [this installation guide](#installation) and [FAQ](#faq) but it has barely made a dent in the volume of requests, so regretably I have now set up an email filter to delete all emails about Walker that mention installation.
+
+Garmin watches are functionally superb, but the installation procedure for Data Fields in particular (which Walker is) leaves a lot to be desired. The installation process is different for each model, and I cannot reasonably learn and document the installation procedure for watch models I do not own. If these instructions do not work for you, please get in touch with Garmin technical support. Walker is compatible with the watch models I have listed compatibility for, and if you are struggling with installation, that is an issue for Garmin who are responsible for the app store and installation process, not me.
 
 <a name="installation"></a>
 ## Installation
