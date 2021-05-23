@@ -230,6 +230,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.3.0
+    - Add support for Venu 2 and Venu 2S
 - 1.2.0
     - Add support for new devices
 - 1.1.2
