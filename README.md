@@ -80,7 +80,9 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 - **Walker isn't translated to my native language**
 	- Garmin supports a fixed number of languages on each device, and as far as I'm aware they do not add new languages to existing devices retrospectively, although they do tend to expand the list of supported languages on new devices. I can only offer translations in the languages supported by Garmin for a given device. If you are sure that Garmin supports a language on your device (in other words you can change the language setting on the watch to that language) and I haven't added a translation for that language, please [get in touch](#contact). I'll do the translation using Google Translate, but if you'd like to help by providing an accurate translation into your language I can give you a template in English for conversion.
 - **I have a feature suggestion**
-	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc. 
+	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc.
+- **Can you add support for the Forerunner 45/55 model?**
+	- No, sorry. The Forerunner 45 and 55 models have 8 colour screens which would require a rewrite of how colours are used in Walker's layout. I've actually tried doing this, but it caused an increase in memory usage which broke compatibility with several older devices such as the Forerunner 235. To support both types of model will require splitting the app into two separate releases which I don't want to do at the moment.
 - **It doesn't work on vivoactive**
 	- I've had several reports from users that can't find or can't load Walker on a vivoactive 3/4 watch model. I have reports from users of both models confirming that it does install on both models, but that the installation process is different from some of the other models. See these [installation steps](#othermodels) for guidance on installation provided by users who have Walker installed and working on these models.
 - **My watch isn't supported**
@@ -168,11 +170,11 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 - Approach S60 / S62
 - Captain Marvel / Darth Vader / First Avenger / Rey
 - D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S
-- Descent Mk1
+- Descent Mk1 / Mk2 / Mk2S
 - fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / Chronos
-- Forerunner 230 / 235 / 630 / 645 / 645 Music / 735xt / 935 / 945
+- Forerunner 230 / 235 / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition / Golfer
-- Venu
+- Venu / 2 / 2S
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S
 
 *Note: Only tested in on a real fenix 5X and Forerunner 235 in the field, all other watches tested only in the SDK device simulator.*
@@ -237,6 +239,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.3.1
+    - Add support for new devices, update Chinese translation (thanks [Chuanyi](https://github.com/Likenttt))
 - 1.3.0
     - Add support for Venu 2 and Venu 2S
 - 1.2.0

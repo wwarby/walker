@@ -5,6 +5,7 @@
  * - Forerunner 245 Music
  * - Forerunner 745
  * - Forerunner 945
+ * - Forerunner 945 LTE
  */
 
 function getLayout() {
