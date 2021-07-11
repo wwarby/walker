@@ -1,24 +1,24 @@
 <strings>
-	<string id="appName">Járás</string>
+	<string id="appName">Sétáló</string>
 	<string id="steps">Lépések</string>
 	<string id="stepsUnits">lépések</string>
 	<string id="pace">TEMPÓ</string>
 	<string id="speed">SEBESSÉG</string>
-	<string id="timer">KRONO</string>
-	<string id="paceOrSpeedModeTitle">Ütem / sebesség mód</string>
-	<string id="heartRateModeTitle">Pulzus üzemmód</string>
+	<string id="timer">IDŐ</string>
+	<string id="paceOrSpeedModeTitle">Tempó / sebesség mód</string>
+	<string id="heartRateModeTitle">Pulzus mód</string>
 	<string id="showHeartRateZoneTitle">Pulzusszám zóna</string>
-	<string id="showSpeedInsteadOfPace">Használja a sebességet</string>
-	<string id="darkMode">Fekete</string>
+	<string id="showSpeedInsteadOfPace">Mutass sebességet tempó helyett</string>
+	<string id="darkMode">Fekete háttér</string>
 	<string id="modeInstant">Azonnali</string>
-	<string id="mode5Seconds">60s átlag</string>
+	<string id="mode5Seconds">5s átlag</string>
 	<string id="mode10Seconds">10s átlag</string>
 	<string id="mode30Seconds">30s átlag</string>
 	<string id="mode60Seconds">60s átlag</string>
-	<string id="averageStepsPerKm">Átlagos Lépések / KM</string>
-	<string id="averageStepsPerMile">Átlagos Lépések / Mérföld</string>
-	<string id="averageStepsPerHour">Átlagos Lépések / Óra</string>
-	<string id="stepsPerKm">Lépések / KM</string>
-	<string id="stepsPerMile">Lépések / Mérföld</string>
-	<string id="stepsPerHour">Lépések / Óra</string>
+	<string id="averageStepsPerKm">Átlagos lépésszám / km</string>
+	<string id="averageStepsPerMile">Átlagos lépésszám / mérföld</string>
+	<string id="averageStepsPerHour">Átlagos lépésszám / óra</string>
+	<string id="stepsPerKm">Lépésszám / km</string>
+	<string id="stepsPerMile">Lépésszám / mérföld</string>
+	<string id="stepsPerHour">Lépésszám / óra</string>
 </strings>
