@@ -132,8 +132,11 @@ class WalkerView extends Ui.DataField {
 		
 		kmOrMileInMetersDistance = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
 		kmOrMileInKmPace = deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? 1.0f : 1.60934f;
-		distanceUnitsLabel = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi";
-		averagePaceOrSpeedUnitsLabel = showSpeedInsteadOfPace ? "/hr" : "/" + (deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? "km" : "mi");
+		var distanceUnitsRes = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? Rez.Strings.km : Rez.Strings.mi;
+		var averagePaceOrSpeedUnitsRes = showSpeedInsteadOfPace ? Rez.Strings.h
+			: (deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? Rez.Strings.km : Rez.Strings.mi);
+		distanceUnitsLabel = Ui.loadResource(distanceUnitsRes);
+		averagePaceOrSpeedUnitsRes = "/" + Ui.loadResource(averagePaceOrSpeedUnitsRes);
 		
 		if (WalkerView has :view32) {
 			view32.readSettings(self, deviceSettings, app);
