@@ -136,7 +136,7 @@ class WalkerView extends Ui.DataField {
 		var averagePaceOrSpeedUnitsRes = showSpeedInsteadOfPace ? Rez.Strings.h
 			: (deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? Rez.Strings.km : Rez.Strings.mi);
 		distanceUnitsLabel = Ui.loadResource(distanceUnitsRes);
-		averagePaceOrSpeedUnitsRes = "/" + Ui.loadResource(averagePaceOrSpeedUnitsRes);
+		averagePaceOrSpeedUnitsLabel = "/" + Ui.loadResource(averagePaceOrSpeedUnitsRes);
 		
 		if (WalkerView has :view32) {
 			view32.readSettings(self, deviceSettings, app);
