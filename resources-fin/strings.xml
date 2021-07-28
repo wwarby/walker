@@ -1,7 +1,7 @@
 <strings>
 	<string id="appName">Kävelijä</string>
-	<string id="steps">Vaiheet</string>
-	<string id="stepsUnits">vaiheet</string>
+	<string id="steps">Askeleet</string>
+	<string id="stepsUnits">askeleet</string>
 	<string id="pace">VAUHTI</string>
 	<string id="speed">NOPEUS</string>
 	<string id="timer">KRONO</string>
