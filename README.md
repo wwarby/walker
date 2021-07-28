@@ -124,7 +124,7 @@ Installation and setup of data fields on Garmin watches is not as straightforwar
 16. You should now see the Walker data field on your screen, but it will be the last data field in the list. You probably want it to be the first so that it shows by default when you start a walk.
 18. Press the top right button to edit the position of the field. You should land in a menu with "Layout 1 Field" highlighted. Use the bottom left button to scroll down to "Reorder"
 19. Press the top right button. You should now land in a sub-menu where "Walker" is highlighted.
-20. Press the middle right button repeatedly to move Walker up to the top of the list, then press the top right button to confirm.
+20. Press the middle left button repeatedly to move Walker up to the top of the list, then press the top right button to confirm.
 21. You’re done. Press the bottom right button three times to exit out of the menus, and you should be back to the activity selection menu with "Walk" selected.
 22. Press the top right button to select the "Walk" activity and you should find you’re ready to go for a walk with Walker shown on screen by default.
 
