@@ -169,12 +169,14 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 ## Supported Devices
 - Approach S60 / S62
 - Captain Marvel / Darth Vader / First Avenger / Rey
-- D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S
+- D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S / Air / Air X10
 - Descent Mk1 / Mk2 / Mk2S
-- fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / Chronos
+- epix 2
+- Enduro
+- fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7S / 7X / Chronos
 - Forerunner 230 / 235 / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition / Golfer
-- Venu / 2 / 2S
+- Venu / 2 / 2S / 2 Plus
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S
 
 *Note: Only tested in on a real fenix 5X and Forerunner 235 in the field, all other watches tested only in the SDK device simulator.*
@@ -239,6 +241,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.4.0
+    - Add support for new devices
 - 1.3.1
     - Add support for new devices, update Chinese translation (thanks [Chuanyi](https://github.com/Likenttt))
 - 1.3.0
