@@ -169,7 +169,7 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 ## Supported Devices
 - Approach S60 / S62
 - Captain Marvel / Darth Vader / First Avenger / Rey
-- D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S / Air / Air X10
+- D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S / Air / Air X10 / Mach 1
 - Descent Mk1 / Mk2 / Mk2S
 - epix 2
 - Enduro
@@ -241,6 +241,9 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.5.0
+    - Add support for new devices
+		- Fix Hungarian and Hebrew translations - thanks (thanks [flocsy](https://github.com/flocsy))
 - 1.4.0
     - Add support for new devices
 - 1.3.1
