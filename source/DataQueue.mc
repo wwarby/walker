@@ -4,37 +4,39 @@ import Toybox.Lang;
 class DataQueue {
 
 	var data as Array;
+	var trackAvg = false;
 	var maxSize = 0;
 	var pos = 0;
+	var total = 0.0;
+	var size = 0;
+	var average = 0.0;
 
-	function initialize(arraySize) {
+	function initialize(arraySize, trackAverage) {
 		data = new[arraySize];
 		maxSize = arraySize;
+		trackAvg = trackAverage;
 	}
 	
 	// Add a new element to the array
 	function add(element) {
+		if (trackAvg) {
+			var oldestVal = data[pos];
+			if (oldestVal != null) { total -= oldestVal; }
+			total += element;
+			if (size < maxSize) { size++; }
+			average = total > 0 ? total.toFloat() / size : 0.0;
+		}
 		data[pos] = element;
 		pos = (pos + 1) % maxSize;
 	}
 
 	// Reset all the entries in the array to null
 	function reset() {
-		for (var i = 0; i < data.size(); i++) { data[i] = null; }
+		data = new[maxSize];
 		pos = 0;
-	}
-	
-	// Get the average value of the items in the array, discounting nulls
-	function average() {
-		var size = 0;
-		var sumOfData = 0.0;
-		for (var i = 0; i < data.size(); i++) {
-			if (data[i] != null) {
-				sumOfData = sumOfData + data[i];
-				size++;
-			}
-		}
-		return sumOfData > 0 ? sumOfData.toFloat() / size : 0.0;
+		total = 0.0;
+		size = 0;
+		average = 0.0;
 	}
 	
 	// Get the least recently added entry in the array

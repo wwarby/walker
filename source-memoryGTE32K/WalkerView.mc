@@ -74,7 +74,7 @@ class WalkerView extends Ui.DataField {
 	var previousDistanceUnits;
 
 	// Fixed window of 60 seconds for determining "steps per" values for chart FIT contributions
-	var stepData = new DataQueue(60);
+	var stepData = new DataQueue(60, false);
 	var stepDataCount = 0;
 	
 	function initialize() {
@@ -122,14 +122,14 @@ class WalkerView extends Ui.DataField {
 		// Speed / pace mode 
 		paceOrSpeedMode = app.getProperty("pm");
 		if (paceOrSpeedMode > 0) {
-			paceOrSpeedData = new DataQueue(paceOrSpeedMode);
+			paceOrSpeedData = new DataQueue(paceOrSpeedMode, true);
 		} else {
 			paceOrSpeedData = null;
 		}
 		
 		heartRateMode = app.getProperty("hm");
 		if (heartRateMode > 0) {
-			heartRateData = new DataQueue(heartRateMode);
+			heartRateData = new DataQueue(heartRateMode, true);
 		} else {
 			heartRateData = null;
 		}
@@ -215,7 +215,7 @@ class WalkerView extends Ui.DataField {
 		heartRate = heartRateMode <= 0
 			? info.currentHeartRate
 			: heartRateData != null
-				? heartRateData.average()
+				? heartRateData.average
 				: null;
 		
 		// Heart rate zone
@@ -246,7 +246,7 @@ class WalkerView extends Ui.DataField {
 		var speed = paceOrSpeedMode == 0
 			? info.currentSpeed
 			: paceOrSpeedData != null
-				? paceOrSpeedData.average()
+				? paceOrSpeedData.average
 				: null;
 		paceOrSpeed = speed != null && speed > 0.1 // Walking at a speed of less than 0.22 miles per hour probably isn't walking
 			? showSpeedInsteadOfPace
