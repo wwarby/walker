@@ -101,8 +101,8 @@ class WalkerView extends Ui.DataField {
 		var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
 		
 		// Create FIT contributor fields
-		stepsActivityField = createField(stepsLabel, 0, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
-		stepsLapField = createField(stepsLabel, 1, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_LAP, :units => stepsUnits });
+		stepsActivityField = createField("steps", 0, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		stepsLapField = createField("steps", 1, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_LAP, :units => stepsUnits });
 
 		// Set initial steps FIT contributions to zero
 		stepsActivityField.setData(0);
@@ -152,16 +152,16 @@ class WalkerView extends Ui.DataField {
 		var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
 		
 		stepsPerKmOrMileField = createField(
-			Ui.loadResource(deviceSettings.distanceUnits == System.UNIT_METRIC ? Rez.Strings.stepsPerKm : Rez.Strings.stepsPerMile),
+			deviceSettings.distanceUnits == System.UNIT_METRIC ? "stepsPerKm" : "stepsPerMile",
 			deviceSettings.distanceUnits == System.UNIT_METRIC ? 2 : 3,	Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
 		
-		stepsPerHourField = createField(Ui.loadResource(Rez.Strings.stepsPerHour), 4, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
+		stepsPerHourField = createField("stepsPerHour", 4, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
 
 		averageStepsPerKmOrMileField = createField(
-			Ui.loadResource(deviceSettings.distanceUnits ==System.UNIT_METRIC ? Rez.Strings.averageStepsPerKm : Rez.Strings.averageStepsPerMile),
+			deviceSettings.distanceUnits == System.UNIT_METRIC ? "avgStepsPerKm" : "avgStepsPerMile",
 			deviceSettings.distanceUnits == System.UNIT_METRIC ? 5 : 6, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
 		
-		averageStepsPerHourField = createField(Ui.loadResource(Rez.Strings.averageStepsPerHour), 7, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		averageStepsPerHourField = createField("avgStepsPerHour", 7, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
 			
 		// Set initial steps FIT contributions to zero
 		stepsPerKmOrMileField.setData(0);
