@@ -6,6 +6,7 @@
 <a href="https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74" target="_blank" class="download"><img src="supporting-files/available-connect-iq-badge.svg" height="60" alt="Download" /></a>
 
 ## Table of Contents
+- [Donate](#donate)
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](#faq)
@@ -17,6 +18,11 @@
 - [Source](#source)
 - [Credits](#credits)
 - [Changelog](#changelog)
+
+
+<a name="donate"></a>
+## Donate
+Donations are welcome and appreciated, but not required. If you'd like to show your appreciation for this app and keep me motivated to maintain it, please feel free to send a small donation to https://paypal.me/wwarby. Walker will always remain free and open source.
 
 <a name="features"></a>
 ## Features
@@ -239,13 +245,12 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
-- 1.6.0
-    - Add support for Forerunner 55, 255, 255S and 955
+- 1.5.0
+    - Add support for D2 Mach 1, Forerunner 55, 255, 255S and 955
 		- Internal work to lock code for older lower memory devices such as Forerunner 235, enabling future new feature development for newer devices
 		- Fix a longstanding bug where steps would go screwy after using "resume later" on an activity
-- 1.5.0
-    - Add support for new devices
 		- Fix Hungarian and Hebrew translations - thanks (thanks [flocsy](https://github.com/flocsy))
+		- Use camelCase English names for custom FIT contribution field names
 - 1.4.0
     - Add support for new devices
 - 1.3.1
