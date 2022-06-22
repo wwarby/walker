@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 240 x 240 FONT GROUP D
  * DEVICES:
@@ -6,9 +8,10 @@
  * - Forerunner 745
  * - Forerunner 945
  * - Forerunner 945 LTE
+ * - Descent MK2 S
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		30, 70, 145, 203, // [0-3] lines
 		3,                // [4]   stepGoalProgressOffsetX
@@ -40,6 +43,7 @@ function getLayout() {
 		3,                // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		2,                // [32]  bottomRowFont            Gfx.FONT_SMALL
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

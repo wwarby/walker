@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 390 x 390 FONT GROUP A
  * DEVICES:
@@ -5,7 +7,7 @@
  * - Venu Mercedes
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		50, 120, 245, 340, // [0-3] lines
 		7,                 // [4]   stepGoalProgressOffsetX
@@ -37,6 +39,7 @@ function getLayout() {
 		3,                 // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		5,                 // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		1,                 // [32]  bottomRowFont            Gfx.FONT_TINY
-		0                  // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                 // [33]  batteryFont              Gfx.FONT_XTINY
+		false              // [34]  eightColourPalette
 	];
 }

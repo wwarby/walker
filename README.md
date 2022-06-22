@@ -18,7 +18,7 @@
 - [Credits](#credits)
 - [Changelog](#changelog)
 
-<a name="heatures"></a>
+<a name="features"></a>
 ## Features
 A free data field for Garmin watches to provide stats for walking activities. Built to provide more data in a more compact format than is typically available on data fields designed for runners (where too much information becomes impossible to digest at speed). Focused on data relevant to casual walking scenarios where step count, distance, pace and calorie burn are the predominant concerns rather than hiking where bearing, ascent and altitude etc. are more relevant. Currently displays:
 
@@ -81,8 +81,6 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	- Garmin supports a fixed number of languages on each device, and as far as I'm aware they do not add new languages to existing devices retrospectively, although they do tend to expand the list of supported languages on new devices. I can only offer translations in the languages supported by Garmin for a given device. If you are sure that Garmin supports a language on your device (in other words you can change the language setting on the watch to that language) and I haven't added a translation for that language, please [get in touch](#contact). I'll do the translation using Google Translate, but if you'd like to help by providing an accurate translation into your language I can give you a template in English for conversion.
 - **I have a feature suggestion**
 	- By all means [get in touch](#contact). Please bear in mind though that Walker has a defined purpose - it is for *casual* walking. I am not inclined to add data that is of more interest to technical hikers, such as altitude, ascent, bearing, cadence etc.
-- **Can you add support for the Forerunner 45/55 model?**
-	- No, sorry. The Forerunner 45 and 55 models have 8 colour screens which would require a rewrite of how colours are used in Walker's layout. I've actually tried doing this, but it caused an increase in memory usage which broke compatibility with several older devices such as the Forerunner 235. To support both types of model will require splitting the app into two separate releases which I don't want to do at the moment.
 - **It doesn't work on vivoactive**
 	- I've had several reports from users that can't find or can't load Walker on a vivoactive 3/4 watch model. I have reports from users of both models confirming that it does install on both models, but that the installation process is different from some of the other models. See these [installation steps](#othermodels) for guidance on installation provided by users who have Walker installed and working on these models.
 - **My watch isn't supported**
@@ -92,7 +90,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 - **Can I contribute to the project?**
 	- It depends what you want to contribute. I'm not opposed in principle to collaboration but the changes would have to be aligned with my intentions for the design and purpose of Walker (i.e. not a feature I don't want the app to have). It would also have to not break support for older devices currently supported (most notably it would have to keep memory usage below 16KB on older devices). I'd suggest [getting in touch](#contact) if this is something you're interested in.
 - **Can I make a forked version of Walker and upload it to the ConnectIQ store?**
-	- Yes. Walker is open source and I support the pricnciples of open source software development. The only thing I'd ask is that you keep your project open source and don't brand your work as a new and improved version of mine by calling it *Walker 2* or *Walker Pro* or something.
+	- Yes. Walker is open source and I support the principles of open source software development. The only thing I'd ask as is that you keep your project open source and as a courtesy, don't brand your work as a new and improved version of mine by calling it *Walker 2* or *Walker Pro* or something.
 
 <a name="help"></a>
 ## Help Requests
@@ -102,7 +100,7 @@ Garmin watches are functionally superb, but the installation procedure for Data 
 
 <a name="installation"></a>
 ## Installation
-Installation and setup of data fields on Garmin watches is not as straightforward as one might hope, and unfortunately is not the same on every model. The following step-by-step instructions are based on my own watch model (fenix 5X) and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
+Installation and setup of data fields on Garmin watches is not as straightforward as one might hope, and unfortunately is not the same on every model. The following step-by-step instructions are based on the fenix 5X model and should be broadly applicable to most Garmin watches, but steps or button layout may vary by watch model.
 1. Go to the [download page](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74) in the Connect IQ store in a web browser and (after logging in with your Garmin account) press the "Download" button.
 	- You will be asked which device you want to install to.
 	- Select the device from the dropdown list and press "Confirm Device".
@@ -163,7 +161,7 @@ The following installation steps for other watch models were kindly provided by 
 
 <a name="contact"></a>
 ## Contact
-Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74/contactdeveloper) to get in touch with me directly through the ConnectIQ store
+Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d2-b87a0b68ee74/contactdeveloper) to get in touch with me directly through the ConnectIQ store. If you need to get in touch this way, **please write in English**. I have translated the app into many languages using online translation tools, but I only understand English and I am less likely to read your message if I have to copy it into an online translator first.
 
 <a name="devices"></a>
 ## Supported Devices
@@ -174,12 +172,12 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 - epix 2
 - Enduro
 - fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7S / 7X / Chronos
-- Forerunner 230 / 235 / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE
+- Forerunner 230 / 235 / 245 / 245 Music / 255 / 255S / 255 Music / 255S Music / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE / 955
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition / Golfer
 - Venu / 2 / 2S / 2 Plus
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S
 
-*Note: Only tested in on a real fenix 5X and Forerunner 235 in the field, all other watches tested only in the SDK device simulator.*
+*Note: Only tested in on a real epix 2, fenix 5X and Forerunner 235 in the field, all other watches tested only in the SDK device simulator.*
 
 <a name="languages"></a>
 ## Supported Languages
@@ -226,7 +224,7 @@ Walker (watch face text and settings) is currently translated into the following
 Arabic, Hebrew and Thai supported by the Garmin ConnectIQ SDK but are not rendered correctly in the device simulator. The simulator also seems to throw an exception when a Thai string resource is used for the units of a FIT contribution. I have tested Arabic and Hebrew on a real fenix 5x watch and it seems to work fine, but my watch doesn't support Thai. Due to these issues it is impossible for me to thoroughly test these languages on all devices.
 
 ### Translation help
-Help with internationalisation would be appreciated. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback.
+Help with internationalisation is appreciated. Current translations are based on Reverso and Google Translate. I've made an effort to find the correct translations but have no easy way of finding out if they are correct except through user feedback.
 
 ## Source
 Walker is open source (MIT license) and it's code resides on GitHub at [https://github.com/wwarby/walker](https://github.com/wwarby/walker)
@@ -241,6 +239,9 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.6.0
+    - Add support for Forerunner 55, 255, 255S and 955
+		- Internal work to lock code for older lower memory devices such as Forerunner 235, enabling future new feature development for newer devices
 - 1.5.0
     - Add support for new devices
 		- Fix Hungarian and Hebrew translations - thanks (thanks [flocsy](https://github.com/flocsy))

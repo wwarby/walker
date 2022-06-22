@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 240 x 240 SQUARE FONT GROUP A
  * DEVICES:
@@ -5,7 +7,7 @@
  * - Venu Square Music
  */
  
-function getLayout() {
+function getLayout() as Array {
 	return [
 		30, 70, 145, 203, // [0-3] lines
 		0,                // [4]   stepGoalProgressOffsetX
@@ -37,6 +39,7 @@ function getLayout() {
 		4,                // [30]  middleRowValueFontShrunk Gfx.FONT_LARGE
 		6,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MEDIUM
 		3,                // [32]  bottomRowFont            Gfx.FONT_MEDIUM
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

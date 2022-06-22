@@ -1,10 +1,14 @@
+import Toybox.Lang;
+
 /* 
  * 416 x 416 FONT GROUP A
  * DEVICES:
  * - Venu 2
+ * - D2 Air X10
+ * - epix Gen 2
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		52, 126, 252, 364, // [0-3] lines
 		7,                 // [4]   stepGoalProgressOffsetX
@@ -36,6 +40,7 @@ function getLayout() {
 		3,                 // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		5,                 // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		3,                 // [32]  bottomRowFont            Gfx.FONT_MEDIUM
-		0                  // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                 // [33]  batteryFont              Gfx.FONT_XTINY
+		false              // [34]  eightColourPalette
 	];
 }

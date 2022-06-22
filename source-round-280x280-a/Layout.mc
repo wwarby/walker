@@ -1,11 +1,15 @@
+import Toybox.Lang;
+
 /* 
  * 280 x 280 FONT GROUP A
  * DEVICES:
  * - fenix 6X Pro
- * - Descent Mk2
+ * - fenix 7X
+ * - Descent MK2
+ * - Enduro
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		36, 86, 176, 243, // [0-3] lines
 		4,                // [4]   stepGoalProgressOffsetX
@@ -37,6 +41,7 @@ function getLayout() {
 		3,                // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		2,                // [32]  bottomRowFont            Gfx.FONT_SMALL
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

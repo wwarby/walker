@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 218 x 218 FONT GROUP C
  * DEVICES:
@@ -6,7 +8,7 @@
  * - fenix Chronos
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		26, 62, 130, 187, // [0-3] lines
 		2,                // [4]   stepGoalProgressOffsetX
@@ -38,6 +40,7 @@ function getLayout() {
 		2,                // [30]  middleRowValueFontShrunk Gfx.FONT_SMALL
 		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		0,                // [32]  bottomRowFont            Gfx.FONT_XTINY
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

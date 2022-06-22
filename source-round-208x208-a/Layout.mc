@@ -1,37 +1,33 @@
 import Toybox.Lang;
 
 /* 
- * 218 x 218 FONT GROUP A
+ * 208 x 208 FONT GROUP A
  * DEVICES:
- * - vivoactive 4S
- * - Forerunner 255S
- * - Forerunner 255S Music
- * - Captain Marvel
- * - Rey
+ * - Forerunner 55
  */
 
 function getLayout() as Array {
 	return [
-		26, 62, 130, 187, // [0-3] lines
+		26, 62, 126, 182, // [0-3] lines
 		2,                // [4]   stepGoalProgressOffsetX
-		10,               // [5]   centerOffsetX
+		6,                // [5]   centerOffsetX
 		13,               // [6]   clockY
 		0,                // [7]   clockOffsetX
 		44,               // [8]   topRowY
 		78,               // [9]   middleRowLabelY
 		106,              // [10]  middleRowValueY
-		77,               // [11]  heartRateIconY
-		72,               // [12]  heartRateIconHRZY
+		72,               // [11]  heartRateIconY
+		67,               // [12]  heartRateIconHRZY
 		20,               // [13]  heartRateIconWidth
 		28,               // [14]  heartRateIconHRZWidth
 		2,                // [15]  heartRateIconXOffset
 		2,                // [16]  heartRateIconHRZXOffset
-		110,              // [17]  heartRateTextY
-		147,              // [18]  bottomRowUpperTextY
-		169,              // [19]  bottomRowLowerTextY
-		22,               // [20]  bottomRowIconX
-		142,              // [21]  bottomRowIconY
-		201,              // [22]  batteryY
+		105,              // [17]  heartRateTextY
+		142,              // [18]  bottomRowUpperTextY
+		164,              // [19]  bottomRowLowerTextY
+		14,               // [20]  bottomRowIconX
+		132,              // [21]  bottomRowIconY
+		194,              // [22]  batteryY
 		0,                // [23]  batteryX
 		40,               // [24]  batteryWidth
 		18,               // [25]  batteryHeight
@@ -43,6 +39,6 @@ function getLayout() as Array {
 		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		1,                // [32]  bottomRowFont            Gfx.FONT_TINY
 		0,                // [33]  batteryFont              Gfx.FONT_XTINY
-    false             // [34]  eightColourPalette
+    true              // [34]  eightColourPalette
 	];
 }

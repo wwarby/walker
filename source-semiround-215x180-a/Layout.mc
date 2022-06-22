@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 215 x 180 FONT GROUP A
  * DEVICES:
@@ -7,7 +9,7 @@
  * - Forerunner 735xt
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		30, 64, 128, 0, // [0-3] lines
 		7,              // [4]   stepGoalProgressOffsetX
@@ -39,6 +41,7 @@ function getLayout() {
 		5,              // [30]  middleRowValueFontShrunk Gfx.FONT_NUMBER_MILD
 		5,              // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		3,              // [32]  bottomRowFont            Gfx.FONT_XTINY
-		3               // [33]  batteryFont              Gfx.FONT_XTINY
+		3,              // [33]  batteryFont              Gfx.FONT_XTINY
+		false           // [34]  eightColourPalette
 	];
 }

@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 218 x 218 FONT GROUP B
  * DEVICES:
@@ -7,7 +9,7 @@
  * - fenix 3 HR
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		26, 62, 130, 187, // [0-3] lines
 		2,                // [4]   stepGoalProgressOffsetX
@@ -39,6 +41,7 @@ function getLayout() {
 		3,                // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		4,                // [31]  middleRowValueFont       Gfx.FONT_LARGE
 		1,                // [32]  bottomRowFont            Gfx.FONT_TINY
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

@@ -1,10 +1,12 @@
+import Toybox.Lang;
+
 /* 
  * 360 x 360 FONT GROUP A
  * DEVICES:
  * - Venu 2S
  */
 
-function getLayout() {
+function getLayout() as Array {
 	return [
 		46, 114, 225, 314, // [0-3] lines
 		7,                 // [4]   stepGoalProgressOffsetX
@@ -36,6 +38,7 @@ function getLayout() {
 		3,                 // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		5,                 // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		2,                 // [32]  bottomRowFont            Gfx.FONT_SMALL
-		0                  // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                 // [33]  batteryFont              Gfx.FONT_XTINY
+		false              // [34]  eightColourPalette
 	];
 }

@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 240 x 240 FONT GROUP A
  * DEVICES:
@@ -15,7 +17,7 @@
  * - Forerunner 935
  */
  
-function getLayout() {
+function getLayout() as Array {
 	return [
 		30, 70, 145, 203, // [0-3] lines
 		3,                // [4]   stepGoalProgressOffsetX
@@ -47,6 +49,7 @@ function getLayout() {
 		2,                // [30]  middleRowValueFontShrunk Gfx.FONT_SMALL
 		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		0,                // [32]  bottomRowFont            Gfx.FONT_XTINY
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

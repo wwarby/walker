@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 /* 
  * 260 x 260 FONT GROUP A
  * DEVICES:
@@ -5,9 +7,12 @@
  * - Darth Vader
  * - First Avenger
  * - vivoactive 4
+ * - Forerunner 255
+ * - Forerunner 255 Music
+ * - Forerunner 955
  */
  
-function getLayout() {
+function getLayout() as Array {
 	return [
 		34, 80, 161, 223, // [0-3] lines
 		4,                // [4]   stepGoalProgressOffsetX
@@ -39,6 +44,7 @@ function getLayout() {
 		3,                // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
 		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
 		2,                // [32]  bottomRowFont            Gfx.FONT_SMALL
-		0                 // [33]  batteryFont              Gfx.FONT_XTINY
+		0,                // [33]  batteryFont              Gfx.FONT_XTINY
+    false             // [34]  eightColourPalette
 	];
 }

@@ -1,7 +1,9 @@
+import Toybox.Lang;
+
 // An efficient circular queue implementation that will store the most recently added X entries
 class DataQueue {
 
-	var data;
+	var data as Array;
 	var maxSize = 0;
 	var pos = 0;
 
