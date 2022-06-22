@@ -77,10 +77,12 @@ class WalkerView extends Ui.DataField {
 		if (info != null && info.elapsedTime > 0) {
 			var app = Application.getApp();
 			steps = app.getProperty("as");
-			lapSteps = app.getProperty("ls");
+			activityStepsAtPreviousLap = app.getProperty("ls");
 			app = null;
 			if (steps == null) { steps = 0; }
 			if (lapSteps == null) { lapSteps = 0; }
+			// Consolidate the previously stored steps, otherwise we will lose them when steps are next calculated
+			consolidatedSteps = steps;
 		}
 		
 		var stepsLabel = Ui.loadResource(Rez.Strings.steps);
