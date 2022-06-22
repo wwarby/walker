@@ -22,7 +22,7 @@
 
 <a name="donate"></a>
 ## Donate
-Donations are welcome and appreciated, but not required. If you'd like to show your appreciation for this app and keep me motivated to maintain it, please feel free to send a small donation to https://paypal.me/wwarby. Walker will always remain free and open source.
+Donations are welcome and appreciated, but not required. If you'd like to show your appreciation for this app and keep me motivated to maintain it, please feel free to send a small donation to [https://paypal.me/wwarby](https://paypal.me/wwarby). Walker will always remain free and open source.
 
 <a name="features"></a>
 ## Features
