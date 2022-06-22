@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">خطوات / كيلومتر</string>
 	<string id="stepsPerMile">خطوات / ميل</string>
 	<string id="stepsPerHour">خطوات / ساعة</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

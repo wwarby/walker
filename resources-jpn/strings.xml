@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">歩数/キロメートル</string>
 	<string id="stepsPerMile">ステップ/マイル</string>
 	<string id="stepsPerHour">ステップ/時間</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

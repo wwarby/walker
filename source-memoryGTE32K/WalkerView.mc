@@ -141,8 +141,8 @@ class WalkerView extends Ui.DataField {
 		
 		kmOrMileInMetersDistance = deviceSettings.distanceUnits == System.UNIT_METRIC ? 1000.0f : 1609.34f;
 		kmOrMileInKmPace = deviceSettings.paceUnits == System.UNIT_METRIC ? 1.0f : 1.60934f;
-		distanceUnitsLabel = deviceSettings.distanceUnits == System.UNIT_METRIC ? "km" : "mi";
-		averagePaceOrSpeedUnitsLabel = showSpeedInsteadOfPace ? "/hr" : "/" + (deviceSettings.paceUnits == System.UNIT_METRIC ? "km" : "mi");
+		distanceUnitsLabel = Ui.loadResource(deviceSettings.distanceUnits == System.UNIT_METRIC ? Rez.Strings.km : Rez.Strings.mi);
+		averagePaceOrSpeedUnitsLabel = "/" + Ui.loadResource(showSpeedInsteadOfPace ? Rez.Strings.h : deviceSettings.paceUnits == System.UNIT_METRIC ? Rez.Strings.km : Rez.Strings.mi);
 		
 		// Short circuit if we have already created our FIT contributor fields and the distance unit setting hasn't changed
 		if (deviceSettings.distanceUnits == previousDistanceUnits) { return; }

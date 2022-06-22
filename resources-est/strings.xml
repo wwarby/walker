@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Samm / KM</string>
 	<string id="stepsPerMile">Samm / Miil</string>
 	<string id="stepsPerHour">Samm / Tund</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

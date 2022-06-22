@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">ขั้นตอนต่อกิโลเมตร</string>
 	<string id="stepsPerMile">ขั้นตอนต่อไมล์</string>
 	<string id="stepsPerHour">ขั้นตอนต่อชั่วโมง</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

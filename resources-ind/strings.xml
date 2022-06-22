@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Langkah / Mil</string>
 	<string id="stepsPerMile">Langkah / Mérföld</string>
 	<string id="stepsPerHour">Langkah / Jam</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

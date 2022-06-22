@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Vaiheet / KM</string>
 	<string id="stepsPerMile">Vaiheet / Maili</string>
 	<string id="stepsPerHour">Vaiheet / Tunti</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

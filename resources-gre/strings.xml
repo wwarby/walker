@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Βήματα / Χιλιόμετρο</string>
 	<string id="stepsPerMile">Βήματα / Μίλι</string>
 	<string id="stepsPerHour">Βήματα / Ωρα</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

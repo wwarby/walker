@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Lépésszám / km</string>
 	<string id="stepsPerMile">Lépésszám / mérföld</string>
 	<string id="stepsPerHour">Lépésszám / óra</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

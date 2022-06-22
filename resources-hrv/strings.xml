@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Koraci / KM</string>
 	<string id="stepsPerMile">Koraci / Milja</string>
 	<string id="stepsPerHour">Koraci / Sat</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

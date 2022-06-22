@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Adım / KM</string>
 	<string id="stepsPerMile">Adım / Mil</string>
 	<string id="stepsPerHour">Adım / Saat</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

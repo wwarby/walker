@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Kroky / KM</string>
 	<string id="stepsPerMile">Kroky / Míle</string>
 	<string id="stepsPerHour">Kroky / Hodina</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

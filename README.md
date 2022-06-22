@@ -245,6 +245,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.5.1
+    - Add translation capability for speed / pace units with Hebrew translation included
 - 1.5.0
     - Add support for D2 Mach 1, Forerunner 55, 255, 255S and 955
 		- Internal work to lock code for older lower memory devices such as Forerunner 235, enabling future new feature development for newer devices

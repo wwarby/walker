@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Pași / KM</string>
 	<string id="stepsPerMile">Pași / Mile</string>
 	<string id="stepsPerHour">Pași / Oră</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

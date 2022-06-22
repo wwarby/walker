@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">步數/公里</string>
 	<string id="stepsPerMile">步數/英里</string>
 	<string id="stepsPerHour">步數/小時</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

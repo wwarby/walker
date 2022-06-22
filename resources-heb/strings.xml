@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">צעדים לק"מ</string>
 	<string id="stepsPerMile">צעדים למייל</string>
 	<string id="stepsPerHour">צעדים לשעה</string>
+	<string id="km">ק"מ</string>
+	<string id="mi">מיל</string>
+	<string id="h">שעה</string>
 </strings>

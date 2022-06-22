@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Trinn / KM</string>
 	<string id="stepsPerMile">Trinn / Mil</string>
 	<string id="stepsPerHour">Trinn / Time</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Стъпки / Километър</string>
 	<string id="stepsPerMile">Стъпки / Миля</string>
 	<string id="stepsPerHour">Стъпки / Час</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>

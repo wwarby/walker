@@ -21,4 +21,7 @@
 	<string id="stepsPerKm">Steg / KM</string>
 	<string id="stepsPerMile">Steg / Mil</string>
 	<string id="stepsPerHour">Steg / Timme</string>
+	<string id="km">km</string>
+	<string id="mi">mi</string>
+	<string id="h">h</string>
 </strings>
