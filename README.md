@@ -242,6 +242,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - 1.6.0
     - Add support for Forerunner 55, 255, 255S and 955
 		- Internal work to lock code for older lower memory devices such as Forerunner 235, enabling future new feature development for newer devices
+		- Fix a longstanding bug where steps would go screwy after using "resume later" on an activity
 - 1.5.0
     - Add support for new devices
 		- Fix Hungarian and Hebrew translations - thanks (thanks [flocsy](https://github.com/flocsy))

@@ -15,10 +15,10 @@
 	<string id="mode10Seconds">10 second average</string>
 	<string id="mode30Seconds">30 second average</string>
 	<string id="mode60Seconds">60 second average</string>
-	<string id="averageStepsPerKm">Average Steps per KM</string>
-	<string id="averageStepsPerMile">Average Steps per Mile</string>
-	<string id="averageStepsPerHour">Average Steps per Hour</string>
-	<string id="stepsPerKm">Steps per KM</string>
-	<string id="stepsPerMile">Steps per Mile</string>
-	<string id="stepsPerHour">Steps per Hour</string>
+	<string id="averageStepsPerKm">Avg Steps / KM</string>
+	<string id="averageStepsPerMile">Avg Steps / Mile</string>
+	<string id="averageStepsPerHour">Avg Steps / Hour</string>
+	<string id="stepsPerKm">Steps / KM</string>
+	<string id="stepsPerMile">Steps / Mile</string>
+	<string id="stepsPerHour">Steps / Hour</string>
 </strings>
