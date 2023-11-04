@@ -85,12 +85,11 @@ class WalkerView extends Ui.DataField {
 			consolidatedSteps = steps;
 		}
 		
-		var stepsLabel = Ui.loadResource(Rez.Strings.steps);
 		var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
 		
 		// Create FIT contributor fields
-		stepsActivityField = createField("steps", 0, 6 /* Fit.DATA_TYPE_UINT32 */, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
-		stepsLapField = createField("steps", 1, 6 /* Fit.DATA_TYPE_UINT32 */, { :mesgType => Fit.MESG_TYPE_LAP, :units => stepsUnits });
+		stepsActivityField = createField("steps", 0, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		stepsLapField = createField("steps", 1, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_LAP, :units => stepsUnits });
 		
 		// Set initial steps FIT contributions to zero
 		stepsActivityField.setData(0);
@@ -384,7 +383,7 @@ class WalkerView extends Ui.DataField {
 		var currentTime = System.getClockTime();
 		var hour = is24Hour ? currentTime.hour : currentTime.hour % 12;
 		if (!is24Hour && hour == 0) { hour = 12; }
-		dc.drawText(halfWidth + layout[7] /* clockOffsetX */, layout[6] /* clockY */, layout[26] /* timeFont */,
+		dc.drawText(halfWidth + layout[8] /* clockOffsetX */, layout[7] /* clockY */, layout[27] /* timeFont */,
 			hour.format(is24Hour ? "%02d" : "%d")
 				+ ":"
 				+ currentTime.min.format("%02d")
@@ -392,18 +391,18 @@ class WalkerView extends Ui.DataField {
 				1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render average pace or speed
-		dc.drawText(halfWidth - layout[5] /* centerOffsetX */, layout[8] /* topRowY */, layout[27] /* topRowFont */,
+		dc.drawText(halfWidth - layout[6] /* centerOffsetX */, layout[9] /* topRowY */, layout[28] /* topRowFont */,
 			(showSpeedInsteadOfPace ? formatDistance(averagePaceOrSpeed) : formatTime(averagePaceOrSpeed, true)) + averagePaceOrSpeedUnitsLabel,
 			0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render distance
-		dc.drawText(halfWidth + layout[5] /* centerOffsetX */, layout[8] /* topRowY */, layout[27] /* topRowFont */,
+		dc.drawText(halfWidth + layout[6] /* centerOffsetX */, layout[9] /* topRowY */, layout[28] /* topRowFont */,
 			formatDistance(distance) + distanceUnitsLabel, 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render heart rate text
 		var heartRateText = (heartRate == null ? 0 : heartRate).format("%d");
-		var heartRateWidth = dc.getTextDimensions(heartRateText, layout[28] /* heartRateFont */)[0];
-		dc.drawText(halfWidth, layout[17] /* heartRateTextY */, layout[28] /* heartRateFont */,
+		var heartRateWidth = dc.getTextDimensions(heartRateText, layout[29] /* heartRateFont */)[0];
+		dc.drawText(halfWidth, layout[18] /* heartRateTextY */, layout[29] /* heartRateFont */,
 			heartRateText, 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render heart rate icon
@@ -411,13 +410,13 @@ class WalkerView extends Ui.DataField {
 		var hrIconWidth;
 		var hrIconXOffset;
 		if (showHeartRateZone && heartRateZone != null) {
-			hrIconY = layout[12] /* heartRateIconHRZY */;
-			hrIconWidth = layout[14] /* heartRateIconHRZWidth */;
-			hrIconXOffset = layout[16] /* heartRateIconHRZXOffset */;
+			hrIconY = layout[13] /* heartRateIconHRZY */;
+			hrIconWidth = layout[15] /* heartRateIconHRZWidth */;
+			hrIconXOffset = layout[17] /* heartRateIconHRZXOffset */;
 		} else {
-			hrIconY = layout[11] /* heartRateIconY */;
-			hrIconWidth = layout[13] /* heartRateIconWidth */;
-			hrIconXOffset = layout[15] /* heartRateIconXOffset */;
+			hrIconY = layout[12] /* heartRateIconY */;
+			hrIconWidth = layout[14] /* heartRateIconWidth */;
+			hrIconXOffset = layout[16] /* heartRateIconXOffset */;
 		}
 		dc.setColor(heartRateIconColour, -1 /* Gfx.COLOR_TRANSPARENT */);
 		dc.fillCircle(halfWidth - (hrIconWidth / 4.7), hrIconY + (hrIconWidth / 3.2), hrIconWidth / 3.2);
@@ -430,7 +429,7 @@ class WalkerView extends Ui.DataField {
 		
 		if (showHeartRateZone && heartRateZone != null) {
 			dc.setColor(heartRateZoneTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
-			dc.drawText(halfWidth, hrIconY + (hrIconWidth / 2) - 3, 0 /* Gfx.FONT_XTINY */,
+			dc.drawText(halfWidth, hrIconY + (hrIconWidth / 2) - 3, Gfx.FONT_XTINY,
 				heartRateZone.toString(), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		}
 		
@@ -438,53 +437,53 @@ class WalkerView extends Ui.DataField {
 		dc.setColor(darkMode ? 0xFFFFFF /* Gfx.COLOR_WHITE */ : 0x000000 /* Gfx.COLOR_BLACK */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		
 		// Render current pace or speed
-		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, layout[9] /* middleRowLabelY */, layout[29] /* middleRowLabelFont */,
+		dc.drawText((halfWidth / 2) - (heartRateWidth / 2) + 5, layout[10] /* middleRowLabelY */, layout[30] /* middleRowLabelFont */,
 			Ui.loadResource(showSpeedInsteadOfPace ? Rez.Strings.speed : Rez.Strings.pace),
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 		(halfWidth / 2) - (heartRateWidth / 2) + 5,
-			layout[10] /* middleRowValueY */,
-			shrinkMiddleText ? layout[30] /* middleRowValueFontShrunk */ : layout[31] /* middleRowValueFont */,
+			layout[11] /* middleRowValueY */,
+			shrinkMiddleText ? layout[31] /* middleRowValueFontShrunk */ : layout[32] /* middleRowValueFont */,
 			paceOrSpeedText,
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render timer
-		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, layout[9] /* middleRowLabelY */, layout[29] /* middleRowLabelFont */,
+		dc.drawText((halfWidth * 1.5) + (heartRateWidth / 2) - 5, layout[10] /* middleRowLabelY */, layout[30] /* middleRowLabelFont */,
 			Ui.loadResource(Rez.Strings.timer), 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		dc.drawText(
 			(halfWidth * 1.5) + (heartRateWidth / 2) - 5,
-			layout[10] /* middleRowValueY */,
-			shrinkMiddleText ? layout[30] /* middleRowValueFontShrunk */ : layout[31] /* middleRowValueFont */,
+			layout[11] /* middleRowValueY */,
+			shrinkMiddleText ? layout[31] /* middleRowValueFontShrunk */ : layout[32] /* middleRowValueFont */,
 			timeText,
 			1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render steps
-		dc.drawBitmap(layout[20] /* bottomRowIconX */, layout[21] /* bottomRowIconY */, stepsIcon);
-		dc.drawText(halfWidth - layout[5] /* centerOffsetX */, layout[18] /* bottomRowUpperTextY */, layout[32] /* bottomRowFont */,
+		dc.drawBitmap(layout[21] /* bottomRowIconX */, layout[22] /* bottomRowIconY */, stepsIcon);
+		dc.drawText(halfWidth - layout[6] /* centerOffsetX */, layout[19] /* bottomRowUpperTextY */, layout[33] /* bottomRowFont */,
 			(steps == null ? 0 : steps).format("%d"), 0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render calories
-		dc.drawBitmap(dc.getWidth() - layout[20] /* bottomRowIconX */ - caloriesIcon.getWidth(), layout[21] /* bottomRowIconY */, caloriesIcon);
-		dc.drawText(halfWidth + layout[5] /* centerOffsetX */, layout[18] /* bottomRowUpperTextY */, layout[32] /* bottomRowFont */,
+		dc.drawBitmap(dc.getWidth() - layout[21] /* bottomRowIconX */ - caloriesIcon.getWidth(), layout[22] /* bottomRowIconY */, caloriesIcon);
+		dc.drawText(halfWidth + layout[6] /* centerOffsetX */, layout[19] /* bottomRowUpperTextY */, layout[33] /* bottomRowFont */,
 			(calories == null ? 0 : calories).format("%d"), 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Set grey colour for day counts
 		dc.setColor(0x555555 /* Gfx.COLOR_DK_GRAY */, -1 /* Gfx.COLOR_TRANSPARENT */);
 		
 		// Render day steps
-		dc.drawText(halfWidth - layout[5] /* centerOffsetX */, layout[19] /* bottomRowLowerTextY */, layout[32] /* bottomRowFont */,
+		dc.drawText(halfWidth - layout[6] /* centerOffsetX */, layout[20] /* bottomRowLowerTextY */, layout[33] /* bottomRowFont */,
 			(daySteps == null ? 0 : daySteps).format("%d"), 0 /* Gfx.TEXT_JUSTIFY_RIGHT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render day calories
-		dc.drawText(halfWidth + layout[5] /* centerOffsetX */, layout[19] /* bottomRowLowerTextY */, layout[32] /* bottomRowFont */,
+		dc.drawText(halfWidth + layout[6] /* centerOffsetX */, layout[20] /* bottomRowLowerTextY */, layout[33] /* bottomRowFont */,
 			(dayCalories == null ? 0 : dayCalories).format("%d"), 2 /* Gfx.TEXT_JUSTIFY_LEFT */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 		
 		// Render battery
 		dc.setColor(batteryIconColour, -1 /* Gfx.COLOR_TRANSPARENT */);
-		dc.fillRoundedRectangle(halfWidth - (layout[24] /* batteryWidth */ / 2) + 2 + layout[23] /* batteryX */, layout[22] /* batteryY */ - (layout[25] /* batteryHeight */ / 2), layout[24] /* batteryWidth */ - 4, layout[25] /* batteryHeight */, 2);
-		dc.fillRoundedRectangle(halfWidth - (layout[24] /* batteryWidth */ / 2) + 2 + layout[23] /* batteryX */ + layout[24] /* batteryWidth */ - 7, layout[22] /* batteryY */ - (layout[25] /* batteryHeight */ / 2) + 4, 7, layout[25] /* batteryHeight */ - 8, 2);
+		dc.fillRoundedRectangle(halfWidth - (layout[25] /* batteryWidth */ / 2) + 2 + layout[24] /* batteryX */, layout[23] /* batteryY */ - (layout[26] /* batteryHeight */ / 2), layout[25] /* batteryWidth */ - 4, layout[26] /* batteryHeight */, 2);
+		dc.fillRoundedRectangle(halfWidth - (layout[25] /* batteryWidth */ / 2) + 2 + layout[24] /* batteryX */ + layout[25] /* batteryWidth */ - 7, layout[23] /* batteryY */ - (layout[26] /* batteryHeight */ / 2) + 4, 7, layout[26] /* batteryHeight */ - 8, 2);
 		dc.setColor(batteryTextColour, -1 /* Gfx.COLOR_TRANSPARENT */);
-		dc.drawText(halfWidth + layout[23] /* batteryX */, layout[22] /* batteryY */ - 1, layout[33] /* batteryFont */,
+		dc.drawText(halfWidth + layout[24] /* batteryX */, layout[23] /* batteryY */ - 1, layout[34] /* batteryFont */,
 			battery.format("%d") + "%", 1 /* Gfx.TEXT_JUSTIFY_CENTER */ | 4 /* Gfx.TEXT_JUSTIFY_VCENTER */);
 	}
 	

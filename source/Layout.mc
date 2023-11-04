@@ -2,35 +2,36 @@
 	return [
 		34, 80, 161, 223, // [0-3] lines
 		4,                // [4]   stepGoalProgressOffsetX
-		10,               // [5]   centerOffsetX
-		17,               // [6]   clockY
-		0,                // [7]   clockOffsetX
-		58,               // [8]   topRowY
-		103,              // [9]   middleRowLabelY
-		134,              // [10]  middleRowValueY
-		100,              // [11]  heartRateIconY
-		96,               // [12]  heartRateIconHRZY
-		20,               // [13]  heartRateIconWidth
-		28,               // [14]  heartRateIconHRZWidth
-		2,                // [15]  heartRateIconXOffset
-		2,                // [16]  heartRateIconHRZXOffset
-		136,              // [17]  heartRateTextY
-		180,              // [18]  bottomRowUpperTextY
-		203,              // [19]  bottomRowLowerTextY
-		25,               // [20]  bottomRowIconX
-		172,              // [21]  bottomRowIconY
-		240,              // [22]  batteryY
-		0,                // [23]  batteryX
-		45,               // [24]  batteryWidth
-		20,               // [25]  batteryHeight
-		1,                // [26]  timeFont                 Gfx.FONT_TINY
-		1,                // [27]  topRowFont               Gfx.FONT_TINY
-		1,                // [28]  heartRateFont            Gfx.FONT_TINY
-		1,                // [29]  middleRowLabelFont       Gfx.FONT_TINY
-		3,                // [30]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
-		5,                // [31]  middleRowValueFont       Gfx.FONT_NUMBER_MILD
-		2,                // [32]  bottomRowFont            Gfx.FONT_SMALL
-		0,                // [33]  batteryFont              Gfx.FONT_XTINY
-    false             // [34]  eightColourPalette
+		3,                // [5]   stepGoalProgressHeight
+		10,               // [6]   centerOffsetX
+		17,               // [7]   clockY
+		0,                // [8]   clockOffsetX
+		58,               // [9]   topRowY
+		103,              // [10]  middleRowLabelY
+		134,              // [11]  middleRowValueY
+		100,              // [12]  heartRateIconY
+		96,               // [13]  heartRateIconHRZY
+		20,               // [14]  heartRateIconWidth
+		28,               // [15]  heartRateIconHRZWidth
+		2,                // [16]  heartRateIconXOffset
+		2,                // [17]  heartRateIconHRZXOffset
+		136,              // [18]  heartRateTextY
+		180,              // [19]  bottomRowUpperTextY
+		203,              // [20]  bottomRowLowerTextY
+		25,               // [21]  bottomRowIconX
+		172,              // [22]  bottomRowIconY
+		240,              // [23]  batteryY
+		0,                // [24]  batteryX
+		45,               // [25]  batteryWidth
+		20,               // [26]  batteryHeight
+		1,                // [27]  timeFont                  Gfx.FONT_TINY
+		1,                // [28]  topRowFont                Gfx.FONT_TINY
+		1,                // [29]  heartRateFont             Gfx.FONT_TINY
+		1,                // [30]  middleRowLabelFont        Gfx.FONT_TINY
+		3,                // [31]  middleRowValueFontShrunk Gfx.FONT_MEDIUM
+		5,                // [32]  middleRowValueFont        Gfx.FONT_NUMBER_MILD
+		2,                // [33]  bottomRowFont             Gfx.FONT_SMALL
+		0,                // [34]  batteryFont               Gfx.FONT_XTINY
+    false             // [35]  eightColourPalette
 	];
 }

@@ -245,6 +245,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.6.0
+    - Add support for new devices, update translations
 - 1.5.1
     - Add translation capability for speed / pace units with Hebrew translation included
 - 1.5.0
