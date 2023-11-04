@@ -1,16 +1,16 @@
 <strings>
-	<string id="appName">проходилка</string>
+	<string id="appName">Walker</string>
 	<string id="steps">стъпки</string>
 	<string id="stepsUnits">стъпки</string>
 	<string id="pace">темпо</string>
 	<string id="speed">скорост</string>
 	<string id="timer">часовник</string>
-	<string id="paceOrSpeedModeTitle">Скорост / темп режим</string>
+	<string id="paceOrSpeedModeTitle">Режим на скорост / темпо</string>
 	<string id="heartRateModeTitle">Режим на сърдечна честота</string>
 	<string id="showHeartRateZoneTitle">Зона на сърдечната честота</string>
-	<string id="showSpeedInsteadOfPace">Използвайте скорост</string>
-	<string id="darkMode">черно</string>
-	<string id="modeInstant">сегашен</string>
+	<string id="showSpeedInsteadOfPace">Използвайте скорост вместо темпо</string>
+	<string id="darkMode">Използвайте тъмен фон</string>
+	<string id="modeInstant">моментен</string>
 	<string id="mode5Seconds">5 сек средно</string>
 	<string id="mode10Seconds">10 сек средно</string>
 	<string id="mode30Seconds">30 сек средно</string>
