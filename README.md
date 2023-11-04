@@ -245,6 +245,8 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.6.1
+    - Fix a bug introduced by changes in 1.6.0
 - 1.6.0
     - Add support for new devices, update translations
 - 1.5.1
