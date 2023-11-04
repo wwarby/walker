@@ -10,7 +10,7 @@
 	<string id="showHeartRateZoneTitle">Zone de fréquence cardiaque</string>
 	<string id="showSpeedInsteadOfPace">Utiliser la vitesse</string>
 	<string id="darkMode">Noir</string>
-	<string id="modeInstant">Instantannée</string>
+	<string id="modeInstant">Instantané</string>
 	<string id="mode5Seconds">Moy sur 5s</string>
 	<string id="mode10Seconds">Moy sur 10s</string>
 	<string id="mode30Seconds">Moy sur 30s</string>
