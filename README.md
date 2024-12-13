@@ -176,9 +176,9 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 - D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S / Air / Air X10 / Mach 1
 - Descent Mk1 / Mk2 / Mk2S
 - epix 2 / 2 Pro 42mm / 2 Pro 47mm / 2 Pro 51mm
-- Enduro
-- fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7 Pro / 7S / 7S Pro / 7X / 7X Pro / Chronos
-- Forerunner 230 / 235 / 245 / 245 Music / 255 / 255S / 255 Music / 255S Music / 265 / 265S / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE / 955 / 965
+- Enduro 1 / 3
+- fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7 Pro / 7S / 7S Pro / 7X / 7X Pro / Chronos / 8 / 8 Solar
+- Forerunner 165 / 165 Music / 230 / 235 / 245 / 245 Music / 255 / 255S / 255 Music / 255S Music / 265 / 265S / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE / 955 / 965
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition / Golfer / 2
 - Venu / 2 / 2S / 2 Plus / 3 / 3S / Square / Square 2 / Square 2 Music
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S / 5
