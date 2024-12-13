@@ -75,10 +75,8 @@ class WalkerView extends Ui.DataField {
 		
 		// If the activity has restarted after "resume later", load previously stored steps values
 		if (info != null && info.elapsedTime > 0) {
-			var app = Application.getApp();
-			steps = app.getProperty("as");
-			activityStepsAtPreviousLap = app.getProperty("ls");
-			app = null;
+			steps = Application.Properties.getValue("as");
+			activityStepsAtPreviousLap = Application.Properties.getValue("ls");
 			if (steps == null) { steps = 0; }
 			if (lapSteps == null) { lapSteps = 0; }
 			// Consolidate the previously stored steps, otherwise we will lose them when steps are next calculated
@@ -100,31 +98,30 @@ class WalkerView extends Ui.DataField {
 	function readSettings() {
 		
 		var deviceSettings = System.getDeviceSettings();
-		var app = Application.getApp();
 		
 		// 12 / 24 hour mode
 		is24Hour = deviceSettings.is24Hour;
 		
 		// Dark mode
-		darkModeFromSetting = app.getProperty("d") == true;
+		darkModeFromSetting = Application.Properties.getValue("d") == true;
 		
 		// Speed / pace mode 
-		paceOrSpeedMode = app.getProperty("pm");
+		paceOrSpeedMode = Application.Properties.getValue("pm");
 		if (paceOrSpeedMode > 0) {
 			paceOrSpeedData = new DataQueue(paceOrSpeedMode, true);
 		} else {
 			paceOrSpeedData = null;
 		}
 		
-		heartRateMode = app.getProperty("hm");
+		heartRateMode = Application.Properties.getValue("hm");
 		if (heartRateMode > 0) {
 			heartRateData = new DataQueue(heartRateMode, true);
 		} else {
 			heartRateData = null;
 		}
 		
-		showHeartRateZone = app.getProperty("z");
-		showSpeedInsteadOfPace = app.getProperty("s");
+		showHeartRateZone = Application.Properties.getValue("z");
+		showSpeedInsteadOfPace = Application.Properties.getValue("s");
 		
 		kmOrMileInMetersDistance = deviceSettings.distanceUnits == 0 /* System.UNIT_METRIC */ ? 1000.0f : 1609.34f;
 		kmOrMileInKmPace = deviceSettings.paceUnits == 0 /* System.UNIT_METRIC */ ? 1.0f : 1.60934f;
