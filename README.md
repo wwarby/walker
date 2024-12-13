@@ -247,6 +247,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 ## Changelog
 - 1.7.0
     - Add support for new devices
+		- Prevent crash when unable to write FIT contributions
 - 1.6.1
     - Fix a bug introduced by changes in 1.6.0
 - 1.6.0

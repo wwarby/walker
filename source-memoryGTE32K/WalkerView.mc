@@ -145,25 +145,30 @@ class WalkerView extends Ui.DataField {
 		
 		// Create FIT contributor fields
 		
-		var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
-		
-		stepsPerKmOrMileField = createField(
-			deviceSettings.distanceUnits == System.UNIT_METRIC ? "stepsPerKm" : "stepsPerMile",
-			deviceSettings.distanceUnits == System.UNIT_METRIC ? 2 : 3,	Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
-		
-		stepsPerHourField = createField("stepsPerHour", 4, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
-
-		averageStepsPerKmOrMileField = createField(
-			deviceSettings.distanceUnits == System.UNIT_METRIC ? "avgStepsPerKm" : "avgStepsPerMile",
-			deviceSettings.distanceUnits == System.UNIT_METRIC ? 5 : 6, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
-		
-		averageStepsPerHourField = createField("avgStepsPerHour", 7, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		try {
+			var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
 			
-		// Set initial steps FIT contributions to zero
-		stepsPerKmOrMileField.setData(0);
-		stepsPerHourField.setData(0);
-		averageStepsPerKmOrMileField.setData(0);
-		averageStepsPerHourField.setData(0);
+			stepsPerKmOrMileField = createField(
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? "stepsPerKm" : "stepsPerMile",
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? 2 : 3,	Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
+			
+			stepsPerHourField = createField("stepsPerHour", 4, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
+
+			averageStepsPerKmOrMileField = createField(
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? "avgStepsPerKm" : "avgStepsPerMile",
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? 5 : 6, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+			
+			averageStepsPerHourField = createField("avgStepsPerHour", 7, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+
+			// Set initial steps FIT contributions to zero
+			stepsPerKmOrMileField.setData(0);
+			stepsPerHourField.setData(0);
+			averageStepsPerKmOrMileField.setData(0);
+			averageStepsPerHourField.setData(0);
+		} catch(e) {
+			System.println("Unable to create and initialise FIT data fields: " + e.getErrorMessage());
+			e.printStackTrace();
+		}
 		
 		previousDistanceUnits = deviceSettings.distanceUnits;
 	}
@@ -275,8 +280,13 @@ class WalkerView extends Ui.DataField {
 			lapSteps = steps - activityStepsAtPreviousLap;
 			
 			// Update step FIT contributions
-			stepsActivityField.setData(steps);
-			stepsLapField.setData(lapSteps);
+			try {
+				stepsActivityField.setData(steps);
+				stepsLapField.setData(lapSteps);
+			} catch (e) {
+				System.println("Unable to set FIT data with steps value " + steps + " and lap steps value " + lapSteps + ": " + e.getErrorMessage());
+				e.printStackTrace();
+			}
 		}
 		stepGoalProgress = activityMonitorInfo.stepGoal != null && activityMonitorInfo.stepGoal > 0
 			? daySteps > activityMonitorInfo.stepGoal
