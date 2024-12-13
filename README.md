@@ -91,6 +91,7 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	- I've had several reports from users that can't find or can't load Walker on a vivoactive 3/4 watch model. I have reports from users of both models confirming that it does install on both models, but that the installation process is different from some of the other models. See these [installation steps](#othermodels) for guidance on installation provided by users who have Walker installed and working on these models.
 - **My watch isn't supported**
 	- Please first [check the supported devices list](#devices). If your watch is listed there, it *is* supported. A common reason why you might not be able to install Walker on your watch is that the firmware on your watch is out of date. In this case, update the firmware on your watch first and if you don't know how to do that, get in touch with Garmin technical support. If your watch is a newer model it is likely I just haven't gotten around to supporting it yet. Please [get in touch](#contact) and give me a nudge to add support.
+	- If your watch is a _really old_ model like the ForeRunner 235, I have intentionally removed support for it as of December 2024. These models have 16KB of working memory - it is simply too much effort to maintain compatibility with these watches. The last version of Walker that worked with these models was v1.6.1.
 - **I think I've found a bug**
 	- It's possible. Please check that the issue you've found isn't covered in this FAQ, and make sure you are running the latest version of Walker. It's impossible to tell from looking at the watch itself if you're running the latest version, so you'll need to use the Connect IQ app on your phone, make sure there are no updates showing as available, and sync your device to your phone. If you're confident the issue you're experiencing is not covered in this not covered in this FAQ and you're running the latest version of Walker, please [get in touch](#contact).
 - **Can I contribute to the project?**
@@ -173,12 +174,12 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 ## Supported Devices
 - Approach S60 / S62 / S70 42mm / S70 47mm / S70 51mm
 - Captain Marvel / Darth Vader / First Avenger / Rey
-- D2 Bravo / Bravo Titanium / Charlie / Delta / Delta PX / Delta S / Air / Air X10 / Mach 1
+- D2 Charlie / Delta / Delta PX / Delta S / Air / Air X10 / Mach 1
 - Descent Mk1 / Mk2 / Mk2S
 - epix 2 / 2 Pro 42mm / 2 Pro 47mm / 2 Pro 51mm
 - Enduro 1 / 3
-- fenix 3 / 3 HR / 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7 Pro / 7S / 7S Pro / 7X / 7X Pro / Chronos / 8 / 8 Solar
-- Forerunner 165 / 165 Music / 230 / 235 / 245 / 245 Music / 255 / 255S / 255 Music / 255S Music / 265 / 265S / 630 / 645 / 645 Music / 735xt / 935 / 945 / 945LTE / 955 / 965
+- fenix 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7 Pro / 7S / 7S Pro / 7X / 7X Pro / Chronos / 8 / 8 Solar
+- Forerunner 165 / 165 Music / 245 / 245 Music / 255 / 255S / 255 Music / 255S Music / 265 / 265S / 630 / 645 / 645 Music / 935 / 945 / 945LTE / 955 / 965
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition / Golfer / 2
 - Venu / 2 / 2S / 2 Plus / 3 / 3S / Square / Square 2 / Square 2 Music
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S / 5
@@ -248,6 +249,7 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 - 1.7.0
     - Add support for new devices
 		- Prevent crash when unable to write FIT contributions
+		- Removed support for really old devices
 - 1.6.1
     - Fix a bug introduced by changes in 1.6.0
 - 1.6.0
