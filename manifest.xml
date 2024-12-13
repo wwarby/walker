@@ -35,7 +35,6 @@
       <iq:product id="fenix5xplus"/>
       <iq:product id="fenix6"/>
       <iq:product id="fenix6pro"/>
-      <iq:product id="fenix6prosystem5preview"/>
       <iq:product id="fenix6s"/>
       <iq:product id="fenix6spro"/>
       <iq:product id="fenix6xpro"/>
@@ -94,7 +93,6 @@
       <iq:product id="venu2"/>
       <iq:product id="venu2plus"/>
       <iq:product id="venu2s"/>
-      <iq:product id="venu2system5preview"/>
       <iq:product id="venu3"/>
       <iq:product id="venu3s"/>
       <iq:product id="venud"/>
@@ -117,19 +115,17 @@
     <iq:languages>
       <iq:language>ara</iq:language>
       <iq:language>bul</iq:language>
-      <iq:language>zhs</iq:language>
-      <iq:language>zht</iq:language>
-      <iq:language>hrv</iq:language>
       <iq:language>ces</iq:language>
       <iq:language>dan</iq:language>
-      <iq:language>dut</iq:language>
       <iq:language>deu</iq:language>
-      <iq:language>gre</iq:language>
+      <iq:language>dut</iq:language>
       <iq:language>eng</iq:language>
       <iq:language>est</iq:language>
       <iq:language>fin</iq:language>
       <iq:language>fre</iq:language>
+      <iq:language>gre</iq:language>
       <iq:language>heb</iq:language>
+      <iq:language>hrv</iq:language>
       <iq:language>hun</iq:language>
       <iq:language>ind</iq:language>
       <iq:language>ita</iq:language>
@@ -137,7 +133,6 @@
       <iq:language>kor</iq:language>
       <iq:language>lav</iq:language>
       <iq:language>lit</iq:language>
-      <iq:language>zsm</iq:language>
       <iq:language>nob</iq:language>
       <iq:language>pol</iq:language>
       <iq:language>por</iq:language>
@@ -151,6 +146,9 @@
       <iq:language>tur</iq:language>
       <iq:language>ukr</iq:language>
       <iq:language>vie</iq:language>
+      <iq:language>zhs</iq:language>
+      <iq:language>zht</iq:language>
+      <iq:language>zsm</iq:language>
     </iq:languages>
     <iq:barrels/>
   </iq:application>
