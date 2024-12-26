@@ -5,5 +5,7 @@
 		<property id="z" type="boolean">false</property>
 		<property id="s" type="boolean">false</property>
 		<property id="d" type="boolean">false</property>
+		<property id="as" type="number">0</property>
+		<property id="ls" type="number">0</property>
 	</properties>
 </resources>
