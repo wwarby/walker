@@ -246,6 +246,9 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.7.1
+    - Fix crash on pause/resume
+		- Fix missing FIT contribution fields
 - 1.7.0
     - Add support for new devices
 		- Prevent crash when unable to write FIT contributions

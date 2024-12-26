@@ -1,4 +1,20 @@
 <fitContributions>
+	<fitField id="0"
+		displayInChart="false"
+		displayInActivityLaps="false"
+		displayInActivitySummary="true"
+		sortOrder="0"
+		dataLabel="@Strings.steps"
+		unitLabel="@Strings.stepsUnits"
+		precision="0" />
+	<fitField id="1"
+		displayInChart="false"
+		displayInActivityLaps="true"
+		displayInActivitySummary="false"
+		sortOrder="1"
+		dataLabel="@Strings.steps"
+		unitLabel="@Strings.stepsUnits"
+		precision="0" />
 	<fitField id="2"
 		displayInChart="true"
 		displayInActivityLaps="false"
