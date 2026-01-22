@@ -181,7 +181,7 @@ Please use [this link](https://apps.garmin.com/en-US/apps/6cfd1ea6-e841-4c6a-98d
 - fenix 5 / 5 Plus / 5S / 5X / 5X Plus / 6 / 6 Pro / 6S / 6S Pro / 6X Pro / 7 / 7 Pro / 7S / 7S Pro / 7X / 7X Pro / Chronos / 8 / 8 Solar
 - Forerunner 165 / 165 Music / 245 / 245 Music / 255 / 255S / 255 Music / 255S Music / 265 / 265S / 630 / 645 / 645 Music / 935 / 945 / 945LTE / 955 / 965
 - MARQ Adventurer / Athlete / Aviator / Captain / Commander / Driver / Expedition / Golfer / 2
-- Venu / 2 / 2S / 2 Plus / 3 / 3S / Square / Square 2 / Square 2 Music
+- Venu / 2 / 2S / 2 Plus / 3 / 3S / 4 41mm / 4 45mm / Square / Square 2 / Square 2 Music
 - vivoactive 3 / 3 Music / 3 Music LTE / 4 / 4S / 5
 
 *Note: Only tested in on a real epix 2, fenix 5X and Forerunner 235 in the field, all other watches tested only in the SDK device simulator.*

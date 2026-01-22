@@ -5,6 +5,7 @@ import Toybox.Lang;
  * DEVICES:
  * - Forerunner 965
  * - Venu 3
+ * - Venu 4 (45mm)
  */
 
 function getLayout() as Array {

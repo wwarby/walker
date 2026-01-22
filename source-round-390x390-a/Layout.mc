@@ -10,6 +10,7 @@ import Toybox.Lang;
  * - MARQ 2
  * - MARQ Aviator
  * - Venu 3S
+ * - Venu 4 (41mm)
  */
 
 function getLayout() as Array {
