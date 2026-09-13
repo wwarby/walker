@@ -4,6 +4,8 @@ import Toybox.Lang;
  * 416 x 416 FONT GROUP B
  * DEVICES:
  * - Forerunner 265
+ * - fenix 9 43mm
+ * - fenix 9 Pro 43mm
  */
 
 function getLayout() as Array {

@@ -7,6 +7,7 @@ import Toybox.Lang;
  * - fenix 6 Pro
  * - fenix 7
  * - fenix 7 Pro
+ * - fenix 9 Pro Solar 47mm
  */
 
 function getLayout() as Array {

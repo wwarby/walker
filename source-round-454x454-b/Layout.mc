@@ -5,6 +5,9 @@ import Toybox.Lang;
  * DEVICES:
  * - Forerunner 965
  * - Venu 3
+ * - fenix 8 Pro 47mm / 51mm
+ * - fenix 9 47mm / 51mm
+ * - fenix 9 Pro 47mm
  */
 
 function getLayout() as Array {

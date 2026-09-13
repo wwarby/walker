@@ -8,6 +8,7 @@ import Toybox.Lang;
  * - fenix 7X Pro
  * - Descent MK2
  * - Enduro
+ * - fenix 9 Pro Solar 51mm
  */
 
 function getLayout() as Array {
